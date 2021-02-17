@@ -1,0 +1,8 @@
+# Change DPI by values of 12. (96 dpi = 100% 192 = 200%)
+Xft.dpi: 126 #Surface Pro DPI settings
+#dmenu_run.dpi: 200 #Dmenu dpi settings
+rofi.dpi: 192 # Rofi's dpi (app launcher)
+#Xft.antialias: 1 # enable antialiasing
+#Xcursor.size: 25  # cursor size
+
+
