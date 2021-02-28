@@ -64,7 +64,7 @@ alias mkd="mkdir -pv"
 alias mountsd="udisksctl mount -b /dev/mmcblk0p1"
 alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
 
-
+alias sleepoff="xset -dpms; xset s off"
 # miniconda alias to path, done to avoid conflict by not running conda init and using the direct path
 # alias cactivate="source /home/mgalvan/miniconda3/bin/activate"
 
@@ -72,4 +72,4 @@ alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.cfg/ --work-tree=/home/mgalvan'
 
 # This starts the Starship prompt
-eval "$(starship init bash)"
+# eval "$(starship init bash)"

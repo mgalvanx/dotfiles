@@ -1,5 +1,5 @@
 env:
-  TERM: xterm-256color
+    TERM: xterm-256color
 # Window Customizations
 window:
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -44,7 +44,7 @@ scrolling:
   multiplier: 3
 
 
-# background_opacity: 0.95 
+background_opacity: 0.90 
     
 # Font configuration
 font:
@@ -75,4 +75,4 @@ font:
     y: 0
 
 import:
-  - /home/mgalvan/.config/alacritty/dracula.yml
+    - /home/mgalvan/.config/alacritty/dracula.yml

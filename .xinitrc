@@ -48,8 +48,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 #udiskie --tray &
-
-setxkbmap -option caps:escape &
+# setxkbmap -option caps:escape &
+remaps &
+nitrogen --restore &
+picom &
 #xrandr --dpi 156
 rclone --vfs-cache-mode writes mount onedrive: ~/onedrive &
-exec awesome
+# exec awesome
+exec dwm
