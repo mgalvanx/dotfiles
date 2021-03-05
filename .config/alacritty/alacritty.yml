@@ -44,7 +44,7 @@ scrolling:
   multiplier: 3
 
 
-background_opacity: 0.90 
+background_opacity: 0.50 
     
 # Font configuration
 font:
