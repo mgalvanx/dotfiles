@@ -50,6 +50,7 @@ fi
 #udiskie --tray &
 # setxkbmap -option caps:escape &
 remaps &
+dwm_status $
 nitrogen --restore &
 picom &
 #xrandr --dpi 156

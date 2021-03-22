@@ -42,3 +42,5 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
+" Use space + F to activate goyo
+map <leader>f :Goyo \| set bg=dark \| set linebreak<CR>
