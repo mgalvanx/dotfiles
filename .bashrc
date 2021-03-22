@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+#Programs to Run on Startup
+colorscript random
+# python ~/dad_joke_generator.py
+
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
@@ -18,7 +22,6 @@ alias l.='exa -a | egrep "^\."'
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 
 
-colorscript random
 
 stty -ixon # Disable ctrl-s and ctrl-1 (These commands pause and enable the terminal. We are going to disable it.
 shopt -s autocd # Allows us to cd into directorys without typing cd.
@@ -29,10 +32,11 @@ bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
 ### "vim" as manpager
-export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+#export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 ### "nvim" as manpager
-# export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="nvim -c 'set ft=man' -"
+
 # navigation
 alias ..='cd ..' 
 alias ...='cd ../..'
@@ -55,18 +59,14 @@ alias rm='rm -i'
 #Some alias
 alias p="sudo pacman"
 alias SS="sudo systemctl"
-alias vi="vim"
-alias sv="sudo vim"
+alias vi="nvim"
+alias sv="sudo nvim"
 alias r="ranger"
 alias ka="killall"
 alias g="git"
 alias mkd="mkdir -pv"
 alias mountsd="udisksctl mount -b /dev/mmcblk0p1"
 alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
-
-alias sleepoff="xset -dpms; xset s off"
-# miniconda alias to path, done to avoid conflict by not running conda init and using the direct path
-# alias cactivate="source /home/mgalvan/miniconda3/bin/activate"
 
 # This adds the .cfg folder as the git repo and Home Directory as the working tree.
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.cfg/ --work-tree=/home/mgalvan'

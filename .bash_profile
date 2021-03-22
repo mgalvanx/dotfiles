@@ -10,6 +10,6 @@
 export PATH=$PATH:~/.local/bin
 
 # Default Programs
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
