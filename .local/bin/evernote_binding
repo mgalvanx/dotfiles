@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+firefox --new-window www.evernote.com/client/web
