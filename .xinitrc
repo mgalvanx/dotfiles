@@ -54,6 +54,6 @@ dwm_status $
 nitrogen --restore &
 picom &
 #xrandr --dpi 156
-rclone --vfs-cache-mode writes mount onedrive: ~/onedrive &
+# rclone --vfs-cache-mode writes mount onedrive: ~/onedrive &
 # exec awesome
 exec dwm

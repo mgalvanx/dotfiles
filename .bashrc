@@ -7,7 +7,7 @@
 
 #Programs to Run on Startup
 colorscript random
-# python ~/dad_joke_generator.py
+python ~/python/scripts/bible_verse_json_gen.py
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -67,7 +67,7 @@ alias g="git"
 alias mkd="mkdir -pv"
 alias mountsd="udisksctl mount -b /dev/mmcblk0p1"
 alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
-
+alias onedrive="rclone --vfs-cache-mode writes mount onedrive: ~/onedrive"
 # This adds the .cfg folder as the git repo and Home Directory as the working tree.
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.cfg/ --work-tree=/home/mgalvan'
 
