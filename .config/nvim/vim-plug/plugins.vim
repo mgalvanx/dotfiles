@@ -1,7 +1,8 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" Better Syntax Support
-	Plug 'sheerun/vim-polyglot'
+  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+	" Plug 'sheerun/vim-polyglot'
 	" File Explorer
 	Plug 'scrooloose/NERDTree'
 	" Auto pairs for '(' '[' '{'
@@ -19,5 +20,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" Use ranger in vim
 	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 	" Relative Line Number Practice Game
-  Plug 'ThePrimeagen/vim-be-good'		
+  " Plug 'ThePrimeagen/vim-be-good'		
+	" Gets you vim wiki... Will I be switching
+  Plug 'vimwiki/vimwiki'
 call plug#end()

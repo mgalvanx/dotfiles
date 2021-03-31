@@ -1,0 +1,19 @@
+# Within firefox sleep 0.300 seems to be the sweet spot for control l
+# mod3 + w
+#   sleep 0.300 && xdotool keyup w key --clearmodifier ctrl+right
+
+# mod3 + b
+#   sleep 0.300 && xdotool keyup b key --clearmodifier ctrl+left
+
+# mod3 + y
+#   sleep 0.300 && xdotool keyup y key --clearmodifier ctrl+c
+
+# mod3 + p
+#   sleep 0.400 && xdotool keyup p key --clearmodifier ctrl+v
+
+
+   # sleep 0.300 && xdotool key ctrl+l
+  
+super + p
+   sleep .300 && xdotool click 1
+

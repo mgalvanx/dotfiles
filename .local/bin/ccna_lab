@@ -1,0 +1,5 @@
+#!/bin/sh
+firefox --new-window https://www.ciscopress.com/promotions/book-registration-ccna-200-301-official-cert-guide-139206#resources &
+sleep 1
+VBoxManage startvm "Windows 10 Applications" &  
+

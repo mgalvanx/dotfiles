@@ -1,0 +1,3 @@
+#!/bin/sh
+
+alacritty --hold -e bash 'sudo minicom cisco; exec bash'

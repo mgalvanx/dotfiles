@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+firefox --new-window https://www.udemy.com/course/the-modern-python3-bootcamp/learn/lecture & 
+sleep 1
+alacritty --working-directory=/home/mgalvan/python/python3bootcamp & 
+
