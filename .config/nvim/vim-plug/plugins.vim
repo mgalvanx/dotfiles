@@ -1,8 +1,8 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" Better Syntax Support
-  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-	" Plug 'sheerun/vim-polyglot'
+  " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+	Plug 'sheerun/vim-polyglot'
 	" File Explorer
 	Plug 'scrooloose/NERDTree'
 	" Auto pairs for '(' '[' '{'

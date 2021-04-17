@@ -8,12 +8,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 if [ -f $sysresources ]; then
 
-
-
-
-
-
-
     xrdb -merge $sysresources
 
 fi
@@ -23,12 +17,6 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
 
     xrdb -merge "$userresources"
 
@@ -48,12 +36,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 #udiskie --tray &
-# setxkbmap -option caps:escape &
+# which_remaps &
 remaps &
-dwm_status $
+# dwm_status &
+dwmblocks &
 nitrogen --restore &
 picom &
 #xrandr --dpi 156
-# rclone --vfs-cache-mode writes mount onedrive: ~/onedrive &
-# exec awesome
 exec dwm

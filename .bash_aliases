@@ -3,11 +3,13 @@
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.cfg/ --work-tree=/home/mgalvan'
 alias g="git"
 
+
 # rc and shell related shortcuts
 alias rc="nvim ~/.bashrc"
 alias rr="source ~/.bashrc"
 alias al="nvim ~/.bash_aliases"
 alias ev="nvim ~/.profile"
+alias xi="$EDITOR ~/.xinitrc"   
 
 
 # Nvim related aliases
@@ -15,6 +17,10 @@ alias vi="nvim"
 alias vv="nvim ~/.config/nvim/init.vim" 
 alias vm="nvim ~/vimwiki/index.wiki"
 
+
+# DWM related shortcuts
+alias dw="nvim ~/.config/dwm/config.h"
+alias cdw="cd ~/.config/dwm && ls -a"
 
 #Move TMUX configuration file to .config(Needs to here)
 # TMUX_CONFIG="~/.config/tmux/.tmux.conf"
@@ -39,8 +45,13 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # Folder Shortcuts
-alias cf="cd ~/.config && ls -a"   
+alias cf="cd ~/.config && la"   
 alias sc="cd ~/.local/bin && ls -a"   
+alias h="cd ~/ && pwd" 
+alias D="cd ~/Downloads && ls -a" 
+alias mn="cd /mnt && ls -a" 
+alias sc="cd ~/.local/bin && ls -a"   
+alias cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" 
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -55,7 +66,8 @@ alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
 alias onedrive="rclone --vfs-cache-mode writes mount onedrive: ~/onedrive"
 
 # For fun
-alias aq='asciiquarium | lolcat'     
+alias aq='asciiquarium'     
+alias aql='asciiquarium | lolcat'     
 alias lc="lolcat"   
 alias sl="sl | lolcat"
 alias pomo="muccadoro | lolcat"  

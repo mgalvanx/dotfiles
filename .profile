@@ -1,13 +1,9 @@
 # This command sources the bash rc file.
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# Autostart startx
-#if [ "$(tty)" = /dev/tty1 ]; then
-#    exec startx
-#fi
-
 # Adds `~/.local/bin` to $PATH
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin/statusbar
 
 # Default Programs
 export EDITOR="nvim"
@@ -22,3 +18,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # So my tmux scripts use the con
 export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
+
+# Autostart startx
+if [ "$(tty)" = /dev/tty1 ]; then
+   exec startx
+fi
+

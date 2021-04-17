@@ -3,10 +3,10 @@
 inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
+" nnoremap <M-j>    :resize -2<CR>
+" nnoremap <M-k>    :resize +2<CR>
+" nnoremap <M-h>    :vertical resize -2<CR>
+" nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
 inoremap jk <Esc>
@@ -25,8 +25,6 @@ nnoremap <S-TAB> :bprevious<CR>
 nnoremap <C-s> :w<CR>
 " Alternate way to quit
 nnoremap <C-Q> :wq!<CR>
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -56,6 +54,10 @@ nnoremap <Leader>O O<Esc>^Da
 " Use space + F to activate goyo
 map <leader>f :Goyo \| set bg=dark \| set linebreak<CR>
 
+" Nerd Tree Toggle
+noremap <leader>n :NERDTreeToggle<CR>
+let NERDTreeChDirMode = 2
+let NERDTreeShowHidden = 1
 
 " Typing MakeTags creates a tags file used for finding definition. (may need to install ctags first)
 command! MakeTags !ctags -R .

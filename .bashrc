@@ -10,7 +10,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 #Programs to Run on Startup
-colorscript random
+# colorscript random
 # python ~/python/scripts/bible_verse_json_gen.py
 
 
