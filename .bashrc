@@ -13,7 +13,6 @@ fi
 # colorscript random
 # python ~/python/scripts/bible_verse_json_gen.py
 
-
 # This sets the prompt for terminal
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 

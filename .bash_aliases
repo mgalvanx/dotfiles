@@ -11,7 +11,8 @@ alias al="nvim ~/.bash_aliases"
 alias ev="nvim ~/.profile"
 alias xi="$EDITOR ~/.xinitrc"   
 
-
+# Grub Menu Editing
+alias gr="sudo nvim /etc/default/grub"
 # Nvim related aliases
 alias vi="nvim"
 alias vv="nvim ~/.config/nvim/init.vim" 

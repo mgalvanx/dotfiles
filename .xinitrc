@@ -35,12 +35,16 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+
 #udiskie --tray &
 # which_remaps &
-remaps &
+sudo kmonad ~/.config/kmonad/end_game.kbd &
+sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
+# kmonad_remaps &
 # dwm_status &
 dwmblocks &
 nitrogen --restore &
 picom &
+xset r rate 300 50 &
 #xrandr --dpi 156
 exec dwm
