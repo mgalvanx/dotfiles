@@ -38,7 +38,7 @@ fi
 
 #udiskie --tray &
 # which_remaps &
-sudo kmonad ~/.config/kmonad/end_game.kbd &
+sudo kmonad ~/.config/kmonad/game_sir.kbd &
 sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
 # dwm_status &

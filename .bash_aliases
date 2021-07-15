@@ -53,6 +53,8 @@ alias D="cd ~/Downloads && ls -a"
 alias mn="cd /mnt && ls -a" 
 alias sc="cd ~/.local/bin && ls -a"   
 alias cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" 
+alias sc="cd ~/.local/bin && ls -a"   
+alias cwars="cd ~/python/codewars"
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
