@@ -2,7 +2,7 @@
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.cfg/ --work-tree=/home/mgalvan'
 alias g="git"
-
+alias notin='grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)'
 
 # rc and shell related shortcuts
 alias rc="nvim ~/.bashrc"

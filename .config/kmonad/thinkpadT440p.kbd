@@ -1,0 +1,61 @@
+
+(defcfg
+  ;; For Linux
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "KMonad: T440")
+;; This option tells KMonad to let non-configured keys act normal
+  fallthrough true
+)
+
+;; US
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [     ]        
+  caps a    s    d    f    g    h    j    k    l    ;    '     \   ret
+  lsft 102d z    x    c    v    b    n    m    ,    .    /              rsft
+  wkup lctl lmet lalt           spc            ralt cmps rctl      back up   fwd
+                                                                   left down rght
+)
+
+(defalias
+    mec (tap-hold-next-release 300 esc lmet)
+    mta (tap-hold-next-release 300 a lmet)
+    ats (tap-hold-next-release 300 s lalt)
+    ctd (tap-hold-next-release 300 d lctl)
+    stf (tap-hold-next-release 300 f lsft)
+    sfj (tap-hold-next-release 300 j rsft)
+    ctk (tap-hold-next-release 300 k rctl)
+    atl (tap-hold-next-release 300 l lalt)
+    mt; (tap-hold-next-release 300 ; rmet)
+    ;;num  (layer-toggle numbers) ;; Bind num to a button that switches to a layer
+    vim  (layer-toggle vimbindings) ;; Bind vim to a button that switches to a layer
+    kil  C-A-del                ;; Bind kil to a button that Ctrl-Alt-delete
+    cpy C-c
+    wrt C-rght
+    blt C-left
+    fin C-f
+    pst C-v
+    cut C-x
+    udo C-z
+    rdo C-y
+    cbs C-bspc
+)
+
+;; US
+(deflayer qwerty
+  grv  1    2    3    4    5    6    7    8    9    0    -     =        bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [     ]        
+  @mec @mta @ats @ctd @stf g    h    @sfj @ctk @atl @mt; '     \    ret
+  lsft 102d z    x    c    v    b    n    m    ,    .    /              rsft
+  wkup lmet lctl @vim           spc            @vim rctl lmet      back up   fwd
+                                                                   left down rght
+)
+(deflayer vimbindings
+  _    _    _    _    _    _    _    _    _    _    _    _    _         @cbs
+  _    _    @wrt _    @rdo _    @cpy @udo home _    @pst _    _    
+  _    end  _    @cut pgup pgdn left down up   rght _    _    _       _
+  _    _    _    del  _    _    @blt _    cmps _    _    @fin           _
+  _    _    _    _              _              _    _    _         _    _    _
+                                                                   _    _    _
+)
+
