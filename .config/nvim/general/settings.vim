@@ -1,9 +1,16 @@
 " set leader key
-let g:mapleader = "\<Space>"
+
+let mapleader = "\<Space>"
+" Forces Vim Wiki to use Markdown instead of vimwiki syntax and saves its
+" folder to my notes folder
+let g:vimwiki_list = [{'path': '~/nextcloud/notes',
+                      \ 'syntax': 'markdown', 'ext': '.md',
+                      \ 'index': 'Wiki'}]
+let g:vimwiki_global_ext = 0
 
 syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
+" set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
@@ -35,8 +42,8 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set scrolloff=8                         " Keeps the cursor towards the middle of the screen when scrolling
-"set autochdir                           " Your working directory will always be the same as your working directory
-
+"set autochdir                          " Your working directory will always be the same as your working directory
+set viminfo=""                          " Prevents vim from creating a .viminfo in the home directory
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me

@@ -35,7 +35,7 @@
 /* dwm.color1: */
 
 /* dwm.selbgcolor: */
-dwm.selfgcolor:
+/* dwm.selfgcolor: */
 
 dwm.normbgcolor: #222222
 dwm.normbordercolor: #444444
@@ -43,3 +43,11 @@ dwm.normfgcolor: #eeeeee
 dwm.selfgcolor: #eeeee
 dwm.selbordercolor: #BD93F9
 dwm.selbgcolor: #BD93F9
+
+/* sxiv dark background */
+/* Use the xrdb -load /.Xresource command to make changes take place */
+/* Sxiv.background: #000000 */
+Sxiv.background: #222222 
+Sxiv.foreground: #BD93F9
+Sxiv.font: Fira Code
+

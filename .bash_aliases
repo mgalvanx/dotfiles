@@ -1,3 +1,5 @@
+# Bash Aliases
+
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.cfg/ --work-tree=/home/mgalvan'
@@ -10,6 +12,7 @@ alias rr="source ~/.bashrc"
 alias al="nvim ~/.bash_aliases"
 alias ev="nvim ~/.profile"
 alias xi="$EDITOR ~/.xinitrc"   
+ 
 
 # Grub Menu Editing
 alias gr="sudo nvim /etc/default/grub"
@@ -37,7 +40,7 @@ alias tt="nvim $TMUX_CONFIG"
 alias cp="cp -iv"
 alias mv='mv -i'
 alias rm='rm -i'
-
+alias mkd="mkdir -pv" 
 # navigation
 alias ..='cd ..' 
 alias ...='cd ../..'
@@ -45,16 +48,6 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-# Folder Shortcuts
-alias cf="cd ~/.config && la"   
-alias sc="cd ~/.local/bin && ls -a"   
-alias h="cd ~/ && pwd" 
-alias D="cd ~/Downloads && ls -a" 
-alias mn="cd /mnt && ls -a" 
-alias sc="cd ~/.local/bin && ls -a"   
-alias cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" 
-alias sc="cd ~/.local/bin && ls -a"   
-alias cwars="cd ~/python/codewars"
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -66,7 +59,6 @@ alias l.='exa -a | egrep "^\."'
 # These are for mounting drives
 alias mountsd="udisksctl mount -b /dev/mmcblk0p1"
 alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
-alias onedrive="rclone --vfs-cache-mode writes mount onedrive: ~/onedrive"
 
 # For fun
 alias aq='asciiquarium'     
@@ -75,3 +67,42 @@ alias lc="lolcat"
 alias sl="sl | lolcat"
 alias pomo="muccadoro | lolcat"  
 alias ka="killall"
+
+
+# This function works by automatically creating a alias for the present working directory
+# Simply type add followed by the name of the alias you want the pwd to be called
+# I modified it from the original source below so that the alias are saved to bash_aliases
+#https://benmyers.dev/blog/alias-directories-unix/
+function ad() {    
+    if [[ "$#" -ne 1 ]]    
+    then        
+        echo "USAGE: ad <alias>"        
+        return 0    
+    elif [[ -n "$(alias $1 2>/dev/null)" ]]    
+    then        
+        echo "Alias already exists!"        
+        return 0    
+    fi    
+        echo -e "alias $1=\"cd $(pwd)\"" >> ~/.bash_aliases
+        source ~/.bashrc    
+        echo "Alias was added successfully."
+    }
+
+
+
+
+# Folder Shortcuts
+alias cf="cd ~/.config && la"   
+alias sc="cd ~/.local/bin && ls -a"   
+alias h="cd ~/ && pwd" 
+alias mn="cd /mnt && ls -a" 
+alias sc="cd ~/.local/bin && ls -a"   
+alias cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" 
+alias cwars="cd ~/projects/codewars"
+alias in="cd /home/mgalvan/nextcloud/notes/0_Inbox && la"
+alias pr="cd /home/mgalvan/nextcloud/notes/1_Projects && la"
+alias ar="cd /home/mgalvan/nextcloud/notes/2_Areas && la"
+alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
+alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
+alias d="cd /home/mgalvan/nextcloud/files/0_Inbox_Files"
+alias cqk="cd /home/mgalvan/projects/qmk_firmware/keyboards/planck/keymaps/mgalvanx"
