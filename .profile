@@ -27,7 +27,8 @@ export HISTFILE=~/.config/bash/history
 export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 
 # moves .python_history to .config 
-export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/pythonstartup.py"
+# export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/pythonstartup.py"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonstartup.py"
 
 # Autostart startx
 if [ "$(tty)" = /dev/tty1 ]; then

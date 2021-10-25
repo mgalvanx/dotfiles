@@ -1,0 +1,500 @@
+ls
+in
+vi *
+vi *
+vi *
+ls
+in
+vi Advance\ Notes\ Using\ Vimundefined\ Markdown\ and\ Pand.md 
+ls
+vi advanced_notes_with_john_hammond.md 
+mv advanced_note_John_Hammond.md advanced_notes_with_john_hammond.md 
+ls
+in
+notetaker
+ls
+cat add_to_qmk_keyboard.md 
+rm add_to_qmk_keyboard.md 
+vi this_is_a_test_note.md 
+rm this_is_a_test_note.md 
+bat when_to_use_bash_or_python.md 
+vi when_to_use_bash_or_python.md 
+rm when_to_use_bash_or_python.md 
+la
+cat Snapshot.md 
+rm Snapshot.md 
+vi Thai\ Stuff.md 
+rm Thai\ Stuff.md 
+bat Linux_Test.md 
+bat Catalytic\ Converter.md 
+ar
+pr
+re
+rg tar
+open_with_fzf
+re
+cd LINUX/
+gr tar
+re
+cd Li
+Lin
+Linux
+ls
+cd Linux
+cd LINUX/
+rg tar
+ar
+re
+cd LINUX/
+ls
+rg tar command
+rg tar
+vi Video\ 29\ Archiving\ and\ Compression\ on\ Linux\ -\ Basi.md 
+vi Video\ 29\ Archiving\ and\ Compression\ on\ Linux\ -\ Basi.md 29_archiving_and_compression_on_linux.md
+d
+ls
+cd my_qmk_configurations/
+ls
+rm planck_colemak_dh_split_newest.json 
+..
+ls
+mv planck_colemak_dh_split.json my_qmk_configurations/
+ls
+cd my_qmk_configurations/
+ls
+ls
+vi planck_colemak_dh_split.json 
+ls
+rm planck_colemak_dh_split.json 
+..
+ls
+mv planck_colemak_dh_split.json my_qmk_configurations/
+ls
+cqk
+ls
+vi keymap.c 
+qmk compile
+qmk flash 
+qmk flash 
+lg
+ls
+in
+vi todo2021-09-2
+vi todo2021-09-26.md 
+ls
+in
+vi todo2021-09-27.md todo2021-09-28.md 
+ls
+in
+vi my_todos.md 
+vi my_todos.md 
+ls
+d
+ls
+unzip Google\ Photos-001.zip 
+ls
+mv Google\ Photos google_photos
+ls
+mv google_photos/ ../../pictures/
+ls
+..
+..
+ls
+cd pictures/
+ls
+cd google_photos/
+sxiv *
+ls
+la 
+mkd videos
+ls
+mv *.MP4 videos/
+ls
+la
+ls
+in
+..
+.
+..
+ls
+cd pictures/
+ls
+cd google_photos/
+ls
+mv videos/ google_videos
+ls
+mv google_videos/ ..
+ls
+sxiv -t *.*
+sxiv
+man sxiv
+cf
+ls
+ls
+in
+..
+..
+ls
+cd pictures/
+ls
+cd google_photos/
+ls
+la
+sxiv *.*
+rne
+re
+cd LINUX
+ls
+mv Video\ 29\ Archiving\ and\ Compression\ on\ Linux\ -\ Basi.md 29_archiving_and_compression_on_linux.md
+ls
+la
+mv 29_archiving_and_compression_with_tar.md 
+mv 29_archiving_and_compression_on_linux.md 29_archiving_and_compression_with_tar.md 
+ls
+cd 29_archiving_and_compression_with_tar.md 
+vi 29_archiving_and_compression_with_tar.md 
+non
+in
+..
+..
+ls
+..
+cd nextcloud/
+ls
+cd pictures/
+ls
+cd google_videos/
+ls
+man mpv
+mpv *
+mpv -t *
+pacs
+la
+pacs
+ls
+man mpv
+sudo pacman -S mpv
+sudo pacman -Rns mpv
+ls
+ls
+.pki/
+ls
+cd nssdb/
+ls
+h
+ls
+cd Downloads/
+ls
+rm -rf Desktop Downloads
+ls
+..
+ls
+rm -rf Desktop Downloads
+ls
+in
+..
+ls
+..
+ls
+cd notes/
+ls
+..
+ls
+cd files/
+ls
+0_Inbox_Files/
+ls
+cd ..
+ls
+..
+ls
+cd pictures/
+ls
+cd google_photos/
+ls
+mpv IMG_1038.MOV 
+man mpv
+..
+ls
+cd google_photos/
+ls
+mv *.MOV ../google_videos/
+ls
+la
+ls
+mpv https://gototub.com/episode/seinfeld-season-2-episode-12/
+ls
+ls
+al
+in
+vi my_todos.md 
+d
+ls
+cat
+nvim
+ls
+vi
+ls
+ajl
+al
+lsbl
+lsblk -f
+lsblk -f
+lsblk -f
+ls
+lsblk -f
+udisksctl mount -b /dev/sdb
+udisksctl mount -b /dev/sdb1
+cd /run/media/mgalvan/Ventoy/
+ls
+ls
+rm archlinux-2020.11.01-x86_64.iso 
+mv ~/nextcloud/files/0_Inbox_Files/archlinux-2021.09.01-x86_64.iso .
+ls
+udisksctl unmount -b /dev/sdb1
+udisksctl unmount -b /dev/sdb1
+mv ~/projects/windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso .
+udisksctl unmount -b /dev/sdb1
+lsbl
+lsblk -f
+d
+gpg --keyserver-options auto-key-retrieve --verify archlinux-2021.09.01-x86_64.iso   
+ls
+ls
+gpg --keyserver-options auto-key-retrieve --verify archlinux-2021.09.01-x86_64.iso.sig 
+man md5
+ls
+cd projects/
+s
+ls
+mv  7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_PROFESSIONAL_x64FRE_en-us.iso windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso 
+ls
+ls
+cd projects/
+ls
+ls
+ls
+ls
+udisksctl unmount -b /dev/sdb1
+udisksctl unmount -b /dev/sdb1
+udisksctl mount -b /dev/sdb1
+ls
+/run/media/mgalvan/Ventoy/
+ls
+rm windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso 
+r
+rm Fedora-Workstation-Live-x86_64-32-1.6.iso debian-live-10.6.0-amd64-kde+nonfree.iso ubuntu-18.04.4-desktop-amd64.iso 
+mv  7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_PROFESSIONAL_x64FRE_en-us.iso windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso 
+mv ~/projects/windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso .
+udisksctl unmount -b /dev/sdb1
+ls
+ls
+in
+ar
+re
+cd WINDOWS/
+ls
+..
+ls
+..
+ls
+man gi 
+man git
+in
+vi new_calorie_intake.md
+rc
+al
+ir
+ls
+config statur
+config config status
+config statur
+config status
+nvim
+`grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)`
+grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
+config config status
+grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
+config status
+cd .config/
+lr
+s
+ls
+grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
+grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
+ls
+vi mimeapps.list 
+config add mimeapps.list 
+config commit -m "added default applications for gui applications"
+git status
+config statur
+config status
+config push 
+config status -l
+config status -u
+config status -uno
+config status -u
+config status -u normai
+config status -u normal
+t ls-files --other | grep -v /
+ls-files --other | grep -v /
+config ls-files --other | grep -v /
+..
+config ls-files --other | grep -v /
+ir
+ls
+config ls-files -- directory --other | grep -v /
+config ls-files -- directory --other | grep -v /
+config ls-files -- directory --other | grep -v /
+config ls-files --other | grep -v /
+config ls-files --directory --other | grep -v /
+config ls-files --directory | grep -v /
+git help ls-files 
+ls
+ar
+rg git
+ls
+cd GIT/
+lr
+ir
+ls
+vi Useful\ Git\ Command\ Shortcuts.md 
+ir
+ls
+..
+..
+..
+h
+ir
+ls
+config statur
+config status
+git add -u
+config add -u
+ir
+ls
+config status
+git status -u 
+config status -u 
+git status -u 
+config status
+config commit -m
+config commit -m "updated nvim and bash files"
+ir
+ls
+config push
+    
+ 
+config status
+.sc
+ir
+ls
+ls
+cd .config/
+rm .viminfo
+ir
+ls
+..
+cd configstore
+cf
+cd configstore/
+ir
+ls
+..
+lr
+cd configstore/
+vi nodemon.json 
+vi update-notifier-electron-builder.json 
+cdw
+git status
+..
+ls
+cd dwm
+..
+cd dwm_patches/
+ls
+ls
+cd dwm
+cd dwm
+ls
+ls
+lr
+ls
+..
+cd dwm
+ls
+cd dwm_patches/
+ls
+mkd maybe_patches
+mv *.diff maybe_patches/
+ls
+ls
+..
+ls
+cd dwm_patches/
+ls
+cd maybe_patches/
+ls
+mv *.diff ..
+ls
+..
+mv maybe_patches/ ..
+ls
+..
+ls
+mv *.diff maybe_patches/
+ls
+git status
+git add .
+ls
+git status
+git commit -m "added experimental patches and changed some keybindings" 
+ls
+git status
+git push
+git push --set-upstream origin colemak_dh
+git branch 
+git checkout 
+git status
+ls
+/dev
+ls
+ls
+pacs
+git clone https://github.com/hamishcoleman/thinkpad-ec
+ls
+mv thinkpad-ec/ projects/
+cd projects
+ls
+cd thinkpad-ec/
+ls
+make list_laptops
+make patch_enable_battery clean
+make patch_enable_keyboard clean
+l
+ls
+make patched.x230.img
+ls
+lsblk -d -o NAME,SIZE,LABEL
+sudo dd if=patched.x230.img of=/dev/sdb bs=4M status=progress cov=fsync
+sudo dd if=patched.x230.img of=/dev/sdb bs=4M status=progress conv=fsync
+lsblk -d -o NAME,SIZE,LABEL
+sudo dd if=patched.x230.img of=/dev/sdb bs=4M status=progress conv=fsync
+fdisk
+fdisk
+fdisk
+fdisk -l
+sudo fdisk -l
+dw
+in
+vi
+ls
+..
+ls
+cd 2_Areas/
+lr
+ls
+cd Arch\ Linux/
+ir
+ls
+vi Pacman\ Commands.md 
