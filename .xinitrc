@@ -49,4 +49,5 @@ xset r rate 300 50 &
 #xrandr --dpi 156
 nitrogen --restore &
 nextcloud --background &
+remaps & 
 exec dwm

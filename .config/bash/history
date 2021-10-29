@@ -1,119 +1,3 @@
-ls
-in
-vi *
-vi *
-vi *
-ls
-in
-vi Advance\ Notes\ Using\ Vimundefined\ Markdown\ and\ Pand.md 
-ls
-vi advanced_notes_with_john_hammond.md 
-mv advanced_note_John_Hammond.md advanced_notes_with_john_hammond.md 
-ls
-in
-notetaker
-ls
-cat add_to_qmk_keyboard.md 
-rm add_to_qmk_keyboard.md 
-vi this_is_a_test_note.md 
-rm this_is_a_test_note.md 
-bat when_to_use_bash_or_python.md 
-vi when_to_use_bash_or_python.md 
-rm when_to_use_bash_or_python.md 
-la
-cat Snapshot.md 
-rm Snapshot.md 
-vi Thai\ Stuff.md 
-rm Thai\ Stuff.md 
-bat Linux_Test.md 
-bat Catalytic\ Converter.md 
-ar
-pr
-re
-rg tar
-open_with_fzf
-re
-cd LINUX/
-gr tar
-re
-cd Li
-Lin
-Linux
-ls
-cd Linux
-cd LINUX/
-rg tar
-ar
-re
-cd LINUX/
-ls
-rg tar command
-rg tar
-vi Video\ 29\ Archiving\ and\ Compression\ on\ Linux\ -\ Basi.md 
-vi Video\ 29\ Archiving\ and\ Compression\ on\ Linux\ -\ Basi.md 29_archiving_and_compression_on_linux.md
-d
-ls
-cd my_qmk_configurations/
-ls
-rm planck_colemak_dh_split_newest.json 
-..
-ls
-mv planck_colemak_dh_split.json my_qmk_configurations/
-ls
-cd my_qmk_configurations/
-ls
-ls
-vi planck_colemak_dh_split.json 
-ls
-rm planck_colemak_dh_split.json 
-..
-ls
-mv planck_colemak_dh_split.json my_qmk_configurations/
-ls
-cqk
-ls
-vi keymap.c 
-qmk compile
-qmk flash 
-qmk flash 
-lg
-ls
-in
-vi todo2021-09-2
-vi todo2021-09-26.md 
-ls
-in
-vi todo2021-09-27.md todo2021-09-28.md 
-ls
-in
-vi my_todos.md 
-vi my_todos.md 
-ls
-d
-ls
-unzip Google\ Photos-001.zip 
-ls
-mv Google\ Photos google_photos
-ls
-mv google_photos/ ../../pictures/
-ls
-..
-..
-ls
-cd pictures/
-ls
-cd google_photos/
-sxiv *
-ls
-la 
-mkd videos
-ls
-mv *.MP4 videos/
-ls
-la
-ls
-in
-..
 .
 ..
 ls
@@ -498,3 +382,119 @@ cd Arch\ Linux/
 ir
 ls
 vi Pacman\ Commands.md 
+ls
+cd .xinitrc 
+xi
+reboot
+remaps
+ls
+.config/
+cd nvim/
+ls
+cd plug-config/
+ls
+cd ..
+cd ..
+cd ..
+ls
+cd .config/alacritty/
+ls
+vi alacritty.yml 
+vi alacritty.yml 
+ls
+vi alacritty.yml 
+ls
+
+$PATH
+remaps
+ xcape
+sudo pacman -F xset
+sudo pacman -S xcape
+remaps
+sc
+vi remaps 
+sudo pacman -F xset
+sudo pacman -xorg-xset
+sudo pacman -S xorg-xset
+remaps
+ls
+ls -lah
+pamixer
+pamixer --get-volume
+pamixer -u
+reboot
+reboot
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+vv
+ls
+vv
+vi
+ls
+ls
+cf
+cf
+ls
+cd alacritty/
+ls
+vi alacritty.yml 
+vi alacritty.yml 
+ls
+vi alacritty.yml 
+ls
+ls
+ls
+ls
+vi alacritty.yml 
+ls
+ls
+.config/
+cd alacritty/
+ls
+vi alacritty.yml 
+ls
+vi alacritty.yml 
+.config/
+ls
+cd alacritty/
+ls
+vi alacritty.yml 
+ls
+ls
+ls
+.config/
+ls
+cd alacritty/
+ls
+vi alacritty.yml 
+vi alacritty.yml 
+ls
+ls
+vi alacritty.yml 
+cd .config/
+ls
+vi alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+ls
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+ls
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+ls -al

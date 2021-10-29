@@ -17,42 +17,42 @@ xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
 # xmodmap -e 'keycode 107 = Super_R'
 
 # Vim arrow keys using alt
-xmodmap -e "keycode 64 = Mode_switch"
-xmodmap -e "keycode 108 = Control_R"
-xmodmap -e "keycode 105 = Alt_R Meta_R"
-xmodmap -e "keycode 29 = y Y XF86Copy XF86Copy"
-xmodmap -e "clear mod1"
-xmodmap -e "clear control"
-xmodmap -e "add control = Control_L"
-xmodmap -e "add control = Control_R"
-xmodmap -e "add mod1 = Alt_R"
-xmodmap -e "add mod1 = Alt_L"
-xmodmap -e "add mod1 = Meta_L"
-xmodmap -e "add mod1 = Meta_R"
-xmodmap -e "keycode 30 = u U Undo Undo"
-xmodmap -e "keycode 27 = r R Redo Redo"
-xmodmap -e "keycode 56 = b B XF86Back XF86Back"
-xmodmap -e "keycode 33 = p P XF86Paste XF86Paste"
-xmodmap -e "keycode 40 = d D XF86Cut XF86Cut"
-xmodmap -e "keycode 31 = i I KP_Home KP_Home"
-xmodmap -e "keycode 38 = a A KP_End KP_End"
-xmodmap -e "keycode 58 = m M Menu Menu"
-xmodmap -e "keycode 43 = h H Left Left"
-xmodmap -e "keycode 44 = j J Down Down"
-xmodmap -e "keycode 45 = k K Up Up"
-xmodmap -e "keycode 46 = l L Right Right"
+#xmodmap -e "keycode 64 = Mode_switch"
+#xmodmap -e "keycode 108 = Control_R"
+#xmodmap -e "keycode 105 = Alt_R Meta_R"
+#xmodmap -e "keycode 29 = y Y XF86Copy XF86Copy"
+#xmodmap -e "clear mod1"
+#xmodmap -e "clear control"
+#xmodmap -e "add control = Control_L"
+#xmodmap -e "add control = Control_R"
+#xmodmap -e "add mod1 = Alt_R"
+#xmodmap -e "add mod1 = Alt_L"
+#xmodmap -e "add mod1 = Meta_L"
+#xmodmap -e "add mod1 = Meta_R"
+#xmodmap -e "keycode 30 = u U Undo Undo"
+#xmodmap -e "keycode 27 = r R Redo Redo"
+#xmodmap -e "keycode 56 = b B XF86Back XF86Back"
+#xmodmap -e "keycode 33 = p P XF86Paste XF86Paste"
+#xmodmap -e "keycode 40 = d D XF86Cut XF86Cut"
+#xmodmap -e "keycode 31 = i I KP_Home KP_Home"
+#xmodmap -e "keycode 38 = a A KP_End KP_End"
+#xmodmap -e "keycode 58 = m M Menu Menu"
+#xmodmap -e "keycode 43 = h H Left Left"
+#xmodmap -e "keycode 44 = j J Down Down"
+#xmodmap -e "keycode 45 = k K Up Up"
+#xmodmap -e "keycode 46 = l L Right Right"
 # xmodmap -e "keycode 41 = f F Find Find"
 
 # Fix F1 - F12 on IQuinox Keyboard
-xmodmap -e 'keycode 232 = F1'
-xmodmap -e 'keycode 233 = F2'
-xmodmap -e 'keycode 128 = F3'
-xmodmap -e 'keycode 212 = F4'
-xmodmap -e 'keycode 237 = F5'
-xmodmap -e 'keycode 238 = F6'
-xmodmap -e 'keycode 173 = F7'
-xmodmap -e 'keycode 172 = F8'
-xmodmap -e 'keycode 171 = F9'
-xmodmap -e 'keycode 121 = F10'
-xmodmap -e 'keycode 122 = F11'
-xmodmap -e 'keycode 123 = F12'
+#xmodmap -e 'keycode 232 = F1'
+#xmodmap -e 'keycode 233 = F2'
+#xmodmap -e 'keycode 128 = F3'
+#xmodmap -e 'keycode 212 = F4'
+#xmodmap -e 'keycode 237 = F5'
+#xmodmap -e 'keycode 238 = F6'
+#xmodmap -e 'keycode 173 = F7'
+#xmodmap -e 'keycode 172 = F8'
+#xmodmap -e 'keycode 171 = F9'
+#xmodmap -e 'keycode 121 = F10'
+#xmodmap -e 'keycode 122 = F11'
+#xmodmap -e 'keycode 123 = F12'
