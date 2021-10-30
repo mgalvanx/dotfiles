@@ -1,500 +1,500 @@
-.
+usermod -aG network mgalvan
+sudo usermod -aG network mgalvan
+mount ~/nextcloud/
+groups
+groupadd network
+sudo usermod -aG network mgalvan
+groups
+vi .config/alacritty/alacritty.yml 
+vi .config/alacritty/alacritty.yml 
+vi .config/alacritty/alacritty.yml 
+vi .config/alacritty/alacritty.yml 
+ls
+ls -a
+l
+al
+ls
+ls
+ls -a
+ls
+rr
+ls
+ls -a
+ls -lah
+ls -CF
+ls -alF
+ls -alh
+ls -alF
+git status
+config status
+config config --local status.showUntrackedFiles no
+config status
+ ls
+ls -a
+config add -u
+config status
+git commit -m "changed alias and some mappings" 
+config commit -m "changed alias and some mappings" 
+git config --global user.email m.galvanx@gmail.com
+git config --global user.name mgalvanx
+ls
+ls -a
+al
+ev
+.config/
+ls
+mkdir git
+ls
 ..
 ls
-cd pictures/
+ls -a
+mv .gitconfig config
 ls
-cd google_photos/
+config push
+mv config .config/git/
+config push --set-upstread origin master
+config push --set-upstread origin master
+config push --set-upstream origin master
+git push
+config push
+config push
+config status
+git commit -m "added different themes to alacritty and modified bindings"
+config commit -m "added different themes to alacritty and modified bindings"
+config push
+config status
+mount nextcloud/
 ls
-mv videos/ google_videos
+cd nextcloud/
 ls
-mv google_videos/ ..
+in
 ls
-sxiv -t *.*
-sxiv
-man sxiv
+ls
+ls -a
+in
+ls
+h
+unmount ~/nextcloud/
+reboot
+reboot
+gpasswd -d mgalvan davfs2
+sudo gpasswd -d mgalvan davfs2
+groups
+groups
+sudo gpasswd -d mgalvan 1001
+vi /etc/group
+ls
+cd ..
+cd mgalvan/
+ls -a
+rm .davfs2/
+rm -rf .davfs2/
+sudoedit /etc/fstab 
+sudo pacman -Rns davfs2
+ls
+ls
+cd ..
+cd mgalvan/
+ls
+ls -a
+pacs
+sudo pacman -S fzf
+pacs
+sudo pacman -S nextcloud-client
+sudo pacman -Syu 
+sudo pacman -S nextcloud-client
+reboot
+groups
+groupdel davfs2
+sudo groupdel davfs2
+groups
+sudo groupdel 1001
+sudo groupdel 1001
+pacs
+pacs
+reboot
+ls -a
+ls
+cd Nextcloud/
+ls
+cd files/
+ls
+cd 0_Inbox_Files/
+ls
+cd ..
+ls
+cd ..
+cd ..
+ls
+cd nextcloud/
+l
+ls
+ls
+ls
+sls
+ls
+ls
+sls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+in
+ls
+ls
+ls
+cd Nextcloud/
+ls
+ls
+ls
+sls
+cd ..
+ls
+cd nextcloud/
+ls
+cd files/
+ls
+cd 0_Inbox_Files/
+ls
+ls -a
+rm .bash_history 
+ls
+ls
+ls
+vi .xinitrc 
+reboot
+unclutter
+reboot
+ls
+cd ..
+ls
+la
+h
 cf
 ls
+ls -lah
+h
+ls -a
 ls
-in
-..
-..
+sudo pacman -S xclip 
 ls
-cd pictures/
+sc
+rm evernote_binding 
+cp remaps setbg
+vi setbg 
+rm setbg 
+cp ide_pymux setbg
+vi setbg 
+xi
 ls
-cd google_photos/
+cd ..
+cd .
+cd ..
 ls
-la
-sxiv *.*
-rne
-re
-cd LINUX
-ls
-mv Video\ 29\ Archiving\ and\ Compression\ on\ Linux\ -\ Basi.md 29_archiving_and_compression_on_linux.md
-ls
-la
-mv 29_archiving_and_compression_with_tar.md 
-mv 29_archiving_and_compression_on_linux.md 29_archiving_and_compression_with_tar.md 
-ls
-cd 29_archiving_and_compression_with_tar.md 
-vi 29_archiving_and_compression_with_tar.md 
-non
-in
-..
-..
-ls
-..
+ls -a
 cd nextcloud/
 ls
 cd pictures/
 ls
-cd google_videos/
-ls
-man mpv
-mpv *
-mpv -t *
-pacs
-la
-pacs
-ls
-man mpv
-sudo pacman -S mpv
-sudo pacman -Rns mpv
-ls
-ls
-.pki/
-ls
-cd nssdb/
-ls
-h
-ls
-cd Downloads/
-ls
-rm -rf Desktop Downloads
-ls
-..
-ls
-rm -rf Desktop Downloads
-ls
+cd 
+g
 in
-..
-ls
-..
-ls
-cd notes/
-ls
-..
-ls
-cd files/
-ls
-0_Inbox_Files/
-ls
+cd ...
 cd ..
 ls
-..
+cd ..
 ls
 cd pictures/
 ls
-cd google_photos/
+cd Gracie\ /
 ls
-mpv IMG_1038.MOV 
-man mpv
-..
+cd ..
+cd Gracie\ /
+cd ..
+setbg Gracie\ /
+sudo pacman -F notify-send
+sudo pacman -S notify-send
+pacs
+sudo pacman -S libnotify
+setbg Gracie\ /
 ls
-cd google_photos/
+cd google_videos/
 ls
-mv *.MOV ../google_videos/
+reboot
+ls
+cf
+vi alacritty/alacritty.yml 
+ls
+ls
+vi alacritty/alacritty.yml 
+vi .config/alacritty/alacritty.yml 
+ls
+ls
+cdw
+vi config.
+cdw
+vi config.h
+in
+\ls
+ar
+ls
+mv Arch\ Linux/ arch_linux
+ls
+cd arch_linux/
+ls
+ls
+cdw
+sudo make clean install
+ls
+ls -lah
+cdw
+vi config.h
+sudo make clean install
+cdw
+vi config.h
+sudo make clean install
+ls
+ls -a
+ls
+ls
+in
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+vi .config/alacritty/alacritty.yml 
+ls
+ls
+ls -a
+in
+al
+ls
+h
+ls
+ls
+rr
+ls
+in
+al
+ls
+ls
+rr
+h
+ls
+ll
+ls
+ls
+ls
+al
+rr
+l
+lt
+al
+rr
+la
+al
+rr
+la
+ls
+ll
+ls
+ls
+in
+la
+la
+ll
 ls
 la
 ls
-mpv https://gototub.com/episode/seinfeld-season-2-episode-12/
-ls
-ls
-al
-in
-vi my_todos.md 
-d
-ls
-cat
-nvim
-ls
-vi
-ls
-ajl
-al
-lsbl
-lsblk -f
-lsblk -f
-lsblk -f
-ls
-lsblk -f
-udisksctl mount -b /dev/sdb
-udisksctl mount -b /dev/sdb1
-cd /run/media/mgalvan/Ventoy/
-ls
-ls
-rm archlinux-2020.11.01-x86_64.iso 
-mv ~/nextcloud/files/0_Inbox_Files/archlinux-2021.09.01-x86_64.iso .
-ls
-udisksctl unmount -b /dev/sdb1
-udisksctl unmount -b /dev/sdb1
-mv ~/projects/windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso .
-udisksctl unmount -b /dev/sdb1
-lsbl
-lsblk -f
-d
-gpg --keyserver-options auto-key-retrieve --verify archlinux-2021.09.01-x86_64.iso   
-ls
-ls
-gpg --keyserver-options auto-key-retrieve --verify archlinux-2021.09.01-x86_64.iso.sig 
-man md5
-ls
-cd projects/
-s
-ls
-mv  7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_PROFESSIONAL_x64FRE_en-us.iso windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso 
-ls
-ls
-cd projects/
 ls
 ls
 ls
 ls
-udisksctl unmount -b /dev/sdb1
-udisksctl unmount -b /dev/sdb1
-udisksctl mount -b /dev/sdb1
 ls
-/run/media/mgalvan/Ventoy/
 ls
-rm windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso 
-r
-rm Fedora-Workstation-Live-x86_64-32-1.6.iso debian-live-10.6.0-amd64-kde+nonfree.iso ubuntu-18.04.4-desktop-amd64.iso 
-mv  7601.24214.180801-1700.win7sp1_ldr_escrow_CLIENT_PROFESSIONAL_x64FRE_en-us.iso windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso 
-mv ~/projects/windows_7_CLIENT_PROFESSIONAL_x64FRE_en-us.iso .
-udisksctl unmount -b /dev/sdb1
-ls
+ll
 ls
 in
+pr
 ar
-re
-cd WINDOWS/
+cd arch_linux/
 ls
-..
+vi My\ Arch\ Linux\ Packages.md 
+vi My\ Arch\ Linux\ Packages.md 
+vi My\ Arch\ Linux\ Packages.md 
+ as
 ls
-..
+vi a.out 
+rm a.out 
 ls
-man gi 
-man git
+vi My\ Arch\ Linux\ Packages.md 
+
+sudo pacman -Qe
+sudo pacman -Qe | less
+sudo pacman -S sxiv mpv 
+sc
+touch wp 
+vi wp
+ls
+chmod +x wp
+ls
 in
-vi new_calorie_intake.md
-rc
+cd ../..
+ls
+cd notes/
+ls
+cd ..
+cd pictures/
+ls
+cd Gracie\ /
+sxiv *
+cd ..
+ls
+cd 2021
+ls
+cd 10/
+ls
+sxiv *.jpg
+sxiv *.jpg
+sxiv *.jpg
+setbg IMG_1094
+setbg IMG_1094.jpg
+setbg IMG_1093.jpg
+....
+..
+..
+..
+ls
+sc
+vi wp
+wp
+in
+...
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+setbg wallpaper/
+ls
+in
+...
+ls
+cd wallpaper/
+ls
+cd 3440X1440_Wallpaper/
+ls
+cd ..
+setbg 3440X1440_Wallpaper/
+setbg 3440X1440_Wallpaper/
+setbg 3440X1440_Wallpaper/
+setbg 3440X1440_Wallpaper/
+setbg 3440X1440_Wallpaper/
+setbg 3440X1440_Wallpaper/
+setbg 3440X1440_Wallpaper/
+reboot
+ls
+ls
+ll
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
 al
-ir
+gr
+gr
+gr
+gr
+in
+...
+cd wallpaper/
 ls
-config statur
-config config status
-config statur
-config status
-nvim
-`grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)`
-grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
-config config status
-grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
-config status
-cd .config/
-lr
-s
+cd GrubWallpaper/
+cd ..
+sxiv -t GrubWallpaper/
 ls
-grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
-grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)
+cd wallpaper
+cd nextcloud/wallpaper/
 ls
-vi mimeapps.list 
-config add mimeapps.list 
-config commit -m "added default applications for gui applications"
-git status
-config statur
-config status
-config push 
-config status -l
-config status -u
-config status -uno
-config status -u
-config status -u normai
-config status -u normal
-t ls-files --other | grep -v /
-ls-files --other | grep -v /
-config ls-files --other | grep -v /
-..
-config ls-files --other | grep -v /
-ir
-ls
-config ls-files -- directory --other | grep -v /
-config ls-files -- directory --other | grep -v /
-config ls-files -- directory --other | grep -v /
-config ls-files --other | grep -v /
-config ls-files --directory --other | grep -v /
-config ls-files --directory | grep -v /
-git help ls-files 
-ls
-ar
-rg git
-ls
-cd GIT/
-lr
-ir
-ls
-vi Useful\ Git\ Command\ Shortcuts.md 
-ir
-ls
-..
-..
-..
-h
-ir
-ls
-config statur
-config status
-git add -u
-config add -u
-ir
-ls
-config status
-git status -u 
-config status -u 
-git status -u 
-config status
-config commit -m
-config commit -m "updated nvim and bash files"
-ir
-ls
-config push
-    
- 
-config status
-.sc
-ir
-ls
-ls
-cd .config/
-rm .viminfo
-ir
-ls
-..
-cd configstore
-cf
-cd configstore/
-ir
-ls
-..
-lr
-cd configstore/
-vi nodemon.json 
-vi update-notifier-electron-builder.json 
-cdw
-git status
-..
-ls
-cd dwm
-..
-cd dwm_patches/
-ls
-ls
-cd dwm
-cd dwm
-ls
-ls
-lr
-ls
-..
-cd dwm
-ls
-cd dwm_patches/
-ls
-mkd maybe_patches
-mv *.diff maybe_patches/
-ls
-ls
-..
-ls
-cd dwm_patches/
-ls
-cd maybe_patches/
-ls
-mv *.diff ..
-ls
-..
-mv maybe_patches/ ..
-ls
-..
-ls
-mv *.diff maybe_patches/
-ls
-git status
-git add .
-ls
-git status
-git commit -m "added experimental patches and changed some keybindings" 
-ls
-git status
-git push
-git push --set-upstream origin colemak_dh
-git branch 
-git checkout 
-git status
-ls
-/dev
-ls
-ls
+sxiv -t GrubWallpaper/
+al
+rr
+rr
+gr
+reboot
 pacs
-git clone https://github.com/hamishcoleman/thinkpad-ec
 ls
-mv thinkpad-ec/ projects/
-cd projects
-ls
-cd thinkpad-ec/
-ls
-make list_laptops
-make patch_enable_battery clean
-make patch_enable_keyboard clean
+on
+in
+ar
+cd arch_linux/
 l
 ls
-make patched.x230.img
+vi My\ Arch\ Linux\ Packages.md 
 ls
-lsblk -d -o NAME,SIZE,LABEL
-sudo dd if=patched.x230.img of=/dev/sdb bs=4M status=progress cov=fsync
-sudo dd if=patched.x230.img of=/dev/sdb bs=4M status=progress conv=fsync
-lsblk -d -o NAME,SIZE,LABEL
-sudo dd if=patched.x230.img of=/dev/sdb bs=4M status=progress conv=fsync
-fdisk
-fdisk
-fdisk
-fdisk -l
-sudo fdisk -l
-dw
-in
-vi
+cdw
+vi config.h
 ls
-..
-ls
-cd 2_Areas/
-lr
-ls
-cd Arch\ Linux/
-ir
-ls
-vi Pacman\ Commands.md 
-ls
-cd .xinitrc 
-xi
-reboot
-remaps
-ls
-.config/
-cd nvim/
-ls
-cd plug-config/
-ls
-cd ..
-cd ..
-cd ..
-ls
-cd .config/alacritty/
-ls
-vi alacritty.yml 
-vi alacritty.yml 
-ls
-vi alacritty.yml 
-ls
-
-$PATH
-remaps
- xcape
-sudo pacman -F xset
-sudo pacman -S xcape
-remaps
 sc
 vi remaps 
-sudo pacman -F xset
-sudo pacman -xorg-xset
-sudo pacman -S xorg-xset
-remaps
+vi which_remaps 
 ls
-ls -lah
-pamixer
-pamixer --get-volume
-pamixer -u
+mpv
 reboot
+sudo grub-mkconfig -o /boot/grub/grub.cfg 
 reboot
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-vv
 ls
-vv
-vi
+on
+in
+cd ...
+...
 ls
+cd wallpaper/
 ls
-cf
-cf
+cd GrubWallpaper/
 ls
-cd alacritty/
-ls
-vi alacritty.yml 
-vi alacritty.yml 
-ls
-vi alacritty.yml 
-ls
-ls
-ls
-ls
-vi alacritty.yml 
-ls
-ls
-.config/
-cd alacritty/
-ls
-vi alacritty.yml 
-ls
-vi alacritty.yml 
-.config/
-ls
-cd alacritty/
-ls
-vi alacritty.yml 
-ls
-ls
-ls
-.config/
-ls
-cd alacritty/
-ls
-vi alacritty.yml 
-vi alacritty.yml 
-ls
-ls
-vi alacritty.yml 
-cd .config/
-ls
-vi alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-ls
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-ls
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-ls -al
+pwd
+gr
+sudo grub-mkconfig -o /boot/grub/grub.cfg 
+reboot
+cdw
+vi config.h
+reboot

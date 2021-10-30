@@ -39,15 +39,19 @@ eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 #udiskie --tray &
 # which_remaps &
-sudo kmonad ~/.config/kmonad/game_sir.kbd &
-sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
+# sudo kmonad ~/.config/kmonad/game_sir.kbd &
+# sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
 # dwm_status &
-dwmblocks &
-picom &
+# dwmblocks &
+# picom &
 xset r rate 300 50 &
 #xrandr --dpi 156
-nitrogen --restore &
-nextcloud --background &
+# nitrogen --restore &
 remaps & 
+dunst &
+unclutter &
+nextcloud --background &
+setbg &
+
 exec dwm

@@ -1,6 +1,9 @@
 # Bash Aliases
 
-alias ls='ls --color=auto'
+alias ls='ls -ah --color=auto --group-directories-first'
+alias ll='ls -alh --color=always --group-directories-first'  # long format
+alias lt='ls -aT --color=always --group-directories-first'  # long format
+alias la='ls -a --color=always --group-directories-first'  # all files and dirs
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
@@ -16,7 +19,7 @@ alias xi="$EDITOR ~/.xinitrc"
  
 
 # Grub Menu Editing
-alias gr="sudo nvim /etc/default/grub"
+alias gr="sudoedit /etc/default/grub"
 # Nvim related aliases
 alias vi="nvim"
 alias vv="nvim ~/.config/nvim/init.vim" 
