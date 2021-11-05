@@ -74,9 +74,10 @@ alias ka="killall"
 
 
 # This function works by automatically creating a alias for the present working directory
-# Simply type add followed by the name of the alias you want the pwd to be called
+# Simply type ad followed by the name of the alias you want the pwd to be called
 # I modified it from the original source below so that the alias are saved to bash_aliases
 #https://benmyers.dev/blog/alias-directories-unix/
+
 function ad() {    
     if [[ "$#" -ne 1 ]]    
     then        

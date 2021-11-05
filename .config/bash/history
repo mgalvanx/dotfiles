@@ -1,178 +1,3 @@
-usermod -aG network mgalvan
-sudo usermod -aG network mgalvan
-mount ~/nextcloud/
-groups
-groupadd network
-sudo usermod -aG network mgalvan
-groups
-vi .config/alacritty/alacritty.yml 
-vi .config/alacritty/alacritty.yml 
-vi .config/alacritty/alacritty.yml 
-vi .config/alacritty/alacritty.yml 
-ls
-ls -a
-l
-al
-ls
-ls
-ls -a
-ls
-rr
-ls
-ls -a
-ls -lah
-ls -CF
-ls -alF
-ls -alh
-ls -alF
-git status
-config status
-config config --local status.showUntrackedFiles no
-config status
- ls
-ls -a
-config add -u
-config status
-git commit -m "changed alias and some mappings" 
-config commit -m "changed alias and some mappings" 
-git config --global user.email m.galvanx@gmail.com
-git config --global user.name mgalvanx
-ls
-ls -a
-al
-ev
-.config/
-ls
-mkdir git
-ls
-..
-ls
-ls -a
-mv .gitconfig config
-ls
-config push
-mv config .config/git/
-config push --set-upstread origin master
-config push --set-upstread origin master
-config push --set-upstream origin master
-git push
-config push
-config push
-config status
-git commit -m "added different themes to alacritty and modified bindings"
-config commit -m "added different themes to alacritty and modified bindings"
-config push
-config status
-mount nextcloud/
-ls
-cd nextcloud/
-ls
-in
-ls
-ls
-ls -a
-in
-ls
-h
-unmount ~/nextcloud/
-reboot
-reboot
-gpasswd -d mgalvan davfs2
-sudo gpasswd -d mgalvan davfs2
-groups
-groups
-sudo gpasswd -d mgalvan 1001
-vi /etc/group
-ls
-cd ..
-cd mgalvan/
-ls -a
-rm .davfs2/
-rm -rf .davfs2/
-sudoedit /etc/fstab 
-sudo pacman -Rns davfs2
-ls
-ls
-cd ..
-cd mgalvan/
-ls
-ls -a
-pacs
-sudo pacman -S fzf
-pacs
-sudo pacman -S nextcloud-client
-sudo pacman -Syu 
-sudo pacman -S nextcloud-client
-reboot
-groups
-groupdel davfs2
-sudo groupdel davfs2
-groups
-sudo groupdel 1001
-sudo groupdel 1001
-pacs
-pacs
-reboot
-ls -a
-ls
-cd Nextcloud/
-ls
-cd files/
-ls
-cd 0_Inbox_Files/
-ls
-cd ..
-ls
-cd ..
-cd ..
-ls
-cd nextcloud/
-l
-ls
-ls
-ls
-sls
-ls
-ls
-sls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-in
-ls
-ls
-ls
-cd Nextcloud/
-ls
-ls
-ls
-sls
-cd ..
-ls
-cd nextcloud/
-ls
-cd files/
-ls
-cd 0_Inbox_Files/
-ls
-ls -a
-rm .bash_history 
-ls
-ls
-ls
-vi .xinitrc 
 reboot
 unclutter
 reboot
@@ -498,3 +323,178 @@ reboot
 cdw
 vi config.h
 reboot
+ls
+ar
+cd arch_linux/
+ls
+vi How\ To\ Install\ Arch\ Linux.md 
+pacs
+pacs
+config status
+config add u
+config add -u
+config status
+config commit -m "updated configs"
+config push 
+config status
+gr
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+rebbot
+ls
+ls
+rm -rf VirtualBox\ VMs/
+ls
+cd virtualbox_vms/
+l
+ls
+ls
+cd virtualbox_vms/
+ls
+rm -rf gentoo/
+ls
+ls
+ll
+ls
+ll
+ls
+pacs
+htop
+htop
+lscpu
+ls cpu
+lscpu
+lscpu
+D
+d
+ls
+ll
+ls
+cd Downloads/
+ls
+rm install-amd64-minimal-20211101T222649Z.iso 
+pacs 
+gpg --keyserver hkps://keys.gentoo.org --recv-keys 
+ls
+cd Downloads/
+ls
+gpg --verify install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+gpg --verify install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
+sha512sum 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
+sha512sum install-amd64-minimal-20211101T222649Z.iso 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
+sha512sum install-amd64-minimal-20211101T222649Z.iso 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021 
+sha512sum 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021 install-amd64-minimal-20211101T222649Z.iso
+grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+sha512sum 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
+sha512sum install-amd64-minimal-20211101T222649Z.iso 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
+grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+sha512sum install-amd64-minimal-20211101T222649Z.iso
+ls
+rm install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
+ls
+cat /etc/resolv.conf 
+man screen
+lsblk
+in
+ar
+cd arch_linux/
+ls
+vi My\ Arch\ Linux\ Packages.md 
+man links
+links
+which dwm
+which neovim
+nvim
+which nvim
+pacs
+ls
+cd /
+ls
+cd efi/
+lks
+ls
+cd ..
+cd boot/
+ls
+cd ..
+ls
+cd efi/
+ls
+cd EFI/
+ls
+...
+cd boot/
+ls
+cd grub/
+ls
+cd ..
+cd ..
+ls
+in
+ls
+touch gentoo_installation_files.md
+in
+vi 
+pacs
+pacman -Qe
+pacman -Qe | less
+pacs
+which lynx
+which nvim
+which ls
+which sudo
+man lynx 
+man lynx
+which lynx
+man lynx
+bat
+pacs
+al
+ev
+ls
+al
+ls
+rm Desktop/
+rm -rf Desktop/
+ls
+ls
+ll
+rm -rf Downloads/
+ls
+h
+in
+h
+ls
+cd_with_fzf
+ls
+al
+in
+ev
+al
+ls
+h
+ls
+rc
+ls
+rc
+rr
+man lynx
+ls
+in
+touch mbr_partitioning.md
+vi mbr_partitioning.md 
+vi mbr_partitioning.md 
+vi mbr_partitioning.md 
+ls
+vi gentoo_installation_files.md 
+rr
+man lynx
+rc
+ls
+man less
+rc
+man bat
+rr
+man less
