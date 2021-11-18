@@ -24,21 +24,21 @@ xmodmap -e "keycode 58 = m M Menu Menu"
 
 # X230/X220 Thinkpad Classic Keyboard Modifiers Remaps
 # Clear All Modifier Behavior
-xmodmap -e "clear control"
-xmodmap -e "clear mod1"
-xmodmap -e "clear mod4"
+# xmodmap -e "clear control"
+# xmodmap -e "clear mod1"
+# xmodmap -e "clear mod4"
 # Swap Left and Right Ctl To Win/Super
-xmodmap -e "keycode 105 = Super_L"
-xmodmap -e "keycode 37 = Super_L"
+# xmodmap -e "keycode 105 = Super_L"
+# xmodmap -e "keycode 37 = Super_L"
 # Swap Right Alt For Control
-xmodmap -e "keycode 108 = Control_L"
+# xmodmap -e "keycode 108 = Control_L"
 # Bring back The alt keys(Windows key is Alt_L; Menu key is Alt_R)
 # xmodmap -e "clear mod1"
-xmodmap -e "keycode 133 = Alt_L"
-xmodmap -e "keycode 135 = Alt_R"
+# xmodmap -e "keycode 133 = Alt_L"
+# xmodmap -e "keycode 135 = Alt_R"
 # Bring Back Modifier Behaviors To Remapped Keys
-xmodmap -e "add Control = Control_L"
-xmodmap -e "add Mod1 = Alt_L Alt_R"
+# xmodmap -e "add Control = Control_L"
+# xmodmap -e "add Mod1 = Alt_L Alt_R"
 
 # Experimental Modifier Layer Bindings
 #xmodmap -e "keycode 108 = Control_R"
