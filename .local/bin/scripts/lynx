@@ -19,3 +19,4 @@ if [ ! -x "$lynxpath" ]; then
 fi
 
 exec "$lynxpath" --useragent="$useragent" "$@"
+

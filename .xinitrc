@@ -44,7 +44,7 @@ export SSH_AUTH_SOCK
 # kmonad_remaps &
 dwm_status &
 # dwmblocks &
-# picom &
+picom &
 xset r rate 300 50 &
 #xrandr --dpi 156
 # nitrogen --restore &

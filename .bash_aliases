@@ -5,6 +5,7 @@ alias '?'=duck
 alias '??'=google
 alias '???'=bing
 
+
 # Terminal Alias
 alias ls='ls -ah --color=auto --group-directories-first'
 alias ll='ls -alh --color=always --group-directories-first'  # long format
