@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+alacritty --working-directory=/home/mgalvan/python/python3bootcamp -e sudo minicom cisco
