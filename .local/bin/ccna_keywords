@@ -1,5 +1,0 @@
-#!/bin/sh
-firefox --new-window https://ptgmedia.pearsoncmg.com/imprint_downloads/cisco/bookreg/9780135792735/flashcards/index.html?configFile=flashcard_data_goes_here.js &
-sleep 1
-anki &  
-

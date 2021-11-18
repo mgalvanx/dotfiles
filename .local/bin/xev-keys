@@ -1,4 +1,0 @@
-#!/bin/sh
-# This is a script from the arch wiki that simplifies the command xev -event keyboard to only
-# show us the key name and the key code
-xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'

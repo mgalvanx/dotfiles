@@ -1,500 +1,500 @@
-reboot
-unclutter
-reboot
+docker attach confident_lamarr
+docker rm confident_lamarr
 ls
-cd ..
+
 ls
-la
-h
-cf
+docker run -it --rm --name ubuntu-h ubuntu ubuntu
+docker run -it --rm --name ubuntu -h ubuntu ubuntu
+docker ps -a
+
+/&
+docker start boost docker attach boost
+docker start boost && docker attach boost
+man command
+man test
+command
+man command
+which command
+vic
+vic
 ls
-ls -lah
-h
-ls -a
+al
+ev
+echo $PATH
+:q
+rr
+which lynx
+which dwm
+which ls
+which vim
+vic
+vicd
+date
+sc
+touch lynx
+vi lynx 
+vic
 ls
-sudo pacman -S xclip 
+cd scripts/
+ls
+a
+vic
+vic 
+vic
+vic lynx
+vi vic 
+vic
+ls
+c
+date
+tree
+pacs
+/
+tree | more
+ls
+vi bin
+cd bin
+ls
+
+ls 
+ls | more
+date
+cd
+ls
+date
+date
+date
+ls
+ls
 ls
 sc
-rm evernote_binding 
-cp remaps setbg
-vi setbg 
-rm setbg 
-cp ide_pymux setbg
-vi setbg 
-xi
+cd scripts/
 ls
-cd ..
-cd .
-cd ..
+touch lynx
 ls
-ls -a
-cd nextcloud/
+chmod +x lynx 
+vi lynx 
+cd
+.config/
 ls
-cd pictures/
+mkdir lynx
+cd lynx/
+touch README.MD
+vi README.MD 
+mv README.md
+mv README.MD README.md
+ls
+vi README.md 
+touch lynx.cfg
+touch lynx.lss
+touch setup
+ls
+vi lynx.cfg
+vi lynx.lss 
+vi setup 
+chmod +x setup 
+ls
+sh setup 
+ls
+ls
+ls
+vi lynx.cfg
+ls
 ls
 cd 
-g
-in
-cd ...
-cd ..
 ls
-cd ..
+.config/lynx
+cd .config/lynx 
 ls
-cd pictures/
+cd .config/
 ls
-cd Gracie\ /
 ls
-cd ..
-cd Gracie\ /
-cd ..
-setbg Gracie\ /
-sudo pacman -F notify-send
-sudo pacman -S notify-send
-pacs
-sudo pacman -S libnotify
-setbg Gracie\ /
 ls
-cd google_videos/
+cd lynx/
 ls
+touch lynx.cfg lynx.lss
+vi lynx.cfg 
+vi lynx.lss 
+ls
+.local
+cd 
+.local/bin/scripts/
+ls
+vi lynx
+ls
+touch duck google bing
+vi duck 
+chmod +x duck
+
+vi duck 
+vi google 
+chmod +x google 
+ls
+vi bing 
+chmod +x bing 
+ls
+al
+rr
+sudo pacman -Syu
+ls
+date
+pr
+cd beginner_boost/
+ls
+vi Linux_in_the_enterprise.md 
+ls
+vi new_to_me_shell_commands.md 
+ls
+vi all_about_containers.md 
+ls
+vi new_to_me_shell_commands.md 
+touch searching_shell_commands.md
+vi searching_shell_commands.md 
+ls
+sc
+touch scripts
+ls
+cd scripts 
+cd scripts 
+ls
+rm scripts 
+mkdir scripts
+ls
+ls
+vi scripts/
+cd scripts/
+ls
+touch vic
+vi vic 
+chmod +x vic 
+ls
+rc
+ev
+rr
+ls
+h
+cd
+ls
+vi lynx
+vic neovim
+rr
+ls
+.config/
+ls
+rm lynx 
+ls
+mkdir lynx
+ls
+ls
+ls
+rr
+rr
+ls
+al
+rr
+lynx
+ls
+ls
+docker run -it -rm rwxrob/workspace
+docker run -it --rm rwxrob/workspace
+? hello
+ls
+echo #PATH
+echo $PATH
+al
+ev
+rr
+echo $PATH
+al
+ev
+.local/bin/
+ls
+mv scripts/ scripts
+ls
+echo $PATH
+ls
+? hello
+lynx
+sudo pacman -Rns lynx
+lynx
+sudo pacman -Rns lynx
+sudo pacman -S lynx
+docker run -it --rm rwxrob/workspace
+ls
+.config/lynx/
+ls
+lynx
+docker run -it --rm rwxrob/lynx
+ls
+? hello
+docker ps -a
+docker rm elegant_raman
+docker stop elegant_raman
+docker rm elegant_raman
+ls
+docker ps -a
+lynx 
+? what is the moose
+docker ps -a
+docker start boost && docker attach boost
+lynx 
+ls
+l
+ls
+ls
+ls -1
+ll
+ll
+?? what is it
+???
+? firefox
+?? what is it
+lynx
+ls
+sc
+rm lynx 
+cd scripts/
+ls
+vi lynx 
+lynx 
+ls
+vic
+vic lynx
+vi
+cd
+cd .local/
+ls
+cd bin/
+ls
+cd
+.config/
+ls
+cd lynx/
+ls
+vi lynx.cfg 
+ls -l
+? what is foo
+sc
+cd scripts/
+ls
+vi lynx 
+docker ps -a
+docker start boost && docker attach boost
+ls
+docker run -it --rm rwxrob/workspace
+?? Cool
+?? what time is it
+? facebook
+sc
+vi duck
+sc
+cd scripts/
+ls
+vi duck 
+touch urlencode 
+vi urlencode 
+rr
+chmod +x
+chmod +x urlencode 
+? what is the 
+? what is the 
+lynx
+?? firefox
+docker run -it --rm rwxrob/workspace
+? what time is it
+ls
+ls
+ls
+ls
+ls
+.config/lynx/
+ls
+echo $HOME
+echo LYNX_CFG
+echo $LYNX_CFG
+[-e "$HOME/.config/lynx/lynx.cfg"
+if [-e "$HOME/.config/lynx/lynx.cfg"
+? baby talk
+export LYNX_CFG="HOME/.config/lynx/lynx.cfg
+
+ev
+? what time is is
+? what time is it
+ls
+.config/
+ls
+vi lynx/
+ls
+lynhx
+? what is love
+?? what time is it
+? what time is it
+? startpage.com
+ls
+ls
+.config/
+ls
+ls
+ls
+ls
+ls
+ls
+sc
+cd scripts/
+ls
+vi lynx 
+ls
+docker run -it --rm rwxrob/workspace
+? gentoo
+? gentoo installation
+ls
+ls
+al
+ev
 reboot
 ls
-cf
-vi alacritty/alacritty.yml 
-ls
-ls
-vi alacritty/alacritty.yml 
-vi .config/alacritty/alacritty.yml 
-ls
-ls
-cdw
-vi config.
-cdw
-vi config.h
-in
-\ls
-ar
-ls
-mv Arch\ Linux/ arch_linux
-ls
-cd arch_linux/
-ls
-ls
-cdw
-sudo make clean install
-ls
-ls -lah
-cdw
-vi config.h
-sudo make clean install
-cdw
-vi config.h
-sudo make clean install
-ls
-ls -a
-ls
-ls
-in
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-vi .config/alacritty/alacritty.yml 
-ls
-ls
-ls -a
-in
-al
-ls
-h
-ls
-ls
+? gentoo installation
+? gentoo installation
 rr
+reboot
 ls
-in
-al
+.config/lynx/
+ls
+vi lynx.
+vi lynx.lss 
+? chrooting
+? chrooting
 ls
 ls
-rr
-h
+cd .config/lynx/
 ls
-ll
+vi lynx.
+vi lynx.lss 
+reboot
+? what is love
+vi lynx.lss 
+cd .config/lynx/
 ls
+vi lynx.lss 
+reboot
+? what time is it
 ls
+vi lynx.lss 
+ls
+cd .config/lynx/
+cd 
+ls
+cd .config/
+ls
+cp lynx ..
+cp lynx backuplynx
+cp -r lynx backuplynx
+ls
+cd lynx/
 ls
 al
-rr
-l
-lt
-al
-rr
-la
-al
-rr
-la
+ev
+reboot
+xev-keys 
+reboot
 ls
-ll
-ls
-ls
-in
-la
-la
-ll
-ls
-la
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ll
-ls
-in
-pr
-ar
-cd arch_linux/
-ls
-vi My\ Arch\ Linux\ Packages.md 
-vi My\ Arch\ Linux\ Packages.md 
-vi My\ Arch\ Linux\ Packages.md 
- as
-ls
-vi a.out 
-rm a.out 
-ls
-vi My\ Arch\ Linux\ Packages.md 
-
-sudo pacman -Qe
-sudo pacman -Qe | less
-sudo pacman -S sxiv mpv 
+? when do baby laugh
 sc
-touch wp 
-vi wp
+vi dwm_status 
 ls
-chmod +x wp
-ls
-in
-cd ../..
-ls
-cd notes/
-ls
-cd ..
-cd pictures/
-ls
-cd Gracie\ /
-sxiv *
-cd ..
-ls
-cd 2021
-ls
-cd 10/
-ls
-sxiv *.jpg
-sxiv *.jpg
-sxiv *.jpg
-setbg IMG_1094
-setbg IMG_1094.jpg
-setbg IMG_1093.jpg
-....
-..
-..
-..
-ls
-sc
+xi
+mv dwm_status scripts/
+mv sysact scripts/
+mv maimpick scripts/
 vi wp
 wp
-in
-...
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
-setbg wallpaper/
+wp
+mv isosec scripts/
 ls
-in
-...
+mv setbg scripts/
 ls
-cd wallpaper/
+mv windows scripts/
 ls
-cd 3440X1440_Wallpaper/
-ls
-cd ..
-setbg 3440X1440_Wallpaper/
-setbg 3440X1440_Wallpaper/
-setbg 3440X1440_Wallpaper/
-setbg 3440X1440_Wallpaper/
-setbg 3440X1440_Wallpaper/
-setbg 3440X1440_Wallpaper/
-setbg 3440X1440_Wallpaper/
-reboot
-ls
-ls
-ll
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-al
-gr
-gr
-gr
-gr
-in
-...
-cd wallpaper/
-ls
-cd GrubWallpaper/
-cd ..
-sxiv -t GrubWallpaper/
-ls
-cd wallpaper
-cd nextcloud/wallpaper/
-ls
-sxiv -t GrubWallpaper/
-al
-rr
-rr
-gr
-reboot
+mv xev-keys scripts/
+vi thinkpad_remaps 
+xev-keys 
 pacs
 ls
-on
-in
 ar
 cd arch_linux/
-l
 ls
+vi Awesome\ WM\ Configuration.md 
 vi My\ Arch\ Linux\ Packages.md 
-ls
-cdw
-vi config.h
+xev-keys 
 ls
 sc
 vi remaps 
-vi which_remaps 
+remaps 
+vi thinkpad_remaps 
+sc
+vi remaps 
+remap
+remaps
+sc
+vi thinkpad_remaps 
 ls
-mpv
-reboot
-sudo grub-mkconfig -o /boot/grub/grub.cfg 
-reboot
-ls
-on
-in
-cd ...
-...
-ls
-cd wallpaper/
-ls
-cd GrubWallpaper/
-ls
-pwd
-gr
-sudo grub-mkconfig -o /boot/grub/grub.cfg 
-reboot
-cdw
-vi config.h
-reboot
-ls
-ar
-cd arch_linux/
-ls
-vi How\ To\ Install\ Arch\ Linux.md 
-pacs
-pacs
-config status
-config add u
-config add -u
-config status
-config commit -m "updated configs"
-config push 
-config status
-gr
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-rebbot
+xev-keys 
+xev
+xmodmap
+xev-keys 
 ls
 ls
-rm -rf VirtualBox\ VMs/
+sc
 ls
-cd virtualbox_vms/
+ls
+vi remaps 
+remaps
+vi remaps
+remaps 
+vi remaps
+ remaps
+vi remaps 
+ls
+sc
+ls
+mv remaps scripts/
+mv wp scripts/
+touch cert_scripts
+rm cert_scripts 
+mkdir cert_scripts 
+ls
+mv ccna* cert_scripts/
+ls
+mv cisco_mode cert_scripts/
+ls
+vi sdmount 
+mv sdmount scripts/
+mv mariomode scripts/
 l
 ls
+mv thinkpad_remaps scripts/
 ls
-cd virtualbox_vms/
+vi firefox-fullscreen 
+mv firefox-fullscreen scripts/
 ls
-rm -rf gentoo/
+vi which_remaps 
+mv which_remaps cert_scripts/
+cd cert_scripts/
+ls
+mv which_remaps ..
+..
+ls
+mv which_remaps scripts/
+vi ide_pymux 
+vi summon_python 
+mkdir pyscripts
+ls
+mv ide_pymux summon_python pyscripts/
+ls
+mv pyscripts/ py_scripts
 ls
 ls
-ll
-ls
-ll
-ls
-pacs
-htop
-htop
-lscpu
-ls cpu
-lscpu
-lscpu
-D
-d
-ls
-ll
-ls
-cd Downloads/
-ls
-rm install-amd64-minimal-20211101T222649Z.iso 
-pacs 
-gpg --keyserver hkps://keys.gentoo.org --recv-keys 
-ls
-cd Downloads/
-ls
-gpg --verify install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-gpg --verify install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
-sha512sum 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
-sha512sum install-amd64-minimal-20211101T222649Z.iso 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
-sha512sum install-amd64-minimal-20211101T222649Z.iso 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021 
-sha512sum 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021 install-amd64-minimal-20211101T222649Z.iso
-grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-sha512sum 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
-sha512sum install-amd64-minimal-20211101T222649Z.iso 4a54050bb332509ed58515f6515f23df62306fb84683b57b72e91ffeadad863faba0526534831a2a59d1502344812de0c527c9a4519b31d60435209f4934b021  install-amd64-minimal-20211101T222649Z.iso
-grep -A 1 -i sha512 install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-sha512sum install-amd64-minimal-20211101T222649Z.iso
-ls
-rm install-amd64-minimal-20211101T222649Z.iso.DIGESTS.asc 
-ls
-cat /etc/resolv.conf 
-man screen
-lsblk
-in
-ar
-cd arch_linux/
-ls
-vi My\ Arch\ Linux\ Packages.md 
-man links
-links
-which dwm
-which neovim
-nvim
-which nvim
-pacs
-ls
-cd /
-ls
-cd efi/
-lks
-ls
-cd ..
-cd boot/
-ls
-cd ..
-ls
-cd efi/
-ls
-cd EFI/
-ls
-...
-cd boot/
-ls
-cd grub/
-ls
-cd ..
-cd ..
-ls
-in
-ls
-touch gentoo_installation_files.md
-in
-vi 
-pacs
-pacman -Qe
-pacman -Qe | less
-pacs
-which lynx
-which nvim
-which ls
-which sudo
-man lynx 
-man lynx
-which lynx
-man lynx
-bat
-pacs
+sc
 al
 ev
-ls
-al
-ls
-rm Desktop/
-rm -rf Desktop/
-ls
-ls
-ll
-rm -rf Downloads/
-ls
-h
-in
-h
-ls
-cd_with_fzf
-ls
-al
-in
-ev
-al
-ls
-h
-ls
-rc
-ls
-rc
-rr
-man lynx
-ls
-in
-touch mbr_partitioning.md
-vi mbr_partitioning.md 
-vi mbr_partitioning.md 
-vi mbr_partitioning.md 
-ls
-vi gentoo_installation_files.md 
-rr
-man lynx
-rc
-ls
-man less
-rc
-man bat
-rr
-man less
+reboot

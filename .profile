@@ -11,12 +11,17 @@ export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # Adds `~/.local/bin` to $PATH(So my custom scripts can run from the command line)
+export PATH=$PATH:~/.local/bin/scripts
+export PATH=$PATH:~/.local/bin/cert_scripts
+export PATH=$PATH:~/.local/bin/py_scripts
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.local/bin/statusbar
 
 
 # These settings will make applications create configuration files in these custom locations(To keep home directory clean)
-export XDG_CONFIG_HOME="$HOME/.config"
+# export XDG_CONFIG_HOME="$HOME/.config"
+export LYNX_LSS="$HOME/.config/lynx/lynx.lss"
+export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"

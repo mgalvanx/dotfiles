@@ -1,9 +1,0 @@
-#!/bin/sh
-
-dockstatus=$(cat /sys/devices/platform/dock.0/docked)
-
-if [ $dockstatus -eq 0 ]; then
-  . ~/.local/bin/remaps
-else
-  . ~/.local/bin/thinkpad_remaps
-fi

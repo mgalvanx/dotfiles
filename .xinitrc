@@ -42,7 +42,7 @@ export SSH_AUTH_SOCK
 # sudo kmonad ~/.config/kmonad/game_sir.kbd &
 # sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
-# dwm_status &
+dwm_status &
 # dwmblocks &
 # picom &
 xset r rate 300 50 &

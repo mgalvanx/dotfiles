@@ -1,9 +1,16 @@
 # Bash Aliases
 
+# Lynx Alias
+alias '?'=duck
+alias '??'=google
+alias '???'=bing
+
+# Terminal Alias
 alias ls='ls -ah --color=auto --group-directories-first'
 alias ll='ls -alh --color=always --group-directories-first'  # long format
 alias lt='ls -aT --color=always --group-directories-first'  # long format
 alias la='ls -a --color=always --group-directories-first'  # all files and dirs
+alias c='clear'
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
@@ -65,8 +72,7 @@ alias mountsd="udisksctl mount -b /dev/mmcblk0p1"
 alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
 
 # For fun
-alias aq='asciiquarium'     
-alias aql='asciiquarium | lolcat'     
+alias fishes='asciiquarium | lolcat'     
 alias lc="lolcat"   
 alias sl="sl | lolcat"
 alias pomo="muccadoro | lolcat"  

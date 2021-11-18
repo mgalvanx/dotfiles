@@ -1,4 +1,0 @@
-#!/bin/sh
-sleep 2
-VBoxManage startvm "Windows 10 Applications"   
-
