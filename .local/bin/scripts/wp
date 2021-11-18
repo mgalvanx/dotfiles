@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find ~/nextcloud/wallpaper -type f | shuf | sxiv 

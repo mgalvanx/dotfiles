@@ -1,0 +1,4 @@
+#!/bin/sh
+udisksctl mount -b /dev/mmcblk0p1
+sleep 2
+alacritty --working-directory=/run/media/mgalvan/Backup &

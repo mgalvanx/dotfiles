@@ -1,0 +1,83 @@
+# This script is called on startup to remap keys.
+
+# Increase key speed via a rate change
+xset r rate 300 50
+
+# Map the caps lock key to super
+setxkbmap -option caps:super
+# But when it is pressed only once, treat it as escape.
+killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+# Turn off the caps lock if on since there is no longer a key for it.
+xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
+
+# Left Alt Changed To Modifier Key
+xmodmap -e "keycode 64 = Mode_switch"
+
+# Vim arrow keys
+xmodmap -e "keycode 43 = h H Left Left"
+xmodmap -e "keycode 44 = j J Down Down"
+xmodmap -e "keycode 45 = k K Up Up"
+xmodmap -e "keycode 46 = l L Right Right"
+
+# Experiment Modifiers I like
+xmodmap -e "keycode 58 = m M Menu Menu"
+
+# X230/X220 Thinkpad Classic Keyboard Modifiers Remaps
+# Clear All Modifier Behavior
+xmodmap -e "clear control"
+xmodmap -e "clear mod1"
+xmodmap -e "clear mod4"
+# Swap Left and Right Ctl To Win/Super
+xmodmap -e "keycode 105 = Super_L"
+xmodmap -e "keycode 37 = Super_L"
+# Swap Right Alt For Control
+xmodmap -e "keycode 108 = Control_L"
+# Bring back The alt keys(Windows key is Alt_L; Menu key is Alt_R)
+# xmodmap -e "clear mod1"
+xmodmap -e "keycode 133 = Alt_L"
+xmodmap -e "keycode 135 = Alt_R"
+# Bring Back Modifier Behaviors To Remapped Keys
+xmodmap -e "add Control = Control_L"
+xmodmap -e "add Mod1 = Alt_L Alt_R"
+
+# Experimental Modifier Layer Bindings
+#xmodmap -e "keycode 108 = Control_R"
+#xmodmap -e "keycode 105 = Alt_R Meta_R"
+#xmodmap -e "keycode 29 = y Y XF86Copy XF86Copy"
+#xmodmap -e "clear mod1"
+#xmodmap -e "clear control"
+#xmodmap -e "add control = Control_L"
+#xmodmap -e "add control = Control_R"
+#xmodmap -e "add mod1 = Alt_R"
+#xmodmap -e "add mod1 = Alt_L"
+#xmodmap -e "add mod1 = Meta_L"
+#xmodmap -e "add mod1 = Meta_R"
+#xmodmap -e "keycode 30 = u U Undo Undo"
+#xmodmap -e "keycode 27 = r R Redo Redo"
+#xmodmap -e "keycode 56 = b B XF86Back XF86Back"
+#xmodmap -e "keycode 33 = p P XF86Paste XF86Paste"
+#xmodmap -e "keycode 40 = d D XF86Cut XF86Cut"
+#xmodmap -e "keycode 31 = i I KP_Home KP_Home"
+#xmodmap -e "keycode 38 = a A KP_End KP_End"
+# xmodmap -e "keycode 41 = f F Find Find"
+
+# Thinkpad T440 Laptop bindings
+# Map the menu button to right super as well.
+# xmodmap -e 'keycode 135 = Super_R'
+# Maps print scan button to right super on thinkpad t440(Print Scan in place of menu)
+# xmodmap -e 'keycode 107 = Super_R'
+
+
+# Fix F1 - F12 on IQuinox Keyboard
+#xmodmap -e 'keycode 232 = F1'
+#xmodmap -e 'keycode 233 = F2'
+#xmodmap -e 'keycode 128 = F3'
+#xmodmap -e 'keycode 212 = F4'
+#xmodmap -e 'keycode 237 = F5'
+#xmodmap -e 'keycode 238 = F6'
+#xmodmap -e 'keycode 173 = F7'
+#xmodmap -e 'keycode 172 = F8'
+#xmodmap -e 'keycode 171 = F9'
+#xmodmap -e 'keycode 121 = F10'
+#xmodmap -e 'keycode 122 = F11'
+#xmodmap -e 'keycode 123 = F12'
