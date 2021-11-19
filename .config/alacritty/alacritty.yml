@@ -111,7 +111,9 @@ schemes:
   ### Dracula ###
   dracula: &dracula
     primary:
+      #Original Dracula Background
       background: '#282a36'
+      #Text Color
       foreground: '#f8f8f2'
     cursor:
       text: CellBackground
@@ -136,14 +138,19 @@ schemes:
       text: CellForeground
       background: '#44475a'
     normal:
-      black:   '#000000'
+      # Replacing black with color from background 
+      # and white with the color of foreground fixes 
+      # issues with lynx
+      black:   '#282a36'
+      # black:   '#000000'
       red:     '#ff5555'
       green:   '#50fa7b'
       yellow:  '#f1fa8c'
       blue:    '#bd93f9'
       magenta: '#ff79c6'
       cyan:    '#8be9fd'
-      white:   '#bfbfbf'
+      # white:   '#bfbfbf'
+      white : '#f8f8f2'
     bright:
       black:   '#4d4d4d'
       red:     '#ff6e67'
@@ -402,7 +409,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *dracula
+colors: *dracula  
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
