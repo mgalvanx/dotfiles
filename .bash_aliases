@@ -12,6 +12,7 @@ alias ll='ls -alh --color=always --group-directories-first'  # long format
 alias lt='ls -aT --color=always --group-directories-first'  # long format
 alias la='ls -a --color=always --group-directories-first'  # all files and dirs
 alias c='clear'
+alias grep='grep --color=always'
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'

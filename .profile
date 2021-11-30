@@ -21,18 +21,11 @@ export PATH=$PATH:~/.local/bin/statusbar
 
 # These settings will make applications create configuration files in these custom locations(To keep home directory clean)
 export XDG_CONFIG_HOME="$HOME/.config"
-# export LYNX_LSS="$HOME/.config/lynx/lynx.lss"
-# export LYNX_CFG="$HOME/.config/lynx/lynx.cfg"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
-export HISTFILE=~/.config/bash/history
+export HISTFILE=~/.config/bash/.bash_history
 
-# export _lynx=$(which lynx)
-# lynx() {sh $HOME/.local/bin/scripts/lynx}
-
-# lynx() { 
-# command lynx -cfg="$XDG_CONFIG_HOME/lynx/lynx.cfg" -lss="$XDG_CONFIG_HOME/lynx/lynx.lss" $*; } && export -f lynx
 
 # This makes tmux use .config to save configuration files.(Used with bash aliases)
 export TMUX_CONFIG="~/.config/tmux/.tmux.conf"

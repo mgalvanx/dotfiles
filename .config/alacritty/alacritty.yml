@@ -149,8 +149,8 @@ schemes:
       blue:    '#bd93f9'
       magenta: '#ff79c6'
       cyan:    '#8be9fd'
-      # white:   '#bfbfbf'
-      white : '#f8f8f2'
+      white:   '#bfbfbf'
+      # white : '#f8f8f2'
     bright:
       black:   '#4d4d4d'
       red:     '#ff6e67'
