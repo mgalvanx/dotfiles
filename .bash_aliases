@@ -30,7 +30,7 @@ alias xi="$EDITOR ~/.xinitrc"
 # Grub Menu Editing
 alias gr="sudoedit /etc/default/grub"
 # Nvim related aliases
-alias vi="nvim"
+alias vi="vim"
 alias vv="nvim ~/.config/nvim/init.vim" 
 alias vm="nvim ~/vimwiki/index.wiki"
 
