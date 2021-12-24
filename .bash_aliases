@@ -5,6 +5,11 @@ alias '?'=duck
 alias '??'=google
 alias '???'=bing
 
+# ytfzf 
+alias yt='ytfzf -t --detach'
+alias yts='ytfzf -St --detach'
+alias yth='ytfzf -Ht --detach'
+
 
 # Terminal Alias
 alias ls='ls -ah --color=auto --group-directories-first'
