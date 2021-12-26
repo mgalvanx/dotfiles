@@ -111,7 +111,7 @@ function ad() {
 
 # Folder Shortcuts
 alias cf="cd ~/.config && la"   
-alias sc="cd ~/.local/bin && ls -a"   
+alias sc="cd ~/.local/bin/scripts && ls -a"   
 alias h="cd ~/ && pwd" 
 alias mn="cd /mnt && ls -a" 
 alias sc="cd ~/.local/bin && ls -a"   
