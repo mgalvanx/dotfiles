@@ -42,6 +42,8 @@ export SSH_AUTH_SOCK
 # sudo kmonad ~/.config/kmonad/game_sir.kbd &
 # sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
+togglemon & 
+dunst &
 dwm_status &
 # dwmblocks &
 picom &
@@ -49,7 +51,6 @@ xset r rate 300 50 &
 #xrandr --dpi 156
 # nitrogen --restore &
 remaps & 
-dunst &
 unclutter &
 nextcloud --background &
 setbg &

@@ -16,8 +16,11 @@ alias ls='ls -ah --color=auto --group-directories-first'
 alias ll='ls -alh --color=always --group-directories-first'  # long format
 alias lt='ls -aT --color=always --group-directories-first'  # long format
 alias la='ls -a --color=always --group-directories-first'  # all files and dirs
-alias c='clear'
 alias grep='grep --color=always'
+
+# Much faster clear using Ansi Escape
+alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
@@ -114,7 +117,6 @@ alias cf="cd ~/.config && la"
 alias sc="cd ~/.local/bin/scripts && ls -a"   
 alias h="cd ~/ && pwd" 
 alias mn="cd /mnt && ls -a" 
-alias sc="cd ~/.local/bin && ls -a"   
 alias cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" 
 alias cwars="cd ~/projects/codewars"
 alias in="cd /home/mgalvan/nextcloud/notes/0_Inbox && la"

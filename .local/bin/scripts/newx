@@ -1,0 +1,12 @@
+#!/bin/sh
+
+path="${SCRIPTS}/${1}"
+
+if test ! -e "$path" -a "$#" -eq 1;then
+ touch "$path" && chmod +x /"$path" && echo "#!/bin/sh\n\n" > "$path" && exec vim +3 "${path}" #exec vim -c "norm o" -c "startinsert" "$path"
+ exit
+fi
+
+
+
+echo file already exists

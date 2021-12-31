@@ -9,6 +9,7 @@
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
+export SCRIPTS=~/.local/bin/scripts
 
 # Adds `~/.local/bin` to $PATH(So my custom scripts can run from the command line)
 # export PATH=$PATH:~/.local/bin/scripts

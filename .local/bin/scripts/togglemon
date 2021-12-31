@@ -1,0 +1,11 @@
+#!/bin/sh
+
+intern=LVDS1
+extern=DP2
+
+if xrandr | grep "{$extern} disconnected"; then 
+  xrandr --output "$extern" --off --output "$intern" --auto && setbg
+  exit
+fi
+xrandr --output "$intern" --auto --output "$extern" --primary --above "$intern" --auto  && setbg
+
