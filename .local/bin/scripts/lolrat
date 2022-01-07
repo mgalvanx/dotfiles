@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#set -x
+
+# Ansi Color Escape
+x="\e[0m"
+# Ansi Clear
+c="\e[H\e[2J"
+
+# Random is Bash exclusive that randomizes numbers between 0 and the number you give it
+randcolor() {
+  # 256 Colors
+ printf "\e[38;2;$((RANDOM%255));$((RANDOM%255));$((RANDOM%255))m"
+ # 16 Color System Palatte
+ # printf "\e[$(((RANDOM%8)+30))m"
+}
+
+while true; do 
+  # Line Stay in Place
+#  printf "${c}$(randcolor)${1}${x}\n"
+  # Line Goes Across the screen
+  printf "$(randcolor)${1}${x}"
+ # sleep .01
+done
+
+
+

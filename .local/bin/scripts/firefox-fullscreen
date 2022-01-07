@@ -1,3 +1,0 @@
-#!/bin/sh
-firefox &
-xdotool search --sync --onlyvisible --pid $! windowactivate key F11!/bin/sh

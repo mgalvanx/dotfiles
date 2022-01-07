@@ -1,0 +1,19 @@
+#!/bin/sh
+
+test "${#}" -gt 1 && echo "you can have 0 to 1 arguments" && exit 1
+
+arg="${1}"
+
+if test "${arg}" = "you";then
+ echo "Hey there You"
+ exit 0
+fi
+
+
+if test "${arg}" = "you over there";then
+ echo "Hey there you over there"
+ exit 0
+fi
+
+echo "Hey there"
+

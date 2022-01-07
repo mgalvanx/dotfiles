@@ -1,0 +1,14 @@
+#!/bin/sh
+
+search=$(echo "Youtube    " | dmenu -p "Search:")
+if test ! "$search";then
+  exit
+fi
+exec ${TERMINAL} -e ytfzf -t -s "${search}"
+
+
+# while true ; do
+# search=$(echo "The Web" | dmenu -p "Search:")
+# exec ${TERMINAL} -e ytfzf -t "${search}"
+# done
+

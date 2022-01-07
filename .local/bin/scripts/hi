@@ -1,0 +1,25 @@
+#!/bin/sh
+
+#set -x
+
+test  "${#}" -eq 0 && echo "You must provide a name" && exit 1
+
+name="${1}"
+
+case "$name" in
+  Rob| Linux|Marco|Shelma) echo "Woah, ${name} you rock" ;;
+  Dork|Jackass|slut)       echo "Um, no need to be rude.";;
+  *)                       echo "hi ${name}"
+esac
+
+
+#if test "$name" = "Rob" -o "$name" = "Linux"; then 
+# echo "Woah , ${name} you rock!"
+# exit
+#elif test "$name" = "Dork"; then 
+# echo "Um no need to be rude."
+# exit
+#fi
+
+#echo "Hi ${name}"
+

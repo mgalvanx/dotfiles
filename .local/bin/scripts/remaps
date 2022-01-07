@@ -21,6 +21,7 @@ xmodmap -e "keycode 46 = l L Right Right"
 
 # Experiment Modifiers I like
 xmodmap -e "keycode 58 = m M Menu Menu"
+xmodmap -e "keycode 135 = Super_L"
 
 # X230/X220 Thinkpad Classic Keyboard Modifiers Remaps
 # Clear All Modifier Behavior

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-printf "Is that okay? (y/n)"
-read resp
-test "$resp" = y

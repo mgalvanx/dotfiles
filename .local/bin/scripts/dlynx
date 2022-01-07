@@ -1,0 +1,16 @@
+#!/bin/sh
+
+search=$(echo "The Web" | dmenu -p "Search:")
+
+if test ! "$search";then
+  exit
+fi
+
+exec alacritty -e duck "${search}"
+
+
+# while true ;then
+# search=$(echo "The Web" | dmenu -p "Search:")
+# do exec alacritty -e duck "${search}"
+# done
+
