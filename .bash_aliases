@@ -10,6 +10,10 @@ alias yt='ytfzf -t --detach'
 alias yts='ytfzf -St --detach'
 alias yth='ytfzf -Ht --detach'
 
+#rsync command
+alias rscp='rsync -aP'
+alias rsmv='rsync -aP --remove-source-files'
+
 
 # Terminal Alias
 alias ls='ls -ah --color=auto --group-directories-first'
@@ -126,3 +130,4 @@ alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
 alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 alias d="cd /home/mgalvan/nextcloud/files/0_Inbox_Files"
 alias cqk="cd /home/mgalvan/projects/qmk_firmware/keyboards/planck/keymaps/mgalvanx"
+alias mt="cd /mnt"

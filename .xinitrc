@@ -34,26 +34,27 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
-# This 2 linesr start the gnome-keyring needed to autologin to nextcloud.
+
+# This 2 lines start the gnome-keyring needed to autologin to nextcloud.
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
-#udiskie --tray &
 # which_remaps &
 # sudo kmonad ~/.config/kmonad/game_sir.kbd &
 # sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
-xrdb ~/.Xresources &
 togglemon & 
+trackpoint &
 dunst &
 dwm_status &
 # dwmblocks &
 picom &
 xset r rate 300 50 &
 #xrandr --dpi 156
-# nitrogen --restore &
 remaps & 
+# xinput disable "SynPS/2 Synaptics TouchPad" &
 unclutter &
 nextcloud --background &
 setbg &
+xrdb ~/.Xresources &
 
 exec dwm

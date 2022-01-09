@@ -7,9 +7,12 @@
 
 # Default Programs
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="firefox"
+
+# Path Variables
 export SCRIPTS=~/.local/bin/scripts
+export WALLPAPER=~/nextcloud/wallpaper
 
 # Adds `~/.local/bin` to $PATH(So my custom scripts can run from the command line)
 # export PATH=$PATH:~/.local/bin/scripts
