@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# This script require the lsof program and notify-send
+
+set -x
+
+choice=$(lsblk -l --output NAME,TYPE,FSTYPE,SIZE,MOUNTPOINTS | grep '/mnt' | dmenu -p "Which usb device do you want to unmount?" -l 10)
+
+test -z "${choice}"  && exit 1
+
+    
+devpath=/dev/"${choice##*/}"
+mntpath=/mnt/"${choice##*/}"
+
+#Check to see if j
+if lsof | grep "${mntpath}";then
+usbpid=$(lsof | grep "${mntpath}" | awk '{ print $2}')
+#  Generally, send 15, and wait a second or two, and if that doesn't work, send 2, and if that
+# doesn't work send 1. Don't use kill -9(corruption may occur)
+kill -15 "${usbpid}"| kill -2 "${usbpid}"| kill -1 "${usbpid}"
+fi
+
+sudo umount "${devpath}"
+sleep 1
+sudo rmdir "${mntpath}"
+notify-send ""${devpath}" is unmounted"

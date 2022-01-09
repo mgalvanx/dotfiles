@@ -2,9 +2,9 @@
 
 set -x 
 
-choice=$(lsblk -l --output NAME,TYPE,FSTYPE,SIZE,PATH | grep -e 'sdb' -e 'mmc'| grep 'part'| dmenu -p "Which usb device do you want to mount?:" -l 10)
+choice=$(lsblk -l --output NAME,FSTYPE,TYPE,SIZE,PATH | grep -e 'sdb' -e 'mmc' -e 'sdc'| grep 'part'| dmenu -p "Which usb device do you want to mount?:" -l 10)
 
-test ! -z "$1"  && exit 1
+test -z "${choice}" && exit 1
 
 usbpath="${choice##* }"
 mntpath=/mnt/${choice%% *}
@@ -12,16 +12,16 @@ mntpath=/mnt/${choice%% *}
 
 if findmnt "${usbpath}";then
 notify-send ""${mntpath}" is already mounted"
+
+
 exit 1
   # exec "${TERMINAL}" -e  cd "${mntpath}"; "${SHELL}" -l
 fi
 
 sudo mkdir -p "${mntpath}" || true
-sudo mount "${usbpath}" ${mntpath} 
-# exec "${TERMINAL}" -e lsmount
-# sleep 1
-# xdotool search --name "${usbpath}" type cd ${mntpath}
-  # type ls 
-  # key enter
+# This line wasn't working before. I added my user to the users group using group add
+# I also reboot so do that if it doesn't work
+sudo mount -o gid=users,fmask=113,dmask=002 "${usbpath}" "${mntpath}"
 notify-send "Usb has been mounted to "${mntpath}""
+
 
