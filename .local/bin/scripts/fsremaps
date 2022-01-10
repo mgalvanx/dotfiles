@@ -21,28 +21,29 @@ xmodmap -e "keycode 46 = l L Right Right"
 
 # Experimental Modifiers I like
 xmodmap -e "keycode 58 = m M Menu Menu"
+#Super L is swap for left menu key
 xmodmap -e "keycode 135 = Super_L"
 
-notify-send "Default keyboard remap has been applied"
+# X230/X220 Thinkpad Classic Keyboard Emulate Fullsize Keyboard
+# (Window Keys are Swapped With Control)
+Clear All Modifier Behavior
+xmodmap -e "clear control"
+xmodmap -e "clear mod1"
+xmodmap -e "clear mod4"
+Swap Left and Right Ctl To Win/Super
+xmodmap -e "keycode 105 = Super_L"
+xmodmap -e "keycode 37 = Super_L"
+Swap Right Alt For Control
+xmodmap -e "keycode 108 = Control_L"
+Bring back The alt keys(Windows key is Alt_L; Menu key is Alt_R)
+xmodmap -e "clear mod1"
+xmodmap -e "keycode 133 = Alt_L"
+xmodmap -e "keycode 135 = Alt_R"
+Bring Back Modifier Behaviors To Remapped Keys
+xmodmap -e "add Control = Control_L"
+xmodmap -e "add Mod1 = Alt_L Alt_R"
 
-# X230/X220 Thinkpad Classic Keyboard Modifiers Remaps
-# Clear All Modifier Behavior
-# xmodmap -e "clear control"
-# xmodmap -e "clear mod1"
-# xmodmap -e "clear mod4"
-# Swap Left and Right Ctl To Win/Super
-# xmodmap -e "keycode 105 = Super_L"
-# xmodmap -e "keycode 37 = Super_L"
-# Swap Right Alt For Control
-# xmodmap -e "keycode 108 = Control_L"
-# Bring back The alt keys(Windows key is Alt_L; Menu key is Alt_R)
-# xmodmap -e "clear mod1"
-# xmodmap -e "keycode 133 = Alt_L"
-# xmodmap -e "keycode 135 = Alt_R"
-# Bring Back Modifier Behaviors To Remapped Keys
-# xmodmap -e "add Control = Control_L"
-# xmodmap -e "add Mod1 = Alt_L Alt_R"
-
+notify-send "Keyboard has been remapped to emulated a fullsize keyboard"
 # Experimental Modifier Layer Bindings
 #xmodmap -e "keycode 108 = Control_R"
 #xmodmap -e "keycode 105 = Alt_R Meta_R"
