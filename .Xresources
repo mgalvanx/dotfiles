@@ -17,7 +17,7 @@ Sxiv.background: #282A36
 
 /* DWM Only Settings */
 
-dwm.borderpx: 2
+dwm.borderpx: 3
 
 /* name		dark	light */
 /* black	0	8 */

@@ -4,7 +4,7 @@ search=$(echo "Youtube    " | dmenu -p "Search:")
 if test ! "$search";then
   exit
 fi
-exec ${TERMINAL} -e ytfzf -t -s "${search}"
+exec ${TERMINAL} -e ytfzf -t "${search}"
 
 
 # while true ; do
