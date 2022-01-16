@@ -10,7 +10,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Make every new terminal use the current pywal colorscheme
-source ~/.cache/wal/colors-tty.sh
+#source ~/.cache/wal/colors-tty.sh
 
 #FZF Keybindings
 bind '"\C-f": "cd_with_fzf\n"'
