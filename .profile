@@ -6,9 +6,9 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Default Programs
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="firefox"
+export BROWSER="librewolf"
 
 # Path Variables
 export SCRIPTS=~/.local/bin/scripts
