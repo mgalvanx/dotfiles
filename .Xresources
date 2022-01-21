@@ -51,6 +51,10 @@ dwm.borderpx: 3
 
 ! Dracula Xresources palette
 
+xterm*.faceName: Fira Code 
+xterm*.faceSize: 16
+xterm*.color0: #282A36
+
 *.foreground: #F8F8F2
 *.background: #282A36
 /* *.color0: #282A36 */
@@ -74,4 +78,4 @@ dwm.borderpx: 3
 /* *.background: .color0 */
 *.color256: 0#1d2021
 *.color257: 15#ebdbb2
-xterm.color0: #282A36
+

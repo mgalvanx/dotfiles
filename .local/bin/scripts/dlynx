@@ -6,7 +6,7 @@ if test ! "$search";then
   exit
 fi
 
-exec $TERMINAL -e duck "${search}"
+exec $TERMINAL2 -e duck "${search}"
 
 
 # while true ;then
