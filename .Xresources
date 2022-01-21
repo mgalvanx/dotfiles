@@ -74,3 +74,4 @@ dwm.borderpx: 3
 /* *.background: .color0 */
 *.color256: 0#1d2021
 *.color257: 15#ebdbb2
+xterm.color0: #282A36

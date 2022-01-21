@@ -42,6 +42,7 @@ export SSH_AUTH_SOCK
 # sudo kmonad ~/.config/kmonad/game_sir.kbd &
 # sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
+xrdb ~/.Xresources &
 togglemon & 
 trackpoint &
 dunst &
@@ -55,6 +56,5 @@ remaps &
 unclutter &
 nextcloud --background &
 setbg &
-xrdb ~/.Xresources &
 
 exec dwm
