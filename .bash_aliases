@@ -29,13 +29,12 @@ alias clear='printf "\e[H\e[2J"'
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
 alias g="git"
-alias notin='grep -vf<(config ls-files -d) <(config ls-files -o -c --exclude-standard)'
 
 # rc and shell related shortcuts
-alias rc="nvim ~/.bashrc"
+alias rc="$EDITOR ~/.bashrc"
 alias rr="source ~/.bashrc"
-alias al="nvim ~/.bash_aliases"
-alias ev="nvim ~/.profile"
+alias al="$EDITOR ~/.bash_aliases"
+alias ev="$EDITOR ~/.profile"
 alias xi="$EDITOR ~/.xinitrc"   
  
 
@@ -48,7 +47,7 @@ alias vm="nvim ~/vimwiki/index.wiki"
 
 
 # DWM related shortcuts
-alias dw="nvim ~/.config/dwm/config.h"
+alias dw="$EDITOR ~/.config/dwm/config.h"
 alias cdw="cd ~/.config/dwm && ls -a"
 
 #Move TMUX configuration file to .config(Needs to here)
@@ -57,7 +56,7 @@ alias cdw="cd ~/.config/dwm && ls -a"
 alias tmux="tmux -u -f $TMUX_CONFIG"      
 alias tn="tmux -u -f $TMUX_CONFIG new"    
 alias ta="tmux -u -f $TMUX_CONFIG attach" 
-alias tt="nvim $TMUX_CONFIG"             
+alias tt="$EDITOR $TMUX_CONFIG"             
 
 
 
