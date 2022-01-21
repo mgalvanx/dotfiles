@@ -1,12 +1,12 @@
 #!/bin/sh
 
-search=$(echo "The Web" | dmenu -p "Search:")
-
-if test ! "$search";then
-  exit
-fi
-
-exec $TERMINAL2 -e duck "${search}"
+while true ;do
+  search=$(echo "The Web" | dmenu -p "Search:")
+  if test ! "$search";then
+   break
+  fi
+  $TERMINAL2 -e duck "${search}"
+done
 
 
 # while true ;then
