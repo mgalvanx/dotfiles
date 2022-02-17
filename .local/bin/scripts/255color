@@ -1,4 +1,6 @@
 #!/bin/sh
+echo "Use the following for ansi escape sequence for all 255 bit colors"
+echo "\e[38;5;0-255m"
 for i in $(seq 0 255); do 
   printf "\e[38;5;${i}m${i}"
 done

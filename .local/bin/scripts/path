@@ -1,2 +1,2 @@
 #!/bin/sh
-echo -e ${PATH//:/\\n}
+printf ${PATH//:/\\n}

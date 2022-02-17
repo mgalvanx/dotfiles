@@ -5,7 +5,7 @@ while true ;do
   if test ! "$search";then
    break
   fi
-  $TERMINAL2 -e duck "${search}"
+  $TERMINAL -e duck "${search}"
 done
 
 

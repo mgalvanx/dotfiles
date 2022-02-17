@@ -2,9 +2,15 @@
 
 while true ; do
  search=$(echo "Youtube" | dmenu -p "Search:")
+ case "${search}" in
+  h) ytfzf -H -D && break;;
+  t) ${TERMINAL} -e ytfzf --features=hd -t --thumbnail-quality=high -cT  && break ;;
+  s) ${TERMINAL} -e ytfzf --features=hd -t --thumbnail-quality=high -cS --fancy-subs --pages=2 && break
+ esac
+	 
  if test ! "$search";then
   break
  fi
- ${TERMINAL} -e ytfzf --features=hd -t --thumbnail-quality=high "${search}"
+ ${TERMINAL} -e ytfzf --features=hd -t --thumbnail-quality=high -l "${search}"
 done
 
