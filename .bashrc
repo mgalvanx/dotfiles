@@ -32,6 +32,7 @@ export HISTSIZE=5000
 export HISTFILESIZE=10000
 #Enable Bash History To Append
 shopt -s histappend
+shopt -s globstar
 
 # This will protect us from overwriting a file using >
 # set - o noclobber
