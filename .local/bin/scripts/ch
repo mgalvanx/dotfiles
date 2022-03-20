@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+language="python go bash shell "
+coreutils="nc netcat tmux args find tr grep"
+
+selected=$(echo -e "${language// /\\n}${coreutils// /\\n}\n" | fzf)
+
+if echo -e "$language" | grep -qs "$selected"; then
+  read -rp "query: " query
+  curl cht.sh/"$selected"/"${query// /+}" | bat
+else
+  curl cht.sh/"$selected~${query// /+}" | bat
+fi
+
+
