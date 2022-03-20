@@ -20,7 +20,7 @@ while true; do
 #  printf "${c}$(randcolor)${1}${x}\n"
   # Line Goes Across the screen
   printf "$(randcolor)${1}${x}"
- # sleep .01
+  sleep .01
 done
 
 

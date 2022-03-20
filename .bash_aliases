@@ -20,9 +20,12 @@ alias ls='ls -ah --color=auto --group-directories-first'
 alias ll='ls -alh --color=always --group-directories-first'  # long format
 alias lt='ls -aT --color=always --group-directories-first'  # long format
 alias la='ls -a --color=always --group-directories-first'  # all files and dirs
-alias grep='grep --color=always'
-
+alias grep='grep -i --colour=auto'
+alias egrep='egrep -i --colour=auto'
+alias fgrep='fgrep -i --colour=auto'
+alias temp='cd $(mktemp -d)'
 # Much faster clear using Ansi Escape
+alias x='exit'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
 
@@ -130,4 +133,3 @@ alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 alias d="cd /home/mgalvan/nextcloud/files/0_Inbox_Files"
 alias cqk="cd /home/mgalvan/projects/qmk_firmware/keyboards/planck/keymaps/mgalvanx"
 alias mt="cd /mnt"
-alias temp="cd /tmp"

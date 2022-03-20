@@ -1,5 +1,5 @@
 #!/bin/sh
 
 # This some info on top of dwm
-while true; do xsetroot -name "$(date +"%F %R" )";sleep 1m;done &
+while true; do xsetroot -name "$(date +"%F %I:%M" )";sleep 1m;done &
 

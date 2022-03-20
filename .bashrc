@@ -9,6 +9,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# cdpath
+export CDPATH=.:\
+$HOME/.config:\
+~
+
 # Make every new terminal use the current pywal colorscheme
 #source ~/.cache/wal/colors-tty.sh
 
@@ -16,13 +21,30 @@ fi
 bind '"\C-f": "cd_with_fzf\n"'
 bind '"\C-o": "open_with_fzf\n"'
 bind '"\C-v": "nvim\n"'
+bind '"\C-g": "chtsh"'
 #Programs to Run on Startup
 # colorscript random
 # python ~/python/scripts/bible_verse_json_gen.py
 
 #2  a This sets the prompt for terminal
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+PROMPT_LONG=50
+PROMPT_MAX=95
 
+__ps1(){
+  local P='$'
+  #colors for prompt
+  local r='\[\e[1;31m\]' #
+  local u='\[\e[1;36m\]'
+  local h='\[\e[1;32m\]'
+  local w='\[\e[34m\]'
+  local p='\[\e[34m\]'
+  local g='\[\e[37m\]'
+  local x='\[\e[0m\]'
+
+  PS1="$u\u$g@$h\h$g:$w\W$p$P$x "
+}
+
+PROMPT_COMMAND="__ps1"
 #--------------Bash Shell Options---------------------------
 # Disable ctrl-s and ctrl-1 (These commands pause and enable the terminal. We are going to disable it.
 stty -ixon
@@ -41,9 +63,24 @@ shopt -s globstar
 # shopt -s autocd 
 
 
+# Pager
+# Hack that makes man pages uses color(More minimal than using bat) Rob suggest to copy and paste(Manpager variable does not work on all system , this works universally)# See beginner boost 27 at the 10:00 mark to get this to work
+
+if test -x /usr/bin/lesspipe; then
+	export LESSOPEN="| /usr/bin/lesspipe %s";
+	export LESSCLOSE="/usr/bin/lesspipe %s %s";
+fi
+export LESS_TERMCAP_mb="[35m" # magenta
+export LESS_TERMCAP_md="[32m" # green
+export LESS_TERMCAP_me="[0m" # "^[0m"
+export LESS_TERMCAP_se="[0m" # "^[0m"
+export LESS_TERMCAP_so="[34m"  # purple
+export LESS_TERMCAP_ue="[0m" # "^[0m"
+export LESS_TERMCAP_us="[4m"  # underline
+
 ### bat as a manpager
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 #Fzf Functions

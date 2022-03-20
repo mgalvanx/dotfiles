@@ -1,12 +1,19 @@
 #!/bin/sh
 
+test -z "${SCRIPTS}" && echo "SCRIPTS in not set" && exit 1
+test -z "${1}" && echo "<usuage> arg" && exit 1
+
 path="${SCRIPTS}/${1}"
 
-if test ! -e "$path" -a "$#" -eq 1;then
- touch "$path" && chmod +x "$path" && echo "#!/bin/sh\n\n" > "$path" && exec vim +3 "${path}" #exec vim -c "norm o" -c "startinsert" "$path"
- exit
+if test -e "${path}"; then
+  printf "File exists. Edit? "
+  read -r yes
+  case ${yes} in
+    y|yes|yep|yeppers) exec "${EDITOR}" "${path}" 
+  esac
+  exit 0
 fi
 
-
-
-echo file already exists
+printf "#!/bin/sh\n\n\n" >> "${path}"
+chmod +x "${path}"
+exec "${EDITOR}" +3 "${path}"

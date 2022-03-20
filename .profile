@@ -8,12 +8,12 @@
 # Default Programs
 export EDITOR="vim"
 export TERMINAL="st"
-export TERMINAL2="xterm"
 export BROWSER="librewolf"
 
 # Path Variables
 export SCRIPTS=~/.local/bin/scripts
 export WALLPAPER=~/nextcloud/wallpaper
+export NOTES=~/nextcloud/notes
 
 # Adds `~/.local/bin` to $PATH(So my custom scripts can run from the command line)
 # export PATH=$PATH:~/.local/bin/scripts
