@@ -1,0 +1,12 @@
+# search engine alias
+# note: no trailing space after %s
+1x: file:/cgi-bin/search_engines.cgi?%s
+dd: file:/cgi-bin/search_engines.cgi?%s
+gg: file:/cgi-bin/search_engines.cgi?%s
+gs: file:/cgi-bin/search_engines.cgi?%s
+pb: file:/cgi-bin/search_engines.cgi?%s
+rd: file:/cgi-bin/search_engines.cgi?%s
+wi: file:/cgi-bin/search_engines.cgi?%s
+v2: file:/cgi-bin/search_engines.cgi?%s
+ya: file:/cgi-bin/search_engines.cgi?%s
+yt: file:/cgi-bin/search_engines.cgi?%s
