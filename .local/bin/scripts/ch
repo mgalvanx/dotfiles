@@ -1,15 +1,22 @@
 #!/usr/bin/bash
 
-language="python go bash shell "
-coreutils="nc netcat tmux args find tr grep"
+search="$1"
+shift
+query=$(echo "$*" | tr ' ' '+'  )
+#query="$*"
 
-selected=$(echo -e "${language// /\\n}${coreutils// /\\n}\n" | fzf)
 
-if echo -e "$language" | grep -qs "$selected"; then
-  read -rp "query: " query
-  curl cht.sh/"$selected"/"${query// /+}" | bat
-else
-  curl cht.sh/"$selected~${query// /+}" | bat
-fi
+#if [[ "$#" == 0 ]]; then
+#  curl -s cht.sh/"${search}" | bat
+#  echo "if curl cht.sh/"${search}""
+#else
+#  curl  cht.sh/"$search~${query}" |  man
+#  echo "curl cht.sh/"${search}"~"${query}""
+#fi
+
+curl  cht.sh/"$search~${query}" |  cat
+echo "curl cht.sh/${search}~${query}"
+echo "$#"
+
 
 

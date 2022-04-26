@@ -9,6 +9,7 @@
 export EDITOR="vim"
 export TERMINAL="st"
 export BROWSER="librewolf"
+export BROWSERCLI="w3m"
 
 # Path Variables
 export SCRIPTS=~/.local/bin/scripts
@@ -19,7 +20,7 @@ export NOTES=~/nextcloud/notes
 # export PATH=$PATH:~/.local/bin/scripts
 export PATH=~/.local/bin/scripts:$PATH
 export PATH=$PATH:~/.local/bin/cert_scripts
-export PATH=$PATH:~/.local/bin/py_scripts
+export PATH=$PATH:~/.local/bin/tmux_scripts
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.local/bin/statusbar
 
@@ -33,7 +34,7 @@ export HISTFILE=~/.config/bash/.bash_history
 
 
 # This makes tmux use .config to save configuration files.(Used with bash aliases)
-export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
+#export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 
 # moves .python_history to .config 
 # export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/pythonstartup.py"

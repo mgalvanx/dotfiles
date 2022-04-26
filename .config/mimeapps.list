@@ -1,4 +1,8 @@
 
 [Default Applications]
-text/plain=nvim.desktop
-text/x-shellscript=nvim.desktop
+text/plain=vim.desktop
+text/x-shellscript=vim.desktop
+text/x-shellscript=vim.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+

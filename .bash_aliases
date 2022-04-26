@@ -5,14 +5,23 @@ alias '?'=duck
 alias '??'=google
 alias '???'=bing
 
+# newsboat
+alias nb='newsboat'
+
 # ytfzf 
 alias yt='ytfzf -t --detach'
 alias yts='ytfzf -St --detach'
 alias yth='ytfzf -Ht --detach'
 
-#rsync command
-alias rscp='rsync -aP'
-alias rsmv='rsync -aP --remove-source-files'
+# notes
+alias notes='cd $NOTES'
+alias n='notesearch'
+alias nn='newnote'
+alias in='inbox'
+alias pr='. $SCRIPTS/projects'
+alias ar=". $SCRIPTS/areas"
+alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
+alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 
 
 # Terminal Alias
@@ -24,10 +33,12 @@ alias grep='grep -i --colour=auto'
 alias egrep='egrep -i --colour=auto'
 alias fgrep='fgrep -i --colour=auto'
 alias temp='cd $(mktemp -d)'
-# Much faster clear using Ansi Escape
+alias ctemp='. $SCRIPTS/ctemp'
 alias x='exit'
+alias b='cd -'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
+alias o='xdg-open'
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
@@ -56,10 +67,10 @@ alias cdw="cd ~/.config/dwm && ls -a"
 #Move TMUX configuration file to .config(Needs to here)
 # TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 
-alias tmux="tmux -u -f $TMUX_CONFIG"      
-alias tn="tmux -u -f $TMUX_CONFIG new"    
-alias ta="tmux -u -f $TMUX_CONFIG attach" 
-alias tt="$EDITOR $TMUX_CONFIG"             
+#alias tmux="tmux -u -f $TMUX_CONFIG"      
+#alias tn="tmux -u -f $TMUX_CONFIG new"    
+#alias ta="tmux -u -f $TMUX_CONFIG attach" 
+#alias tt="$EDITOR $TMUX_CONFIG"             
 
 
 
@@ -68,6 +79,7 @@ alias cp="cp -iv"
 alias mv='mv -i'
 alias rm='rm -i'
 alias mkd="mkdir -pv" 
+
 # navigation
 alias ..='cd ..' 
 alias ...='cd ../..'
@@ -123,13 +135,7 @@ alias cf="cd ~/.config && la"
 alias sc="cd ~/.local/bin/scripts && ls -a"   
 alias h="cd ~/ && pwd" 
 alias mn="cd /mnt && ls -a" 
-alias cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" 
 alias cwars="cd ~/projects/codewars"
-alias in="cd /home/mgalvan/nextcloud/notes/0_Inbox && la"
-alias pr="cd /home/mgalvan/nextcloud/notes/1_Projects && la"
-alias ar="cd /home/mgalvan/nextcloud/notes/2_Areas && la"
-alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
-alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 alias d="cd /home/mgalvan/nextcloud/files/0_Inbox_Files"
 alias cqk="cd /home/mgalvan/projects/qmk_firmware/keyboards/planck/keymaps/mgalvanx"
 alias mt="cd /mnt"

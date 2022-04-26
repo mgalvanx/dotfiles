@@ -1,6 +1,7 @@
 
 
 st.font: Fira Code:regular:size=14
+#st.font2:  JoyPixels:regular:size=12
 dmenu.font: #monospace: size=14
 dwm.font: #monospace: size=14
 
