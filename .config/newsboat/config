@@ -1,0 +1,54 @@
+auto-reload yes # reloads everytime we open newsboat
+max-items 50
+reload-time 30 # reloads every 30 mins
+reload-threads 100
+browser $BROWSERCLI
+prepopulate-query-feeds yes
+cleanup-on-quit yes
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+
+color listnormal cyan default
+color listfocus black yellow standout bold
+#color listnormal_unread blue default
+color listfocus_unread yellow default bold
+#color info red black bold
+#color article cyan default
+
+highlight article "^Feed:.*" color5 color0
+highlight article "^Title:.*" color3 color0 bold
+highlight article "^Author:.*" color2 color0
+highlight article "^Date:.*" color223 color0
+highlight article "^Link:.*" color4 color0
+highlight article "^Flags:.*" color9 color0
+highlight article "\\[[0-9][0-9]*\\]" color66 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color109 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
+
+
+#feedlist-format "%?T?║%4i %n %8u %t (%T) &╠#%-8t════════════════════════════════════════?"
+
+# Macros
+macro w open-in-browser ; set browser "$BROWSERCLI %u"
+macro W set browser "$BROWSER"; open-in-browser ; set browser "$BROWSERCLI %u"
+macro p set browser "tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-60 %u"; open-in-browser ; set browser "$BROWSERCLI %u"
+#macro n set browser "$BROWSER_PRIVATE"; open-in-browser ; set browser "$URLPORTAL %u"
+
+notify-program "notify-send"
