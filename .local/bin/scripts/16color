@@ -1,0 +1,19 @@
+#!/bin/sh
+
+printf "\e[H\e[2J"
+echo "Use the following ansi escape sequences for system-wide 16 bit colors"
+echo
+
+for i in $(seq 0 1); do 
+  if test "$i" -eq 0; then
+    echo "For regular colors"
+    echo "\e[30-37m"
+  else
+    printf "\e[0m"
+    echo "For bright colors"
+    echo "\e[1;30-37m"
+  fi
+ for n in $(seq 30 37);do
+  printf "\e[${i};${n}m%s\n" "${n}"
+ done
+done

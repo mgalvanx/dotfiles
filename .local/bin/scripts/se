@@ -1,0 +1,22 @@
+#!/bin/sh
+
+search() {
+  searchengine=$(sr -elvi | tail -n +4)
+  selected=$(echo "$searchengine" | fzf --cycle | cut -f1)
+
+  if test -z "$selected"; then
+    return
+  fi
+
+  printf "search ${selected}: "
+  read -r query
+
+  if test -z query; then
+    return
+  fi
+
+  sr "${selected}" -browser=w3m "$query"
+}
+
+search
+

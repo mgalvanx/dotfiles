@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while true; do 
+  clear
+  printf "search youtube: "
+  read -r search
+  ytfzf --features=hd -t --thumbnail-quality=high -l "${search}"
+  clear
+done

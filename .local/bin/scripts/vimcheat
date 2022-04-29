@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# A list of vi commands that I want to memorize
+
+c="\e[1;34m"
+d="\e[1;36m"
+r="\e[0m"
+
+printf "${c}>ip${r} - ${d}Will indent inside a paragraph${r}\n"
+printf "${c}>ip${r} - ${d}Will indent in a paragraph in reverse${r}\n"
+printf "${c}!ip${r} - ${d}Sends current paragraph to the shell${r}\n"
+printf "${c}72i#esc${r} - ${d}Adds 72 hashtags after pressing escape${r}\n"
+printf "${c}:set paste${r} - ${d}use this when copying text from a mouse${r}\n"
+printf "${c}:messages${r} - ${d}shows you any startup error and messages${r}\n"
+printf "${c}:help <x>${r} - ${d}let you decipher commands/variables in your vimrc${r}\n"
+printf "${c}:highlight${r} - ${d}used to see all highlight groups you have defined in your bashrc${r}\n"
+printf "${c}:map${r} - ${d}gives you all of your custom mapping${r}\n"

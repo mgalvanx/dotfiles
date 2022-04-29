@@ -1,0 +1,7 @@
+#!/bin/sh
+
+apt update && apt upgrade
+unminimize
+useradd -m mgalvan
+usermod -s /bin/bash -aG sudo mgalvan
+apt install vim git tmux

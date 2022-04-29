@@ -1,0 +1,17 @@
+#!/bin/sh
+
+printf "Do you want to rename files or directories? [f]iles/[dir]? "
+
+read -r query
+
+case $query in
+  files|file|f) files=$(find . -maxdepth 1 -type f) ;;
+  dir|directory|d) dir=$(find . -maxdepth 1 -type d) ;;
+  *) exit
+esac
+ 
+# Rewrite this script in using posix sed and regular expression if it applies
+IFS="$(printf '\n ')" && IFS="${IFS% }"
+for line in $(ls -A); do 
+  mv "$line" "$(echo "${line}" | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | tr '-' '_')"
+done 

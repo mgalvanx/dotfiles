@@ -1,0 +1,20 @@
+#!/bin/sh
+
+printf "Do you want to make a backup of just the files of the current directory or the the current direct and all files and child directories? files/dir "
+
+read -r query
+
+case $query in 
+  files|file|f) out=$(mktemp -d); cp * "$out" ;;
+  dir|directory|d) out=$(mktemp -d); cp -r "$PWD" "$out" ;;
+  *) exit
+esac
+
+# OLDPWD an environment variable used by the command `cd -`.
+# by sourcing ctemp we can manipulate the current shells environmental value
+# there by being able to cd - into a directory we have never been in
+# Here a some recommended alias to make this better
+#alias ctemp='. $SCRIPTS/cptotemp'
+#alias b='cd -'
+export OLDPWD="${out}"
+printf "Contents of directory copied to %s\n" "${out}"
