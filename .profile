@@ -21,6 +21,7 @@ export NOTES=~/nextcloud/notes
 export PATH=~/.local/bin/scripts:$PATH
 export PATH=$PATH:~/.local/bin/cert_scripts
 export PATH=$PATH:~/.local/bin/tmux_scripts
+export PATH=$PATH:~/.local/bin/notescripts
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.local/bin/statusbar
 
