@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#set -x
+query="$*"
+
+if test "$#" == 0; then
+  printf "notesearch: "
+  read -r query
+fi
+
+filename=$(find "$NOTES" -type f -iname "*${query}*.md")
+infile=$(find "$NOTES" -type f \( -name "*.md" -and ! -iname "*${query}*" \) -exec grep -il "${query}" {} +)
+
+selected=$(printf "${filename}${infile}" | fzf -d / --with-nth=-1 --cycle --layout=reverse-list --keep-right --preview="bat -p --color always {}" --preview-window=wrap:right:50% --bind=space:toggle-preview --bind=right:preview-down --bind=left:preview-up)
+
+if test -z "$selected"; then
+  exit
+fi
+
+"$EDITOR" "$selected"
