@@ -4,8 +4,12 @@ intern=LVDS1
 extern=DP2
 
 if xrandr | grep "{$extern} disconnected"; then 
-  xrandr --output "$extern" --off --output "$intern" --auto && setbg
+  xrandr --dpi 123.39 --output "$extern" --off --output "$intern" --scale 1.2x1.2 --auto 
   exit
 fi
-xrandr --output "$intern" --auto --output "$extern" --primary --above "$intern" --auto  && setbg
+
+xrandr --dpi 144 --output LVDS1 --scale 1.2x1.2  --auto --output DP2 --primary --above LVDS1 --mode 3440x1440 
+
+# Old Monitor setup
+#xrandr --output "$intern" --auto --output "$extern" --primary --above "$intern" --auto  && setbg
 
