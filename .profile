@@ -8,7 +8,7 @@
 # Default Programs
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="librewolf"
+export BROWSER="firefox"
 export BROWSERCLI="w3m"
 
 # Path Variables

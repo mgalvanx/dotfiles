@@ -24,17 +24,15 @@ export SSH_AUTH_SOCK
 # sudo kmonad ~/.config/kmonad/game_sir.kbd &
 # sudo kmonad ~/.config/kmonad/thinkpadT440p.kbd &
 # kmonad_remaps &
+xset r rate 300 50 &
 xrdb ~/.Xresources &
 togglemon & 
 trackpoint &
 dunst &
 dwm_status &
 # dwmblocks &
-picom &
-xset r rate 300 50 &
-#xrandr --dpi 156
+#picom &
 remaps & 
-# xinput disable "SynPS/2 Synaptics TouchPad" &
 unclutter &
 nextcloud --background &
 setbg &
