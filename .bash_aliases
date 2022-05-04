@@ -9,9 +9,9 @@ alias '???'=bing
 alias nb='newsboat'
 
 # ytfzf 
-alias yt='ytfzf -t --detach'
-alias yts='ytfzf -St --detach'
-alias yth='ytfzf -Ht --detach'
+alias yt='ytfzf -t '
+alias yts='ytfzf -St '
+alias yth='ytfzf -Ht '
 
 # notes
 alias notes='cd $NOTES'
