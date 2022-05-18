@@ -21,7 +21,6 @@ $HOME/.config:\
 bind '"\C-f": "cd_with_fzf\n"'
 bind '"\C-o": "open_with_fzf\n"'
 bind '"\C-v": "nvim\n"'
-bind '"\C-g": "chtsh"'
 #Programs to Run on Startup
 # colorscript random
 # python ~/python/scripts/bible_verse_json_gen.py
@@ -95,6 +94,3 @@ cd_with_fzf() {
     cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" 
 }
 
-pacs() {
-    sudo pacman -S $(pacman -Ssq | fzf -m --preview="pacman -Si {}" --preview-window=:hidden --bind=space:toggle-preview)
-}
