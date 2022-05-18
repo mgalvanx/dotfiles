@@ -39,6 +39,13 @@ set hlsearch
 set incsearch
 set linebreak
 
+" more risky, but cleaner
+set nobackup
+set noswapfile
+set nowritebackup
+
+set icon
+
 "Better ex command autocomplete
 set wildmenu
 
