@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# This command modifies every line of a file or standard input
+# It will delete every until and including the first space
+# This will essentially uncomment any line in a file no matter the type
+
+while IFS= read -r line; do
+  echo "${line#* }"
+done
+
+

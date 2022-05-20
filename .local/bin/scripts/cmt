@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# This command takes a file/standard input and operates on every line of the file.
+# It will add a '#' to the beginning of every line in that file as the default.
+# If you add a argument to this script (cmt <arg>) it will add what every you type to the
+# beginning of every line in that file. (ex: cmt '//') 
+
+while IFS= read -r line ;do
+  echo "${1:-#} $line"
+done
