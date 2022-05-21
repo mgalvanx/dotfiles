@@ -46,6 +46,10 @@ set nowritebackup
 
 set icon
 
+" Set unicode/emoji support
+set encoding=utf-8
+set fileencoding=utf-8
+
 "Better ex command autocomplete
 set wildmenu
 
