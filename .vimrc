@@ -8,10 +8,9 @@ set ruler " set up line and column numbers on the bottom right
 set showmode " show command and insert mode
 set tabstop=2 " ake tab take up only 2 spaces instead of 4
 set autowrite " save files automatically when all files are open
-set autoindent " auto indent a new line(does not work with functions)
+set autoindent " auto indent a new linedoes not work with functions
 
 " #######################   vim   ##############################
-syntax on
 set smarttab "backspace delete the same number of spaces set to tabstop
 set expandtab " replace tabs with spaces automatically
 set shiftwidth=2  " when you use > or < for indent a line it will equal 2
@@ -46,6 +45,9 @@ set nowritebackup
 
 set icon
 
+set viminfo="" "Prevents vim from creating a viminfo directory in home
+" enable omni-completion
+
 " Set unicode/emoji support
 set encoding=utf-8
 set fileencoding=utf-8
@@ -53,12 +55,31 @@ set fileencoding=utf-8
 "Better ex command autocomplete
 set wildmenu
 
-set viminfo="" "Prevents vim from creating a viminfo directory in home
+set omnifunc=syntaxcomplete#Complete
 
-"set clipboard=unnamedplus
+" Built in Fuzzy Finding(use :find *)
+set path+=**
+"	 command history
+set history=100
+
+" here because plugins and stuff need it
+if has("syntax")
+  syntax enable
+endif
+
+" faster scrolling
+set ttyfast
+
+" allow sensing the filetype
+filetype plugin on
+
+set clipboard=unnamedplus
 
 let g:netrw_banner = 0
+
 " ####################### Remaps ##############################
+map ; :
+noremap ;; :
 noremap <C-n> <C-d>
 noremap <C-p> <C-u>
 nnoremap <C-L> :nohl<CR><C-L> 
@@ -81,12 +102,39 @@ function! <SID>SynStack()
 endfunc
 endif
 
+" ####################### Snippets ##############################
+" nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 " ####################### Autocommands ##############################
 
 " au vimleavepre *.md !emoji %
 
 " start at the last place you were editing
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!      g'\"" | endif
+
+" #######################   Vim Plugins    ##############################
+"
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+
+  " github.com/junegunn/vim-plug
+
+  call plug#begin('~/.local/share/vim/plugins')
+
+"   Plug 'frazrepo/vim-rainbow'
+   Plug 'vim-pandoc/vim-pandoc'
+   Plug 'rwxrob/vim-pandoc-syntax-simple'
+   Plug 'dracula/vim', { 'as': 'dracula' }
+"   Plug 'pegn/pegn-syntax'
+"   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"   Plug 'tpope/vim-fugitive'
+"   Plug 'hashivim/vim-terraform'
+"   Plug 'morhetz/gruvbox'
+"   Plug 'mrk21/yaml-vim'
+  call plug#end()
+endif
+
+let g:dracula_colorterm = 0
+colorscheme dracula
+set background=dark
 
 " #######################   Functions Keys   ##############################
 map <F1> :set number!<CR> :set relativenumber!<CR>
@@ -95,3 +143,11 @@ set pastetoggle=<F3>
 map <F4> :set list!<CR>
 map <F5> :set cursorline!<CR>
 map <F7> :set spell!<CR>
+
+" Set a nicer Status Line
+set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+
+" ####################### Force file names to be a specific type  ##############################
+au bufnewfile,bufRead *.bash* set ft=bash
+au bufnewfile,bufRead $SNIPPETS/bash/* set ft=bash
+"au bufnewfile,bufRead $SNIPPETS/go/* set ft=bash
