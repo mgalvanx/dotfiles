@@ -9,6 +9,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+
 # cdpath
 export CDPATH=.:\
 $HOME/.config:\
@@ -86,6 +87,14 @@ export LESS_TERMCAP_us="[4m"  # underline
 # A set of functions that allows us to quickly navigate to folders,files and even open them will our default applications
 #Source:https://www.youtube.com/watch?v=QeJkAs_PEQQ
 
+temp() {
+  if [[ -z $TEMP_DIR ]]; then
+    temp_dir=$(mktemp -d)
+    export TEMP_DIR="$temp_dir"
+  fi
+  cd $TEMP_DIR
+}
+
 open_with_fzf() {
     fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
 }
@@ -94,3 +103,5 @@ cd_with_fzf() {
     cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" 
 }
 
+owncomp=(greet)
+for i in ${owncomp[@]}; do complete -C $i $i; done
