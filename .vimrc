@@ -73,9 +73,12 @@ set ttyfast
 " allow sensing the filetype
 filetype plugin on
 
-set clipboard=unnamedplus
-
+" hide annoying banner for netrw
 let g:netrw_banner = 0
+" ####################### clipboard ##############################
+"This option must have a version of vim compiled with access to the system
+"clipboard. You can install gvim instead for easier access
+set clipboard=unnamedplus
 
 " ####################### Remaps ##############################
 map ; :
@@ -124,7 +127,7 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
    Plug 'rwxrob/vim-pandoc-syntax-simple'
    Plug 'dracula/vim', { 'as': 'dracula' }
 "   Plug 'pegn/pegn-syntax'
-"   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "   Plug 'tpope/vim-fugitive'
 "   Plug 'hashivim/vim-terraform'
 "   Plug 'morhetz/gruvbox'
