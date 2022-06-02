@@ -1,7 +1,8 @@
-#X230 Screen Dpi
-#Xft.dpi: 123.39
+/*X230 Screen Dpi*/
+/*Xft.dpi: 123.39*/
 
-#Monitor DPI
+/*Xft.dpi: 130*/
+/*Monitor DPI*/
 Xft.dpi: 144
 
 st.font: Fira Code:regular:size=12.5

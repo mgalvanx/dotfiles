@@ -18,8 +18,8 @@ alias notes='cd $NOTES'
 alias n='notesearch'
 alias nn='newnote'
 alias in='inbox'
-alias pr='. $SCRIPTS/projects'
-alias ar=". $SCRIPTS/areas"
+alias pr='projects'
+alias ar="areas"
 alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
 alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 
@@ -32,13 +32,15 @@ alias la='ls -a --color=always --group-directories-first'  # all files and dirs
 alias grep='grep -i --colour=auto'
 alias egrep='egrep -i --colour=auto'
 alias fgrep='fgrep -i --colour=auto'
-alias temp='cd $(mktemp -d)'
+#alias temp='cd $(mktemp -d)'
+alias snippets='cd $SNIPPETS'
 alias ctemp='. $SCRIPTS/ctemp'
 alias x='exit'
 alias b='cd -'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
 alias o='xdg-open'
+alias chmox='chmod +x'
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
