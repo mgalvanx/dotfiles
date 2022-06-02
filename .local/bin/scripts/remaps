@@ -3,16 +3,27 @@
 # Increase key speed via a rate change
 xset r rate 300 50
 
+#    Super Key Is Main Key
 # Map the caps lock key to super
-setxkbmap -option caps:super
+#setxkbmap -option caps:super
 # But when it is pressed only once, treat it as escape.
-killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
-# Turn off the caps lock if on since there is no longer a key for it.
+#killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+# Left Alt Changed To Modifier Key
+#xmodmap -e "keycode 64 = Mode_switch"
+
+#    Alt Keys are the Main Key
+# Map the caps lock key to alt
+setxkbmap -option 'caps:ctrl_modifier' -option 'shift:both_capslock' 
+# But when it is pressed only once, treat it as escape.
+killall xcape 2>/dev/null ; xcape -e 'Caps_Lock=Escape'
+# Change Super To Modifier Key
+xmodmap -e "keycode 133 = Mode_switch"
+
+
+# This always goes after we set up super or alt and the main modifier key
 xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
 
-# Left Alt Changed To Modifier Key
-xmodmap -e "keycode 64 = Mode_switch"
-
+#------------------------Custom Mode_switch Keys-------------------------------
 # Vim arrow keys
 xmodmap -e "keycode 43 = h H Left Left"
 xmodmap -e "keycode 44 = j J Down Down"
@@ -23,7 +34,7 @@ xmodmap -e "keycode 46 = l L Right Right"
 xmodmap -e "keycode 58 = m M Menu Menu"
 xmodmap -e "keycode 135 = Super_L"
 
-notify-send "Default keyboard remap has been applied"
+#notify-send "Default keyboard remap has been applied"
 
 # X230/X220 Thinkpad Classic Keyboard Modifiers Remaps
 # Clear All Modifier Behavior

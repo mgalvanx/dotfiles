@@ -1,22 +1,26 @@
 #!/bin/sh
 
 # A dmenu wrapper script for system functions.
-
-# For non-systemd init systems.
+export WM="dwm"
 case "$(readlink -f /sbin/init)" in
-	*runit*) hib="sudo -A zzz" ;;
-	*openrc*) reb="sudo -A openrc-shutdown -r"; shut="sudo -A openrc-shutdown -p" ;;
+	*systemd*) ctl='systemctl' ;;
+	*) ctl='loginctl' ;;
 esac
 
-cmds="\
-🔒 lock		slock
-🚪 leave dwm	kill -TERM $(pgrep -u $USER "\bdwm$")
-♻ renew dwm	kill -HUP $(pgrep -u $USER "\bdwm$")
-🐻 hibernate	slock ${hib:-systemctl suspend-then-hibernate -i}
-🔃 reboot	${reb:-sudo -A reboot}
-🖥 shutdown	${shut:-sudo -A shutdown -h now}"
+wmpid(){ # This function is needed if there are multiple instances of the window manager.
+	tree="$(pstree -ps $$)"
+	tree="${tree#*$WM(}"
+	echo "${tree%%)*}"
+}
 
-choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
-
-`echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-`
-
+case "$(printf "🔒 lock\n🚪 leave $WM\n♻️ renew $WM\n🐻 hibernate\n🔃 reboot\n🖥️shutdown\n💤 sleep\n📺 display off" | dmenu -i -p 'Action: ')" in
+	'🔒 lock') slock ;;
+	"🚪 leave $WM") kill -TERM "$(wmpid)" ;;
+	"♻️ renew $WM") kill -HUP "$(wmpid)" ;;
+	'🐻 hibernate') slock $ctl hibernate -i ;;
+	'💤 sleep') slock $ctl suspend -i ;;
+	'🔃 reboot') $ctl reboot -i ;;
+	'🖥️shutdown') $ctl poweroff -i ;;
+	'📺 display off') xset dpms force off ;;
+	*) exit 1 ;;
+esac
