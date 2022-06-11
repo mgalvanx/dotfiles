@@ -23,24 +23,11 @@ alias ar="areas"
 alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
 alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 
-
-# Terminal Alias
-alias ls='ls -ah --color=auto --group-directories-first'
-alias ll='ls -alh --color=always --group-directories-first'  # long format
-alias lt='ls -aT --color=always --group-directories-first'  # long format
-alias la='ls -a --color=always --group-directories-first'  # all files and dirs
-alias grep='grep -i --colour=auto'
-alias egrep='egrep -i --colour=auto'
-alias fgrep='fgrep -i --colour=auto'
-#alias temp='cd $(mktemp -d)'
-alias snippets='cd $SNIPPETS'
-alias ctemp='. $SCRIPTS/ctemp'
-alias x='exit'
-alias b='cd -'
-alias c='printf "\e[H\e[2J"'
-alias clear='printf "\e[H\e[2J"'
+# Terminal Aliases
 alias o='xdg-open'
-alias chmox='chmod +x'
+alias open='xdg-open'
+
+
 
 # This is for the dotfile bare repository
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
@@ -73,21 +60,6 @@ alias cdw="cd ~/.config/dwm && ls -a"
 #alias tn="tmux -u -f $TMUX_CONFIG new"    
 #alias ta="tmux -u -f $TMUX_CONFIG attach" 
 #alias tt="$EDITOR $TMUX_CONFIG"             
-
-
-
-# confirm before overwriting something
-alias cp="cp -iv"
-alias mv='mv -i'
-alias rm='rm -i'
-alias mkd="mkdir -pv" 
-
-# navigation
-alias ..='cd ..' 
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
 
 
 # Changing "ls" to "exa"
@@ -133,6 +105,7 @@ function ad() {
 
 
 # Folder Shortcuts
+alias snippets='cd $SNIPPETS'
 alias cf="cd ~/.config && la"   
 alias sc="cd ~/.local/bin/scripts && ls -a"   
 alias h="cd ~/ && pwd" 

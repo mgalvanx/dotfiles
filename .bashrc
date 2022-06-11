@@ -21,12 +21,8 @@ $HOME/.config:\
 #FZF Keybindings
 bind '"\C-f": "cd_with_fzf\n"'
 bind '"\C-o": "open_with_fzf\n"'
-bind '"\C-v": "nvim\n"'
-#Programs to Run on Startup
-# colorscript random
-# python ~/python/scripts/bible_verse_json_gen.py
 
-#2  a This sets the prompt for terminal
+#This sets the prompt for terminal
 PROMPT_LONG=50
 PROMPT_MAX=95
 
@@ -59,8 +55,28 @@ shopt -s globstar
 # This will protect us from overwriting a file using >
 # set - o noclobber
 
-# Allows us to cd into directorys without typing cd.
-# shopt -s autocd 
+# This needed in case we are on a remote machine. Otherwise inputrc is read locally
+set -o vi
+
+# Terminal Alias
+alias ls='ls -ah --color=auto --group-directories-first'
+alias ll='ls -alh --color=always --group-directories-first'  # long format
+alias lt='ls -aT --color=always --group-directories-first'  # long format
+alias la='ls -a --color=always --group-directories-first'  # all files and dirs
+alias grep='grep -i --colour=auto'
+alias egrep='egrep -i --colour=auto'
+alias fgrep='fgrep -i --colour=auto'
+alias temp='cd $(mktemp -d)'
+alias ctemp='. $SCRIPTS/ctemp'
+alias x='exit'
+alias b='cd -'
+alias c='printf "\e[H\e[2J"'
+alias clear='printf "\e[H\e[2J"'
+alias chmox='chmod +x'
+alias ip='ip -c'
+alias ..='cd ..' 
+alias ...='cd ../..'
+
 
 
 # Pager
@@ -83,17 +99,17 @@ export LESS_TERMCAP_us="[4m"  # underline
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
+# temp() {
+#   if [[ -z $TEMP_DIR ]]; then
+#     temp_dir=$(mktemp -d)
+#     export TEMP_DIR="$temp_dir"
+#   fi
+#   cd $TEMP_DIR
+# }
+
 #Fzf Functions
 # A set of functions that allows us to quickly navigate to folders,files and even open them will our default applications
 #Source:https://www.youtube.com/watch?v=QeJkAs_PEQQ
-
-temp() {
-  if [[ -z $TEMP_DIR ]]; then
-    temp_dir=$(mktemp -d)
-    export TEMP_DIR="$temp_dir"
-  fi
-  cd $TEMP_DIR
-}
 
 open_with_fzf() {
     fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-

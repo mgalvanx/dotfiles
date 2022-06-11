@@ -133,11 +133,12 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 "   Plug 'morhetz/gruvbox'
 "   Plug 'mrk21/yaml-vim'
   call plug#end()
-endif
 
-let g:dracula_colorterm = 0
-colorscheme dracula
-set background=dark
+  let g:dracula_colorterm = 0
+  colorscheme dracula
+  set background=dark
+
+endif
 
 " #######################   Functions Keys   ##############################
 map <F1> :set number!<CR> :set relativenumber!<CR>
