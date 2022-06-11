@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This script is used to quickly add my .bashrc, .vimrc and .tmux.conf to a remote computer home directory so that I can become instantly productive.
+
+test "$#" -ne 1 && echo "<usuage> dotscp <remotecompter>:" && exit 1
+
+remote_computer="$1"
+scp "$HOME/.bashrc" "$HOME/.vimrc" "$HOME/.tmux.conf" "${remote_computer}:"

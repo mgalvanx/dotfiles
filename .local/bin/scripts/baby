@@ -1,0 +1,18 @@
+#!/bin/sh
+
+baby_videos="${HOME}/nextcloud/gracie/baby_signing_time"
+
+dmenu_prompt() {
+  selected_video=$(ls -A "$baby_videos" | cut -d '.' -f 1 | dmenu -p "Select vol number (1-4)?")
+}
+
+play_video() {
+  mpv "${baby_videos}/${selected_video}.m4v"
+}
+
+main() {
+  dmenu_prompt
+  play_video
+}
+
+main

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# This script is used to easily add
+test -z "$GITUSER" && echo "Make sure your git username is set in GITUSER" && exit 0
+test $# -ne 1 && echo "<usauge> you must supply the name of the repo" && exit 0
+
+git_repo="$1"
+
+git remote set-url --add --push origin git@gitlab.com:$GITUSER/$git_repo.git
+git remote set-url --add --push origin git@github.com:$GITUSER/$git_repo.git

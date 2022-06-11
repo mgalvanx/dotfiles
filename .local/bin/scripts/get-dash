@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# In Arch and Artix Linux, /bin/sh is linked to bash by default.
+# We can simply symlink /bin/sh to dash but anytime there is an 
+# update for bash, it will overwrite the symlink to dash.
+# This script create hook script that automatically re-symlinks
+# dash if bash updates
+# https://wiki.archlinux.org/title/Dash
+
+download_dash() {
+  if (command -v dash > /dev/null 2>&1);then
+    printf "dash is already install\n"
+    return
+  fi
+  sudo pacman --noconfirm -S dash
+}
+
+symlink_dash_to_sh() {
+  sudo ln -sfT dash /usr/bin/sh
+  printf "Creating symlink\n"
+}
+
+# The dash.hook file is automatically created in the /usr/share/libalpm/hooks/ 
+# as specified in the Arch Wiki
+# https://wiki.archlinux.org/title/Pacman#Hooks
+
+create_hook() {
+  dash_hook='\
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = bash
+
+[Action]
+Description = Re-pointing /bin/sh symlink to dash...
+When = PostTransaction
+Exec = /usr/bin/ln -sfT dash /usr/bin/sh
+Depends = dash
+'
+  sudo sh -c "echo \"$dash_hook\" > /usr/share/libalpm/hooks/dash.hook"
+
+  printf Hook file created at /usr/share/libalpm/hooks/dash.hook\n
+}
+
+main() {
+download_dash
+symlink_dash_to_sh
+create_hook
+}
+
+main
