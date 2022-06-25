@@ -9,11 +9,20 @@ alias '???'=bing
 alias nb='newsboat'
 
 # ytfzf 
-alias yt='ytfzf -t'
-alias yth='ytfzf -Ht'
+alias yt='ytfzf -t' # default sorts by relevance
+alias yth='ytfzf -t -H'
+alias ytv='ytfzf -t --sort-by=view_count'
+alias ytd='ytfzf -t --sort-by=upload_date'
+alias ytr='ytfzf -t --sort-by=rating'
+
+# virtual box
+alias vmlist='vboxmanage list vms'
+alias vmsnap='vboxmanage snapshot'
+#alias vmon='vboxmanage list runningvms'
 
 # notes
 alias notes='cd $NOTES'
+alias repo='cd $REPOS'
 alias n='notesearch'
 alias nn='newnote'
 alias in='inbox'
