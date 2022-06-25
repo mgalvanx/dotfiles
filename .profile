@@ -27,11 +27,13 @@ export PATH=$PATH:~/.local/bin/statusbar
 
 
 # These settings will make applications create configuration files in these custom locations(To keep home directory clean)
+export GITUSER="${USER}x"
+export REPOS="${HOME}/repos/${GITUSER}"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
-export HISTFILE=~/.config/bash/.bash_history
+#export HISTFILE=~/.config/bash/.bash_history
 
 
 # This makes tmux use .config to save configuration files.(Used with bash aliases)
