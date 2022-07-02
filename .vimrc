@@ -46,7 +46,12 @@ set nowritebackup
 set icon
 
 set viminfo="" "Prevents vim from creating a viminfo directory in home
-" enable omni-completion
+
+if has("eval") " vim-tiny detection
+    let g:loaded_matchparen=1
+  endif
+set noshowmatch
+
 
 " Set unicode/emoji support
 set encoding=utf-8
