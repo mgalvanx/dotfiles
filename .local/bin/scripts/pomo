@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# This script will sends a timer to a seperate tmux session. Once the timer is finished, it will automatically close the tmux session
+
+timer="$1"
+
+test -z $timer && echo "<usuage>: pomo num[s/m/h]" && exit 1
+
+pomo_tmux() {
+notify-send -t 3000 "🍅Pomo timer of "${timer}" has started🍅"
+
+tmux new-session -d -s pomo -n countdown
+
+tmux send-keys -t pomo:countdown \
+"termdown "${timer}" | lolcat  && notify-send -t 5000 '🍅Pomo has ended! Consider Taking a Break 🍅' && setsid -f mpv  --no-video https://www.youtube.com/watch?v=kh3KagpasVo && tmux kill-session -t pomo" \
+Enter 
+}
+
+pomo_tmux
