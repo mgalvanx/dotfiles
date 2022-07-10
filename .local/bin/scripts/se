@@ -1,22 +1,35 @@
 #!/bin/sh
+#set -x
 
 search() {
-  searchengine=$(sr -elvi | tail -n +4)
-  selected=$(echo "$searchengine" | fzf --cycle | cut -f1)
+  query="$*"
+  search_engines=$(fzf --cycle < $HOME/cmdline-search/search-engines)
+  best_browser=$(echo $search_engines | awk '{print $4}')
 
-  if test -z "$selected"; then
-    return
+   if test -z "$search_engines"; then
+     return 1
+   fi
+ 
+ 
+  if test -z "$query"; then
+    printf "search ${search_engines}: "
+    read -r query
+    query=$(urlencode "$query")
+  fi
+  query=$(urlencode "$query")
+
+  #search_engine="${search_engines##* }"
+  search_engine=$(echo "${search_engines% *}" | awk '{print $5}')
+  url="${search_engine}${query}"
+  
+  if test -n "$TMUX"; then
+    tmux new-window -n ${search_engines%% *}
+    tmux send-keys "${best_browser} \"${url}\" && tmux kill-window" Enter
+    return 0
   fi
 
-  printf "search ${selected}: "
-  read -r query
-
-  if test -z query; then
-    return
-  fi
-
-  sr "${selected}" -browser=w3m "$query"
+  exec "$best_browser" "$url"
 }
 
-search
+search "$*"
 
