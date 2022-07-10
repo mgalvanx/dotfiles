@@ -1,0 +1,42 @@
+#!/bin/bash 
+
+
+summon_nedry() {
+  i="$((RANDOM%9))"
+  original="https://www.youtube.com/shorts/yCmqwZ0L4go://www.youtube.com/shorts/yCmqwZ0L4go"
+  originalv2="https://www.youtube.com/watch?v=wdHw_tg-ecg"
+  please="https://youtu.be/QDySGUFAom0"
+  laughter="https://www.youtube.com/watch?v=T6tIf8ZWSFc"
+  sausage="https://www.youtube.com/watch?v=rgy75sNjQEA"
+  raptor="https://youtu.be/MxWmC31jdos"
+  squeal="https://www.youtube.com/shorts/1o4H4vc0wyI"
+  poison="https://www.youtube.com/watch?v=bN4rHD45p2A"
+  sayonora="https://www.youtube.com/watch?v=uEc13LWyFCk"
+  case $i in
+    0) url="$original" ;;
+    1) url="$originalv2" ;; 
+    2) url="$please" ;;   
+    3) url="$laughter" ;;     
+    4) url="$sausage" ;;      
+    5) url="$raptor" ;;       
+    6) url="$squeal" ;;        
+    7) url="$poison" ;;       
+    8) url="$sayonora" ;;       
+  esac
+  setsid -f mpv --really-quiet --no-terminal --loop-file=inf "$url" 
+}
+
+repeat_magic_word() {
+  while true; do
+    printf "\e[1;31mYOU DIDN'T SAY THE MAGIC WORD!\e[0m\n" 
+    sleep .1
+  done
+}
+
+
+main() {
+  summon_nedry 
+  repeat_magic_word 
+}
+
+main
