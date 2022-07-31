@@ -1,0 +1,40 @@
+#!/bin/bash
+
+[[ -z $SNIPPETS ]] && echo "SNIPPETS folder not defined in .bashrc" && exit 1
+
+snip() {
+  local name="$1"
+  local path="$SNIPPETS/$1"
+  shift
+  if [[ -r $path ]]; then
+    local buf=$(<$path)
+
+    if [[ -s /dev/stdin ]]; then
+     in=$(</dev/stdin)
+     #TODO Figure out why this works and not the bottom command
+     #in=/dev/stdin
+    else 
+      in="" 
+    fi
+    if [[ $# = 0 &&  -z $in ]]; then 
+      echo "$buf"
+      return
+    fi
+
+    if [[ $# > 0 ]]; then
+       local -i n=1
+       for arg in $@; do
+         buf=${buf//\{$n\}/$arg}
+         ((n++))
+       done
+       echo "$buf"
+    else
+        while IFS=$'\n' read -r argline; do
+          IFS=" " snip $name $argline
+        done
+    fi
+  fi
+}
+
+snip "$@"
+
