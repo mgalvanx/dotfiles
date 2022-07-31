@@ -159,4 +159,8 @@ set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 " ####################### Force file names to be a specific type  ##############################
 au bufnewfile,bufRead *.bash* set ft=bash
 au bufnewfile,bufRead $SNIPPETS/bash/* set ft=bash
+" https://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+"autocmd VimLeave * call system("tmux rename-window shell")
+autocmd VimLeave * call system("tmux kill-pane")
 "au bufnewfile,bufRead $SNIPPETS/go/* set ft=bash
