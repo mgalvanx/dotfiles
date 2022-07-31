@@ -1,0 +1,19 @@
+#!/bin/sh
+#set -x 
+
+files="$@"
+
+if test -z "$files"; then
+  "$EDITOR" 
+fi
+
+
+if test -n "$TMUX"; then
+  for file in $files; do
+    tmux new-window -n "$file" && tmux send-keys "${EDITOR} ${file}" Enter 
+  done
+  return 0
+fi
+
+exec "$EDITOR" "$files"
+

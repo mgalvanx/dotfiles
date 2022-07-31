@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#set -x
+
+my_tmux() {
+	session_name="$*"
+
+ 	if test -z "$session_name"; then
+ 		printf "What do you want to name the session? "
+ 		read -r session_name
+ 	fi
+
+	tmux new-session -d -s "$session_name" #-n shell
+
+
+	if test -z "$TMUX"; then
+		tmux attach -t "$session_name"
+		return 0
+	fi
+	tmux switch-client -t "$session_name"
+}
+
+my_tmux "$*"
