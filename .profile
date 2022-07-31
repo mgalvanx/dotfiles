@@ -6,7 +6,7 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Default Programs
-export EDITOR="vim"
+export EDITOR="vim" # This is alias to a vim that is a tmux wrapper
 export TERMINAL="st"
 export BROWSER="firefox"
 export BROWSERCLI="w3m"
