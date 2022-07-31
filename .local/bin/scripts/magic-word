@@ -177,7 +177,7 @@ repeat_magic_word_hacker() {
      # Newman Sausage Song
      setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=s-R3GTzZU14"
      # Newman Collects Bottle
-     setsid -f mpv --no-terminal --no-video https://www.youtube.com/watch?v=fxpjSW_R3b4&t=12s  
+     setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=fxpjSW_R3b4&t=12s"  
      # Newman Interview
      setsid -f mpv --no-video --no-terminal  --start=2:45 --end=3:01  "https://www.youtube.com/watch?v=jDmA2xoIoFU"
     fi
