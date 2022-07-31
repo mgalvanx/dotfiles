@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# declare -A is used to set a variable as a dictionary/map
+# you can use -a for regular lists/arrays. declare is usually used 
+# to declare a global map/array. use local for local variables
+# run the below command in bash using vimagic
+# for i in smile bear hamburger idea love rocket; do echo "emoji[${i}]="; done
+
+# TODO
+# Make a script that takes emojis and turns them back in to text. That way we can undo
+# The changes.
+
+
+declare -A emoji
+emoji[smile]=😃
+emoji[bear]=🐻
+emoji[hamburger]=🍔
+emoji[idea]=💡
+emoji[love]=💕
+emoji[rocket]=🚀
+
+# using${!emoji[@]}
+
+toemojo() {
+# /dev/stdin and /dev/stout are only here because we are going to overwrite the 
+# the content of a file, if an argument give to toemoji
+ local in=/dev/stdin
+ local out=/dev/stdout
+ local file=$1
+ if [[ -n $file ]]; then 
+   in="$file"
+   out=$(mktemp)
+ fi
+# This IFS variable explicity makes only the a \n split every line. By default 
+# IFS is ' \t\n'. This essentially protects beginning whitespace.
+ IFS=$'\n'
+ while read -r line; do 
+    for k in ${!emoji[@]}; do
+      line=${line//:$k:/${emoji[$k]}}
+    done
+    echo "$line" >> $out
+ done < $in
+# The temporary file with the modifications from $line is going to be cp to the name 
+# of the passed file if a argument with a filename was given. We are using cp instead 
+# mv because we cannot mv file across file system bondaries.
+
+ if [[ -n $file ]]; then
+   cp "$out" "$file"
+   rm "$out"
+ fi
+}
+
+
+
+toemojo $@
+
