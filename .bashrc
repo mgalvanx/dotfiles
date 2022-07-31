@@ -1,6 +1,4 @@
 #
-# ~/.bashrc
-#
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -17,6 +15,14 @@ $HOME/.config:\
 
 # Make every new terminal use the current pywal colorscheme
 #source ~/.cache/wal/colors-tty.sh
+
+## bash autocomplete tab
+bind "TAB:menu-complete"
+bind '"\e[Z": menu-complete-backward'
+bind "set show-all-if-ambiguous on"
+bind "set menu-complete-display-prefix on"
+bind "set completion-ignore-case on"
+
 
 #FZF Keybindings
 bind '"\C-f": "cd_with_fzf\n"'
@@ -60,12 +66,12 @@ set -o vi
 
 # Terminal Alias
 alias ls='ls -ah --color=auto --group-directories-first'
-alias ll='ls -alh --color=always --group-directories-first'  # long format
-alias lt='ls -aT --color=always --group-directories-first'  # long format
-alias la='ls -a --color=always --group-directories-first'  # all files and dirs
 alias grep='grep -i --colour=auto'
 alias egrep='egrep -i --colour=auto'
 alias fgrep='fgrep -i --colour=auto'
+alias pgrep='pgrep -i --colour=auto'
+alias diff='diff --color=auto'
+alias ip='ip -c'
 alias temp='cd $(mktemp -d)'
 alias ctemp='. $SCRIPTS/ctemp'
 alias x='exit'
@@ -73,7 +79,6 @@ alias b='cd -'
 alias c='printf "\e[H\e[2J"'
 alias clear='printf "\e[H\e[2J"'
 alias chmox='chmod +x'
-alias ip='ip -c'
 alias ..='cd ..' 
 alias ...='cd ../..'
 
@@ -112,11 +117,45 @@ export LESS_TERMCAP_us="[4m"  # underline
 #Source:https://www.youtube.com/watch?v=QeJkAs_PEQQ
 
 open_with_fzf() {
-    fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+  find . -type f | fzf -d / --with-nth=-1 --cycle --layout=reverse-list   --keep-right --preview="bat -p --color always {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up
 }
 
+# cd_with_fzf() {
+#   local dir_path=$(find $HOME -maxdepth 5 -type d | grep -v '.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
+#   local dir="${dir_path##*/}"
+#   if [[ -z "$TMUX" ]]; then
+#     tmux new-session  -s "$dir" && tmux attach -t "$dir" &&  tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
+#     echo "attach isn't attaching"
+#     echo "keys aren't being sent"
+#     return 0
+#   fi
+#   echo "This shouldn't run when we are calling from outside tmux"
+#   tmux new-session -d -s "$dir"
+#   tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
+#   tmux switch-client -t "$dir"
+#}
+
 cd_with_fzf() {
-    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" 
+  local dir_path=$(find $HOME -maxdepth 5 -type d | grep -v '.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
+
+#  if [[ -z "$dir_path" ]]; then
+#    return 1
+#  fi
+
+  local dir="${dir_path##*/}"
+  local dir="${dir//./}"
+
+  tmux has-session -t $dir 2>/dev/null
+  if [[ $? -eq 1 ]]; then
+    tmux new-session -d -s "$dir" #-n "shell"
+    tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
+  fi
+
+  if [[ -z "$TMUX" ]]; then
+    tmux attach -t "$dir"
+    return 0
+  fi
+  tmux switch-client -t "$dir"
 }
 
 owncomp=(greet)
