@@ -1,42 +1,196 @@
 #!/bin/bash 
 
+initial_beep() {
+ setsid -f mpv --no-video --no-terminal  --start=11.4 --end=12.5 "https://www.youtube.com/watch?v=RfiQYRn7fBg"
+}
 
+start_beep() {
+ sedsid -f mpv --no-video  --no-terminal --start=+23 --ab-loop-a=23 --ab-loop-b=26 "https://www.youtube.com/watch?v=RfiQYRn7fBg"
+}
+
+play_video() {
+	setsid -f mpv --really-quiet --no-terminal --loop-file=inf "$1"
+}
+summon_original_nedry() {
+  setsid -f mpv  --no-terminal  --start=0  --ab-loop-a=0 --ab-loop-b=1.4 "https://www.youtube.com/shorts/yCmqwZ0L4go://www.youtube.com/shorts/yCmqwZ0L4go"
+}
 summon_nedry() {
-  i="$((RANDOM%9))"
+  play_video "https://www.youtube.com/shorts/yCmqwZ0L4go://www.youtube.com/shorts/yCmqwZ0L4go"
+}
+summon_hawaiian_nedry() {
+  play_video "https://www.youtube.com/watch?v=wdHw_tg-ecg"
+}
+summon_please_nedry() {
+ play_video "https://youtu.be/QDySGUFAom0"
+}
+summon_laugh_nedry() {
+  setsid -f  mpv  --volume=135 --no-terminal  "https://www.youtube.com/watch?v=T6tIf8ZWSFc"
+}
+summon_sausage_newman() {
+  setsid -f  mpv --volume=118 --no-terminal "https://www.youtube.com/watch?v=rgy75sNjQEA"
+}
+summon_evil_nedry() {
+  for i in {1..6};do summon_nedry;done
+}
+summon_I_hate_this_hacker_crap() {
+  setsid -f  mpv --no-video --volume=122 --no-terminal --start=+20 "https://www.youtube.com/watch?v=RfiQYRn7fBg"
+}
+
+summon_random_nedry() {
+  i="$((RANDOM%4))"
   original="https://www.youtube.com/shorts/yCmqwZ0L4go://www.youtube.com/shorts/yCmqwZ0L4go"
   originalv2="https://www.youtube.com/watch?v=wdHw_tg-ecg"
   please="https://youtu.be/QDySGUFAom0"
-  laughter="https://www.youtube.com/watch?v=T6tIf8ZWSFc"
+  evil="https://www.youtube.com/watch?v=T6tIf8ZWSFc"
   sausage="https://www.youtube.com/watch?v=rgy75sNjQEA"
-  raptor="https://youtu.be/MxWmC31jdos"
-  squeal="https://www.youtube.com/shorts/1o4H4vc0wyI"
-  poison="https://www.youtube.com/watch?v=bN4rHD45p2A"
-  sayonora="https://www.youtube.com/watch?v=uEc13LWyFCk"
   case $i in
     0) url="$original" ;;
     1) url="$originalv2" ;; 
     2) url="$please" ;;   
-    3) url="$laughter" ;;     
+    3) url="$evil" ;;     
     4) url="$sausage" ;;      
-    5) url="$raptor" ;;       
-    6) url="$squeal" ;;        
-    7) url="$poison" ;;       
-    8) url="$sayonora" ;;       
   esac
   setsid -f mpv --really-quiet --no-terminal --loop-file=inf "$url" 
 }
 
-repeat_magic_word() {
+echo_jurassic_park() {
+  clear
+  echo "Jurassic Park, System Security Interface"
+  echo "Version 4.0.5, Alpha E"
+  printf "Ready"
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf ".\n"
+  printf "> access security\n"
+  sleep .5
+  printf "access: "
+  sleep .5
+  printf "PERMISSION DENIED\n"
+  sleep .5
+  printf "> access security grid\n"
+  sleep .5
+  printf "access: "
+  sleep .5
+  printf "PERMISSION DENIED\n"
+  sleep .5
+  printf "> access main security grid\n"
+  sleep .5
+  initial_beep
+  #summon_sausage_newman
+  printf "access: "
+  sleep .5
+  #summon_evil_nedry
+  printf "PERMISSION DENIED\n"
+  sleep .2
+  #summon_hawaiian_nedry
+  sleep .5
+  printf "> access main security grid\n"
+  sleep .4
+  printf "access: "
+  sleep .4
+  printf "PERMISSION DENIED"
+  summon_nedry
+#  summon_evil_nedry
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "and"
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf "."
+  sleep .1
+  printf ".\n"
+  printf "\e[1;31mYOU DIDN'T SAY THE MAGIC WORD!\e[0m\n" 
+  sleep 1
+  clear
+  #summon_I_hate_this_hacker_crap
+}
+
+repeat_magic_word_infinitely() {
   while true; do
     printf "\e[1;31mYOU DIDN'T SAY THE MAGIC WORD!\e[0m\n" 
-    sleep .1
+    sleep .012
   done
 }
 
 
-main() {
-  summon_nedry 
-  repeat_magic_word 
+repeat_magic_word_hacker() {
+  for i in {1..2140}; do
+    printf "\e[1;31mYOU DIDN'T SAY THE MAGIC WORD!\e[0m\n" 
+    sleep .012
+    if [ $i -eq 200 ];then
+      summon_I_hate_this_hacker_crap
+    fi
+    if [ $i -eq 540 ];then
+      summon_evil_nedry
+    fi
+#    if [ $i -eq 1000 ];then
+#      setsid -f $TERMINAL -e  bash -c "cat '$REPOS/newman-magic-word/nedry-nobody-cares-ascii.txt';bash"
+#    fi
+    if [ $i -eq 700 ];then
+#      setsid -f $TERMINAL -e  bash -c "cat '$REPOS/newman-magic-word/newman.txt';bash"
+      summon_laugh_nedry
+    fi
+#    if [ $i -eq 1500 ];then
+#      setsid -f $TERMINAL -e  bash -c "cat '$REPOS/newman-magic-word/ascii-magic-word-newman.txt';bash"
+#      summon_laugh_nedry
+#    fi
+    if [ $i -eq 1854 ];then
+      pkill -f mpv
+      summon_sausage_newman
+    fi
+  done
+
 }
 
+print_figlet_magic_word(){
+  while true; do
+    figlet "AH" | lolcat 
+    sleep .2
+    figlet "        AH" | lolcat 
+    sleep .2
+    figlet "                     AHHH" | lolcat 
+    sleep .2
+    figlet "YOU" | lolcat 
+    sleep .2
+    figlet "DIDN'T" | lolcat 
+    sleep .2
+    figlet "SAY" | lolcat 
+    sleep .2
+    figlet "THE" | lolcat 
+    sleep .2
+    figlet "MAGIC" | lolcat 
+    sleep .2
+    figlet "WORD" | lolcat 
+    sleep .2
+  done
+  }
+
+main() {
+  echo_jurassic_park
+  repeat_magic_word_hacker
+  print_figlet_magic_word
+}
 main
