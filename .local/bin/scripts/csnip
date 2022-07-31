@@ -1,0 +1,19 @@
+#!/bin/sh
+
+
+if test $# -ne 1; then
+  echo "usage: csnip <filename>" 2>&1
+  exit 1
+fi
+
+csnip() {
+  name=$1
+  while IFS= read -r line; do
+    echo "$line"  >> $SNIPPETS/$name
+  done
+}
+
+csnip "$1"
+
+
+
