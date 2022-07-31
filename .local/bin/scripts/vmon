@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if command -v fzf &> /dev/null; then
+  vm=$(vboxmanage list vms | cut -d " " -f 1 | sed 's/"//g' | fzf  --keep-right --layout=reverse --prompt="Select virtual machine to turn on: ")
+else
+  echo "Select virtual machine to turn on:"
+  PS3="Select a number: "
+  select vm in $(vboxmanage list vms | cut -d " " -f 1 | sed 's/"//g'); do break; done
+fi
+
+test -z "$vm" && echo "No vm selected" && exit 1
+
+if test -n "$TMUX"; then
+    tmux new-window -n "$vm" && tmux send-keys "vboxmanage startvm \"$vm\" --type headless; sleep 7; ssh \"$vm\"" Enter
+  exit 0
+fi
+
+
+vboxmanage startvm "$vm" --type headless && echo "Waiting for server to accept ssh connections..." &&  sleep 7 && ssh $vm

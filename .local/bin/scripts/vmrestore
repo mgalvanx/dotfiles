@@ -1,0 +1,8 @@
+#!/bin/sh
+
+vm=$1
+
+test -z "$vm" && echo "No args given" && exit 1
+
+vboxmanage controlvm "$vm" poweroff && vboxmanage snapshot "$vm" restorecurrent
+

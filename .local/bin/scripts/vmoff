@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if command -v fzf &> /dev/null; then
+  vm=$(vboxmanage list runningvms | cut -d " " -f 1 | sed 's/"//g' | fzf  --keep-right --layout=reverse --prompt="Which virtual machine do you want to shut off? ")
+else
+  PS3=vm:
+  echo "Which virtual machine do you want to shut off? "
+  select vm in $(vboxmanage list runningvms | cut -d " " -f 1 | sed 's/"//g'); do break; done
+fi
+
+
+test -z "$vm" && echo "No vm selected" && exit 1
+
+exec vboxmanage controlvm "$vm" poweroff

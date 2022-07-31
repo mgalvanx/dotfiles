@@ -1,0 +1,11 @@
+#!/bin/bash
+
+vm=$1
+shift
+snap_name=$*
+
+test -z "$vm" && echo "You must supply a running vm name" && exit 1
+test -z "$snap_name" && echo "You must name the snapshot name" && exit 1
+
+vboxmanage snapshot "$vm" take "${snap_name// /-}"
+
