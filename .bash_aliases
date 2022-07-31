@@ -1,9 +1,30 @@
 # Bash Aliases
 
-# Lynx Alias
-alias '?'=duck
-alias '??'=google
-alias '???'=bing
+# rc and shell related shortcuts
+alias cfb="vi ~/.bashrc"
+alias cfv="vi ~/.vimrc"
+alias cfa="vi ~/.bash_aliases"
+alias cfp="vi ~/.profile"
+alias cfg="sudoedit /etc/default/grub"
+alias cfx="vi ~/.xinitrc"   
+alias cfX="vi ~/.Xresources"   
+alias cfn="vi ~/.local/newsboat/config"   
+alias cfu="vi ~/.local/newsboat/urls"   
+
+
+
+# cli browsing aliases
+alias ?='clibrowse lynx duck'
+alias ?b='clibrowse lynx brave'
+alias ?g='clibrowse lynx google'
+alias ??='clibrowse w3m duck'
+alias ??b='clibrowse w3m brave'
+alias ??g='clibrowse w3m google'
+
+
+# Tmux
+alias ta='tmux attach'
+#alias tx='tmux new-session -n shell'
 
 # newsboat
 alias nb='newsboat'
@@ -17,12 +38,11 @@ alias ytr='ytfzf -t --sort-by=rating'
 
 # virtual box
 alias vmlist='vboxmanage list vms'
-alias vmsnap='vboxmanage snapshot'
 #alias vmon='vboxmanage list runningvms'
 
 # notes
 alias notes='cd $NOTES'
-alias repo='cd $REPOS'
+alias repos='cd $REPOS'
 alias n='notesearch'
 alias nn='newnote'
 alias in='inbox'
@@ -41,22 +61,6 @@ alias open='xdg-open'
 alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
 alias g="git"
 
-# rc and shell related shortcuts
-alias rc="$EDITOR ~/.bashrc"
-alias rr="source ~/.bashrc"
-alias al="$EDITOR ~/.bash_aliases"
-alias ev="$EDITOR ~/.profile"
-alias xi="$EDITOR ~/.xinitrc"   
- 
-
-# Grub Menu Editing
-alias gr="sudoedit /etc/default/grub"
-# Nvim related aliases
-alias vi="vim"
-alias vv="nvim ~/.config/nvim/init.vim" 
-alias vm="nvim ~/vimwiki/index.wiki"
-
-
 # DWM related shortcuts
 alias dw="$EDITOR ~/.config/dwm/config.h"
 alias cdw="cd ~/.config/dwm && ls -a"
@@ -70,22 +74,11 @@ alias cdw="cd ~/.config/dwm && ls -a"
 #alias tt="$EDITOR $TMUX_CONFIG"             
 
 
-# Changing "ls" to "exa"
-#alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-#alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-#alias ll='exa -l --color=always --group-directories-first'  # long format
-#alias lt='exa -aT --color=always --group-directories-first' # tree listing
-#alias l.='exa -a | egrep "^\."'
-
-# These are for mounting drives
-alias mountsd="udisksctl mount -b /dev/mmcblk0p1"
-alias unmountsd="udisksctl unmount -b /dev/mmcblk0p1"
 
 # For fun
-alias fishes='asciiquarium | lolcat'     
+alias fishies='asciiquarium | lolcat'     
 alias lc="lolcat"   
 alias sl="sl | lolcat"
-alias pomo="muccadoro | lolcat"  
 alias ka="killall"
 
 
@@ -114,11 +107,9 @@ function ad() {
 
 # Folder Shortcuts
 alias snippets='cd $SNIPPETS'
-alias cf="cd ~/.config && la"   
+alias cloud='cd $HOME/nextcloud'
+alias cf="cd ~/.config && ls -l"   
 alias sc="cd ~/.local/bin/scripts && ls -a"   
-alias h="cd ~/ && pwd" 
 alias mn="cd /mnt && ls -a" 
-alias cwars="cd ~/projects/codewars"
 alias d="cd /home/mgalvan/nextcloud/files/0_Inbox_Files"
-alias cqk="cd /home/mgalvan/projects/qmk_firmware/keyboards/planck/keymaps/mgalvanx"
 alias mt="cd /mnt"
