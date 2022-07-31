@@ -1,8 +1,16 @@
 #!/bin/sh
+search="$*"
+url="https://lite.duckduckgo.com/lite?kd=-1&kp=-1&q=$(urlencode "$search")" # 🦆
+
+if test -n "$TMUX"; then
+  tmux new-window -n duck
+	tmux send-keys "lynx \"$url\" && tmux kill-window" Enter
+	return 0
+fi
+
 #exec w3m "duckduckgo.com/lite?kd=-1&kp=-1&q=$*"
-#url="https://lite.duckduckgo.com/lite?kd=-1&kp=-1&q=$(urlencode "$*")" # 🦆
 # chat "🦆 searching: $* $url"
 #exec lynx "$url"
 #exec lynx "duckduckgo.com/lite?q=$*" # 🦆
-exec lynx "duckduckgo.com/lite?q=$*"
+exec lynx "duckduckgo.com/lite?q=${search}"
 
