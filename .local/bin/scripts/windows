@@ -1,4 +1,4 @@
 #!/bin/sh
 sleep 2
-VBoxManage startvm "windows"   
+VBoxManage startvm "windows10"   
 
