@@ -17,6 +17,7 @@ if [ -f "$userresources" ]; then
 fi
 
 # This 2 lines start the gnome-keyring needed to autologin to nextcloud.
+#rclone mount --daemon --vfs-cache-mode full gdrive: /home/mgalvan/gdrive/ &
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 xset r rate 300 50 &
