@@ -7,6 +7,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+_source_if() { [[ -r "$1" ]] && source "$1"; }
 
 # cdpath
 export CDPATH=.:\
@@ -160,3 +161,7 @@ cd_with_fzf() {
 
 owncomp=(greet)
 for i in ${owncomp[@]}; do complete -C $i $i; done
+
+_source_if "$HOME/.bash_personal"
+_source_if "$HOME/.bash_private"
+_source_if "$HOME/.bash_work"
