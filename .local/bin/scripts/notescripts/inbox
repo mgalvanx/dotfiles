@@ -1,0 +1,24 @@
+#!/bin/sh
+
+INBOX="${NOTES}/0_Inbox"
+
+
+choose_file() {
+  file=$(find "$INBOX" -iname "*.md" | sort | fzf -d / --with-nth=-1 --cycle --layout=reverse-list   --keep-right --preview="bat -p --color always {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up)
+
+  if test "$file" = "${INBOX}/0_Inbox.md"; then
+    "$EDITOR" "$INBOX"
+    return
+  fi
+
+  if test -z "$file"; then
+    return
+  fi
+
+  "$EDITOR" "$file"
+  }
+
+choose_file
+
+
+
