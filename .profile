@@ -34,6 +34,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
+export XDG_DESKTOP_DIR="${HOME}/${USER}"
+export XDG_DOWNLOAD_DIR="${HOME}/downloads"
 #export HISTFILE=~/.config/bash/.bash_history
 
 
