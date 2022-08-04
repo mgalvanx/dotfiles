@@ -1,0 +1,5 @@
+#!/bin/sh
+firefox --new-window https://blog.certskills.com/category/200-301-v1-parts&
+sleep 1
+alacritty --working-directory=/home/mgalvan/ccna_ocg_configs  
+
