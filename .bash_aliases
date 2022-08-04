@@ -58,7 +58,7 @@ alias open='xdg-open'
 
 
 # This is for the dotfile bare repository
-alias config='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
+alias dot='/usr/bin/git --git-dir=/home/mgalvan/.dotfiles/ --work-tree=/home/mgalvan'
 alias g="git"
 
 # DWM related shortcuts
