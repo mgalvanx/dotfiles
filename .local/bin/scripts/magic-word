@@ -171,15 +171,15 @@ repeat_magic_word_hacker() {
     fi
     if [ $i -eq 2138 ];then
       pkill -f mpv
-     setsid -f $TERMINAL -e bash -c 'bash $REPOS/jurassic-newman/ascii-magic-word-newman;bash'
+     setsid -f $TERMINAL -e bash -c 'ascii-newman;bash'
      #Seinfeld The Theme
-     setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=_V2sBURgUBI"
+     #setsid -f mpv --volume=60 --no-terminal --no-video "https://www.youtube.com/watch?v=_V2sBURgUBI"
      # Newman Sausage Song
-     setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=s-R3GTzZU14"
+#     setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=s-R3GTzZU14"
      # Newman Collects Bottle
-     setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=fxpjSW_R3b4&t=12s"  
+#     setsid -f mpv --no-terminal --no-video "https://www.youtube.com/watch?v=fxpjSW_R3b4&t=12s"  
      # Newman Interview
-     setsid -f mpv --no-video --no-terminal  --start=2:45 --end=3:01  "https://www.youtube.com/watch?v=jDmA2xoIoFU"
+     setsid -f mpv --volume=120 --no-video --no-terminal  --start=2:45 --end=3:02  "https://www.youtube.com/watch?v=jDmA2xoIoFU"
     fi
   done
 
