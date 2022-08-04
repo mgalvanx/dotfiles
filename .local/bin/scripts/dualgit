@@ -1,8 +1,11 @@
 #!/bin/sh
 
-# This script is used to easily add
+# Use script on one of your repos that you made. The steps might be different when creating a new repo
+
 test -z "$GITUSER" && echo "Make sure your git username is set in GITUSER" && exit 0
 test $# -ne 1 && echo "<usauge> you must supply the name of the repo" && exit 0
+
+git push --set-upstream origin master
 
 git_repo="$1"
 
