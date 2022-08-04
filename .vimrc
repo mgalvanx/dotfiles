@@ -125,14 +125,14 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
   " github.com/junegunn/vim-plug
 
-  call plug#begin('~/.local/share/vim/plugins')
+  call plug#begin()
 
 "   Plug 'frazrepo/vim-rainbow'
    Plug 'vim-pandoc/vim-pandoc'
    Plug 'rwxrob/vim-pandoc-syntax-simple'
    Plug 'dracula/vim', { 'as': 'dracula' }
 "   Plug 'pegn/pegn-syntax'
-   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "   Plug 'tpope/vim-fugitive'
 "   Plug 'hashivim/vim-terraform'
 "   Plug 'morhetz/gruvbox'

@@ -136,7 +136,13 @@ open_with_fzf() {
 #   tmux switch-client -t "$dir"
 #}
 
-cd_with_fzf() {
+install_vim() {
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim -es -u ${HOME}/.vimrc -i NONE -c "PlugInstall" -c "qa"
+}
+
+cd_fzf() {
   local dir_path=$(find $HOME -maxdepth 5 -type d | grep -v '.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
 
 #  if [[ -z "$dir_path" ]]; then
