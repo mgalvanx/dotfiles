@@ -52,6 +52,8 @@ if has("eval") " vim-tiny detection
   endif
 set noshowmatch
 
+" Turns off spell check for now
+set nospell
 
 " Set unicode/emoji support
 set encoding=utf-8
