@@ -54,6 +54,7 @@ set noshowmatch
 
 " Turns off spell check for now
 set nospell
+set nospell
 
 " Set unicode/emoji support
 set encoding=utf-8
@@ -147,6 +148,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 
 endif
 
+"turn off spellcheck in vim pandoc
+let g:pandoc#spell#enabled = 0
 " #######################   Functions Keys   ##############################
 map <F1> :set number!<CR> :set relativenumber!<CR>
 nmap <F2> :call <SID>SynStack()<CR>
