@@ -12,6 +12,8 @@ alias cfn="vi ~/.local/newsboat/config"
 alias cfu="vi ~/.local/newsboat/urls"   
 
 
+alias gmk="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
 
 # cli browsing aliases
 alias ?='clibrowse lynx duck'
@@ -30,11 +32,31 @@ alias ta='tmux attach'
 alias nb='newsboat'
 
 # ytfzf 
-alias yt='ytfzf -t' # default sorts by relevance
+#alias yt='ytfzf -t --detach -l' # default sorts by relevance
+alias yt='yt_pages' # default sorts by relevance
 alias yth='ytfzf -t -H'
 alias ytv='ytfzf -t --sort-by=view_count'
 alias ytd='ytfzf -t --sort-by=upload_date'
 alias ytr='ytfzf -t --sort-by=rating'
+
+yt_pages(){
+  query="$*"
+  count=1
+  if [[ -z "$query" ]]; then
+    exit 0
+  fi
+  clear
+  while true; do
+    clear
+    ytfzf -t --detach  -l --pages-start="$count" "$query"
+    read -p "Enter n for next page? " input
+    case "$input" in
+  		n) ((count=count+1)) ;;
+  		l) continue ;;
+			*) break
+ 		esac
+  done
+}
 
 # virtual box
 alias vmlist='vboxmanage list vms'
@@ -108,7 +130,7 @@ function ad() {
 # Folder Shortcuts
 alias snippets='cd $SNIPPETS'
 alias cloud='cd $HOME/nextcloud'
-alias cf="cd ~/.config && ls -l"   
+alias conf="cd ~/.config"   
 alias sc="cd ~/.local/bin/scripts && ls -a"   
 alias mn="cd /mnt && ls -a" 
 alias d="cd /home/mgalvan/nextcloud/files/0_Inbox_Files"
