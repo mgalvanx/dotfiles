@@ -48,7 +48,7 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
 # Macros
 macro w open-in-browser ; set browser "$BROWSERCLI %u"
 macro W set browser "$BROWSER"; open-in-browser ; set browser "$BROWSERCLI %u"
-macro p set browser "tsp mpv --title='newboat-mpv' -ontop --no-border --force-window --autofit=500x280 --geometry=-15-60 %u"; open-in-browser ; set browser "$BROWSERCLI %u"
+macro p set browser "notify-send '%u' &&  tsp mpv --title='newboat-mpv' -ontop --no-border --force-window --autofit=500x280 --geometry=-15-60 %u"; open-in-browser ; set browser "$BROWSERCLI %u"
 #macro p set browser "setsid -f mpv --title='newboat-mpv' --really-quiet --no-terminal  --ontop --no-border --force-window --autofit=500x280 --geometry=-15-60 %u"; open-in-browser ; set browser "$BROWSERCLI %u"
 #macro n set browser "$BROWSER_PRIVATE"; open-in-browser ; set browser "$URLPORTAL %u"
 
