@@ -56,6 +56,7 @@ yt_pages(){
 			*) break
  		esac
   done
+  clear
 }
 
 # virtual box
