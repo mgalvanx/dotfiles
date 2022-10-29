@@ -21,7 +21,7 @@ fi
 sudo mkdir -p "${mntpath}" || true
 # This line wasn't working before. I added my user to the users group using group add
 # I also reboot so do that if it doesn't work
-sudo mount -o gid=users,fmask=113,dmask=002 "${usbpath}" "${mntpath}"
+sudo mount "${usbpath}" "${mntpath}"
 notify-send "Usb has been mounted to "${mntpath}""
 
 
