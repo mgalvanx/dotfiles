@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x 
 
 browser="$1";shift
 search_engine="$1";shift
