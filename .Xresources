@@ -9,6 +9,7 @@ Xft.dpi: 144
 
 
 st.font: Fira Code:regular:size=12.5
+!*.alpha: 0.3
 dmenu.font: #monospace: size=12
 dwm.font: #monospace: size=12
 
@@ -65,7 +66,8 @@ xterm*.color0: #282A36
 
 *.foreground: #F8F8F2
 *.background: #282A36
-/* *.color0:     #000000 */
+*.color0:     #000000 
+!*.color0: #282A36  
 *.color8:     #4D4D4D
 *.color1:     #FF5555
 *.color9:     #FF6E67
@@ -82,11 +84,18 @@ xterm*.color0: #282A36
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
+! DWM Colors
+dwm.color0: #000000
+dwm.color8: #BD93F9
+!dwm.color8:  #4D4D4D
+
+! ST Colors
+st.background: #000000
+!st.background: #282A36 
 /*Lynx Black Background Fixes(Compatible with Dwm*/
-*.color0: #282A36 
-dwm.color0:     #000000 
 /*Lynx.color0: #282A36 */
 /* *.background: .color0 */
 *.color256: 0#1d2021
 *.color257: 15#ebdbb2
 
+!st.color0: #000000 
