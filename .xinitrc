@@ -25,12 +25,13 @@ trackpoint &
 dunst &
 dwm_status &
 # dwmblocks &
-#picom &
+#xcompmgr &
 remaps & 
 unclutter &
-nextcloud --background &
-setbg &
-togglemon 
+#nextcloud --background &
+#setbg &
+#togglemon 
+#toggle-work-mon
 xrdb ~/.Xresources &
 
 exec dwm
