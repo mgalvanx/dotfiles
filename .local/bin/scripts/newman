@@ -1,0 +1,7 @@
+#/bin/bash
+
+summon_original_nedry() {
+  setsid -f mpv --volume=54 --no-terminal "https://www.youtube.com/shorts/yCmqwZ0L4go://www.youtube.com/shorts/yCmqwZ0L4go"
+}
+
+summon_original_nedry
