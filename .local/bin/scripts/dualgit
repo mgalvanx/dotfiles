@@ -3,8 +3,12 @@
 #This script will allow you push a local repo to 2 remote repositories
 #Run this inside a repo and supply the repos name as a argument
 
-# Here is the origin of this line if you the script doesn't work
+# This is the source of the commands
 # https://joshtronic.com/2021/05/16/how-to-push-to-multiple-git-repos-at-once/
+
+# Change http cloned repo to ssh
+#git remote set-url origin git@gitlab.com:{USERNAME}/{PROJECTNAME}.git
+
 
 test -z "$GITUSER" && echo "Make sure your git username is set in GITUSER" && exit 0
 test $# -ne 1 && echo "<usauge> you must supply the name of the repo" && exit 0
