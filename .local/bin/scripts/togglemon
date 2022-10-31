@@ -6,7 +6,7 @@ extern=DP2
 mariomode=HDMI1
 
 if xrandr | grep "${extern} connected"; then 
-  xrandr --dpi 144 --output LVDS1 --scale 1.05x1.05  --auto --output DP2 --primary --above LVDS1 --mode 3440x1440 && setbg
+  xrandr --dpi 144 --output LVDS1 --mode 1280x800 --scale 1.05x1.05 --pos 992x1440 --rotate normal --output DP2 --primary --mode 3440x1440 --pos 0x0 --rotate normal && setbg
   sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' .Xresources
   exit
 fi
