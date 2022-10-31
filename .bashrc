@@ -17,7 +17,8 @@ $HOME/.config:\
 # SSH-Agent
 # This will allow a single ssh-agent process to run at a time.
 # Passwords will only be saved for 1 hour
-ssh-agent(){
+#
+ssh-agent-fix(){
   if ! pgrep -u "$USER" ssh-agent > /dev/null; then
         ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
   fi
@@ -26,7 +27,7 @@ ssh-agent(){
   fi
 }
 
-ssh-agent
+ssh-agent-fix
 
 # Make every new terminal use the current pywal colorscheme
 #source ~/.cache/wal/colors-tty.sh
