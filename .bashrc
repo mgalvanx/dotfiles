@@ -14,6 +14,20 @@ export CDPATH=.:\
 $HOME/.config:\
 ~
 
+# SSH-Agent
+# This will allow a single ssh-agent process to run at a time.
+# Passwords will only be saved for 1 hour
+ssh-agent(){
+  if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+        ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+  fi
+  if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+        source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+  fi
+}
+
+ssh-agent
+
 # Make every new terminal use the current pywal colorscheme
 #source ~/.cache/wal/colors-tty.sh
 
