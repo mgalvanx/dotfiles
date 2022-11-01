@@ -1,13 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 type_word() {
   local string="$*"
   for (( i=0; i<${#string}; i++ )); do
       printf "${string:$i:1}"
-      sleep .08
+      sleep .05
     done
   printf '\n'
 }
 
-#clear
-type_word "Greetings Professor....." && sleep 1 &&  type_word "Shall we play a game?" && sleep 2
+type_word "Greetings Professor....." && sleep 1 &&  type_word "Shall we play a game?"
+sleep .7
