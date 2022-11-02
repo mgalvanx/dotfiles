@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/pcmanfm > /dev/null 2>&1
+
+ 
