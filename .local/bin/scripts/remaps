@@ -25,7 +25,9 @@ xmodmap -e "keycode 133 = Mode_switch"
 #xcape -e 'Alt_R=Control_L|B' -t 200
 
 # This makes Alt_R a singular prefix key for tmux(The ultimate prefix key)
-xcape -e 'Alt_R=Alt_R|space' -t 200
+#xcape -e 'Alt_R=Alt_R|space' -t 200
+# This is used to make tmux use home as the prefix with right alt being a single modifier
+xcape -e 'Alt_R=Alt_R|Home' -t 200
 
 # This always goes after we set up super or alt and the main modifier key
 xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
