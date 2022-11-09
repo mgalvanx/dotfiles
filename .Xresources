@@ -5,11 +5,11 @@
 !Xft.dpi: 144
 
 ! Current DPI
-Xft.dpi: 144
+Xft.dpi: 130
 
 
 st.font: Fira Code:regular:size=12.5
-!*.alpha: 0.3
+*.alpha: 0.8
 dmenu.font: #monospace: size=12
 dwm.font: #monospace: size=12
 
@@ -61,8 +61,9 @@ dwm.borderpx: 3
 ! Dracula Xresources palette
 
 xterm*.faceName: Fira Code 
-xterm*.faceSize: 16
-xterm*.color0: #282A36
+xterm*.faceSize: 12.5
+!xterm*.color0: #282A36
+xterm*.background: #000000
 
 *.foreground: #F8F8F2
 *.background: #282A36
