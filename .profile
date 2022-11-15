@@ -38,6 +38,9 @@ export XDG_DESKTOP_DIR="${HOME}/${USER}"
 export XDG_DOWNLOAD_DIR="${HOME}/downloads"
 #export HISTFILE=~/.config/bash/.bash_history
 
+# Change the default GOPATH and GOBIN
+#export GOPATH="$HOME/.local/share/go"
+#export GOBIN="$HOME/.local/bin"
 
 # This makes tmux use .config to save configuration files.(Used with bash aliases)
 #export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
