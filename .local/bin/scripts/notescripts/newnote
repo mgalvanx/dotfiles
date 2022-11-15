@@ -2,7 +2,7 @@
 
 notename="${*^}"
 filename=$(echo "${notename,,}" | tr ' ' '_')
-notepath="${NOTES}/0_Inbox/${filename}.md"
+notepath="${NOTES}/${filename}.md"
 
 if test ! -f $notepath ; then
  printf "# ${notename}\n\n" > $notepath
