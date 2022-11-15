@@ -15,6 +15,8 @@ export BROWSERCLI="w3m"
 export SCRIPTS=~/.local/bin/scripts
 export WALLPAPER=~/nextcloud/wallpaper
 export NOTES=~/nextcloud/notes
+export INBOX=~/nextcloud/notes/0_Inbox
+#export TODO= # Add a path for todos
 
 # Adds `~/.local/bin` to $PATH(So my custom scripts can run from the command line)
 # export PATH=$PATH:~/.local/bin/scripts
