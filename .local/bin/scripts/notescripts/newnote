@@ -1,8 +1,8 @@
 #!/bin/bash
 
 notename="${*^}"
-filename=$(echo "${notename,,}" | tr ' ' '_')
-notepath="${NOTES}/${filename}.md"
+filename=$(echo "${notename,,}" | tr ' ' '-')
+notepath="${INBOX}/${filename}.md"
 
 if test ! -f $notepath ; then
  printf "# ${notename}\n\n" > $notepath
