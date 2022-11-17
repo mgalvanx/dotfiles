@@ -1,0 +1,16 @@
+#!/bin/sh
+
+noteFilename="${TODO}/todos-$(date +%m-%d-%Y).md"
+
+if [ ! -f $noteFilename ]; then
+  echo "# Todo List for $(date +%m-%d-%Y)" > $noteFilename
+fi
+
+vim -c "norm Go" \
+  -c "norm Go## $(date +%I:%M)" \
+  -c "norm Go" \
+  -c "norm Go" \
+  -c "norm zz" \
+  -c "startinsert" $noteFilename
+
+
