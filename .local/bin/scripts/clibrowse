@@ -1,5 +1,4 @@
 #!/bin/sh
-
 browser="$1";shift
 search_engine="$1";shift
 query="$*"
@@ -11,27 +10,33 @@ case $browser in
 esac
 
 case $search_engine in
-  google) search_engine=https://www.google.com/search?q= ;;
-  brave) search_engine=https://search.brave.com/search?q= ;;
-  duck) search_engine=https://duckduckgo.com/lite?kd=-1\&kp=-1\&q= ;;
+  google) search_engine='https://www.google.com/search?q=' ;;
+  brave) search_engine='https://search.brave.com/search?q=' ;;
+  duck) search_engine='https://duckduckgo.com/lite?kd=-1\&kp=-1\&q=' ;;
 esac
 
 
-if $browser -eq w3m -a $search_engine -eq $search_engine; then
-    search_engine=https://duckduckgo.com/lite?kd=-1&kp=-1&q=
+if test "$browser" == 'w3m' -a "$search_engine" == 'https://duckduckgo.com/lite?kd=-1\&kp=-1\&q='; then
+#    search_engine='https://duckduckgo.com/lite?kd=-1&kp=-1&q='
     query=$(urlencode "$query")
 fi
 
+# if test "$browser" == 'lynx' -a "$search_engine" == 'https://www.google.com/search?q='; then
+#     search_engine='https://duckduckgo.com/lite?kd=-1&kp=-1&q='
+#     query=$(urlencode "$query")
+# fi
+
 #search_engine=https://duckduckgo.com/lite?kd=-1&kp=-1&q=
 
-if test -n "$TMUX"; then
-  tmux new-window -n "$browser"
-	tmux send-keys "\"$browser\" \"${search_engine}${query}\" && tmux kill-window" Enter
-	return 0
-fi
+# if test -n "$TMUX"; then
+#   tmux new-window -n "$browser"
+# 	tmux send-keys "\"$browser\" \"${search_engine}${query}\" && tmux kill-window" Enter
+# 	return 0
+# fi
 
 #exec w3m "duckduckgo.com/lite?kd=-1&kp=-1&q=$*"
 # chat "🦆 searching: $* $url"
 #exec lynx "$url"
 #exec lynx "duckduckgo.com/lite?q=$*" # 🦆
-exec "$browser" "${search_engine}${query}"
+"$browser" "${search_engine}${query}" && clear
+
