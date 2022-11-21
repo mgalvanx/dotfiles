@@ -16,12 +16,16 @@ alias gmk="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 
 # cli browsing aliases
-alias ?='clibrowse lynx duck'
-alias ?b='clibrowse lynx brave'
-alias ?g='clibrowse lynx google'
-alias ??='clibrowse w3m duck'
-alias ??b='clibrowse w3m brave'
-alias ??g='clibrowse w3m google'
+# alias ??='clibrowse lynx duck'
+# alias ??b='clibrowse lynx brave'
+# alias ??g='clibrowse lynx google'
+# alias sd='clibrowse w3m duck'
+# alias sb='clibrowse w3m brave'
+# alias sg='clibrowse w3m google'
+alias sd='duck'
+alias sb='brave'
+alias sg='google'
+
 
 
 # Tmux

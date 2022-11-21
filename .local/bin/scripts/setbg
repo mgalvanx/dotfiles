@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+#set -x
 
 # This script does the following:
 #	Run by itself, set the wallpaper (at X start).
