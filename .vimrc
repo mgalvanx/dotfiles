@@ -169,3 +169,6 @@ autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " 
 "autocmd VimLeave * call system("tmux rename-window shell")
 autocmd VimLeave * call system("tmux kill-pane")
 "au bufnewfile,bufRead $SNIPPETS/go/* set ft=bash
+"
+" This script contains mappings
+source ~/.vim/mapping.vim
