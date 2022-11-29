@@ -40,10 +40,6 @@ bind "set menu-complete-display-prefix on"
 bind "set completion-ignore-case on"
 
 
-#FZF Keybindings
-bind '"\C-f": "cd_with_fzf\n"'
-bind '"\C-o": "open_with_fzf\n"'
-
 #This sets the prompt for terminal
 PROMPT_LONG=50
 PROMPT_MAX=95
@@ -98,7 +94,9 @@ alias chmox='chmod +x'
 alias ..='cd ..' 
 alias ...='cd ../..'
 
+# Function Alias
 
+alias f='cd_with_fzf'
 
 # Pager
 # Hack that makes man pages uses color(More minimal than using bat) Rob suggest to copy and paste(Manpager variable does not work on all system , this works universally)# See beginner boost 27 at the 10:00 mark to get this to work
@@ -136,9 +134,11 @@ open_with_fzf() {
   find . -type f | fzf -d / --with-nth=-1 --cycle --layout=reverse-list   --keep-right --preview="bat -p --color always {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up
 }
 
-# cd_with_fzf() {
-#   local dir_path=$(find $HOME -maxdepth 5 -type d | grep -v '.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
-#   local dir="${dir_path##*/}"
+cd_with_fzf() {
+  local dir_path=$(find $HOME -maxdepth 5 -type d -path $GDRIVE -prune -o -print | grep -v 'gdrive\|.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
+  local dir="${dir_path##*/}"
+  cd "${dir_path}"
+
 #   if [[ -z "$TMUX" ]]; then
 #     tmux new-session  -s "$dir" && tmux attach -t "$dir" &&  tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
 #     echo "attach isn't attaching"
@@ -149,7 +149,8 @@ open_with_fzf() {
 #   tmux new-session -d -s "$dir"
 #   tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
 #   tmux switch-client -t "$dir"
-#}
+
+}
 
 install_vim() {
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -157,28 +158,6 @@ install_vim() {
   vim -es -u ${HOME}/.vimrc -i NONE -c "PlugInstall" -c "qa"
 }
 
-cd_fzf() {
-  local dir_path=$(find $HOME -maxdepth 5 -type d | grep -v '.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
-
-#  if [[ -z "$dir_path" ]]; then
-#    return 1
-#  fi
-
-  local dir="${dir_path##*/}"
-  local dir="${dir//./}"
-
-  tmux has-session -t $dir 2>/dev/null
-  if [[ $? -eq 1 ]]; then
-    tmux new-session -d -s "$dir" #-n "shell"
-    tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
-  fi
-
-  if [[ -z "$TMUX" ]]; then
-    tmux attach -t "$dir"
-    return 0
-  fi
-  tmux switch-client -t "$dir"
-}
 
 owncomp=(greet)
 for i in ${owncomp[@]}; do complete -C $i $i; done
