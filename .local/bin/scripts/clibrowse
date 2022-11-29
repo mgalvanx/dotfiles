@@ -1,4 +1,8 @@
 #!/bin/sh
+# TODO
+# This script was creating a segmention fault when paired with w3m and tmux. 
+# Further research is to be done and I am using dedicated browser scripts in the meantime
+
 browser="$1";shift
 search_engine="$1";shift
 query="$*"
@@ -18,6 +22,9 @@ esac
 
 if test "$browser" == 'w3m' -a "$search_engine" == 'https://duckduckgo.com/lite?kd=-1\&kp=-1\&q='; then
 #    search_engine='https://duckduckgo.com/lite?kd=-1&kp=-1&q='
+    search_engine='https://lite.duckduckgo.com/lite/?q='
+
+
     query=$(urlencode "$query")
 fi
 
