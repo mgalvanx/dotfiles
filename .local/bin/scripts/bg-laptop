@@ -1,0 +1,36 @@
+#!/bin/sh
+set -x
+
+killall -9 xwinwrap
+extern='DP2'
+
+#wp=$(find ~/videos/ -type f | shuf -n 1)
+#
+
+_screen() {
+    xwinwrap -ov -ni -g 1366x768+0+0 -- mpv --fullscreen\
+        --no-stop-screensaver \
+        --vo=gpu --hwdec=vdpau \
+        --loop-file --no-audio --no-osc --no-osd-bar -wid WID --no-input-default-bindings \
+        "${HOME}/videos/stars.webm" &
+}
+
+
+
+
+_work_screen() {
+    xwinwrap -ov -ni -g 1366x768+1050+912 -- mpv --fullscreen\
+        --no-stop-screensaver \
+        --vo=gpu --hwdec=vdpau \
+        --loop-file --no-audio --no-osc --no-osd-bar -wid WID --no-input-default-bindings \
+        "${HOME}/videos/stars.webm" &
+}
+
+if xrandr | grep "${extern} connected"; then
+  _work_screen
+  exit 
+fi
+
+#_screen
+
+
