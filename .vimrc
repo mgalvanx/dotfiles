@@ -166,8 +166,11 @@ au bufnewfile,bufRead *.bash* set ft=bash
 au bufnewfile,bufRead $SNIPPETS/bash/* set ft=bash
 " https://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
-"autocmd VimLeave * call system("tmux rename-window shell")
-autocmd VimLeave * call system("tmux kill-pane")
+"autocmd VimLeave * call system("tmux rename-window bash")
+"autocmd VimLeave * call system("tmux rename-window 'tmux'")
+autocmd VimLeave,FocusLost * call system("tmux set-window-option automatic-rename")
+
+"autocmd VimLeave * call system("tmux kill-pane")
 "au bufnewfile,bufRead $SNIPPETS/go/* set ft=bash
 "
 " This script contains mappings

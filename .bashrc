@@ -77,12 +77,14 @@ shopt -s globstar
 set -o vi
 
 # Terminal Alias
+alias vi='$EDITOR'
 alias ls='ls -ah --color=auto --group-directories-first'
 alias grep='grep -i --colour=auto'
 alias egrep='egrep -i --colour=auto'
 alias fgrep='fgrep -i --colour=auto'
 alias pgrep='pgrep -i --colour=auto'
 alias diff='diff --color=auto'
+alias lss='ls | less'
 alias ip='ip -c'
 alias temp='cd $(mktemp -d)'
 alias ctemp='. $SCRIPTS/ctemp'

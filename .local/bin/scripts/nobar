@@ -1,4 +1,5 @@
 #!/bin/sh
 
-sleep 4
+
+sleep .05
 xdotool key 'alt+b'
