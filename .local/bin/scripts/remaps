@@ -18,8 +18,9 @@ setxkbmap -option 'caps:ctrl_modifier'
 #setxkbmap -option 'caps:ctrl_modifier' -option 'shift:both_capslock' 
 # But when it is pressed only once, treat it as escape.
 killall xcape 2>/dev/null ; xcape -e 'Caps_Lock=Escape'
+
 # Change Super To Modifier Key
-xmodmap -e "keycode 133 = Mode_switch"
+#xmodmap -e "keycode 133 = Mode_switch"
 
 # This makes Alt_R a singular prefix key for tmux(The ultimate prefix key)
 #xcape -e 'Alt_R=Control_L|B' -t 200
@@ -27,20 +28,20 @@ xmodmap -e "keycode 133 = Mode_switch"
 # This makes Alt_R a singular prefix key for tmux(The ultimate prefix key)
 #xcape -e 'Alt_R=Alt_R|space' -t 200
 # This is used to make tmux use home as the prefix with right alt being a single modifier
-xcape -e 'Alt_R=Alt_R|Home' -t 200
+#xcape -e 'Alt_R=Alt_R|Home' -t 200
 
 # This always goes after we set up super or alt and the main modifier key
 xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
 
 #------------------------Custom Mode_switch Keys-------------------------------
 # Vim arrow keys
-xmodmap -e "keycode 43 = h H Left Left"
-xmodmap -e "keycode 44 = j J Down Down"
-xmodmap -e "keycode 45 = k K Up Up"
-xmodmap -e "keycode 46 = l L Right Right"
+#xmodmap -e "keycode 43 = h H Left Left"
+#xmodmap -e "keycode 44 = j J Down Down"
+#xmodmap -e "keycode 45 = k K Up Up"
+#xmodmap -e "keycode 46 = l L Right Right"
 
-# Experimental Modifiers I like
-xmodmap -e "keycode 58 = m M Menu Menu"
+# Changes menu key to super_L
+#xmodmap -e "keycode 58 = m M Menu Menu"
 xmodmap -e "keycode 135 = Super_L"
 
 #notify-send "Default keyboard remap has been applied"
