@@ -3,19 +3,46 @@
 set -x
 intern=LVDS1
 extern=DP2
-mariomode=HDMI1
+int_res=$(xrandr -q | grep "$intern" | grep -oP '\d+x\d+')
 
-if xrandr | grep "${extern} connected"; then 
-  xrandr --dpi 144 --output LVDS1 --mode 1280x800 --scale 1.05x1.05 --pos 992x1440 --rotate normal --output DP2 --primary --mode 3440x1440 --pos 0x0 --rotate normal && setbg
-  sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' .Xresources
-  exit
-fi
+setup_home(){
+		xrandr --dpi 144 --output LVDS1 --mode "$int_res" --scale 1.05x1.05 --pos 992x1440 --rotate normal --reflect normal --output DP2 --primary --mode "$ext_res" --pos 0x0 --rotate normal --reflect normal && setbg
+		sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' "${HOME}/.Xresources"
+    exit
+}
 
-if xrandr | grep "${mariomode} connected"; then 
-  xrandr --output HDMI1 --primary --mode 1680x1050 --output LVDS1 --off && setbg
-  exit
-fi
+setup_work(){
+		xrandr --output "$intern" --primary --mode 1366x768 --pos 1050x912 --rotate normal --reflect normal --output "$extern" --noprimary --mode 1680x1050 --pos 0x0 --rotate left
+    exit
+}
 
-#xrandr --dpi 123.39 --output "$extern" --off --output "$intern" --auto 
-xrandr --dpi 130 --output "$extern" --off --output "$intern" --auto 
-sed -i 's/^Xft.dpi: 144/Xft.dpi: 130/' .Xresources
+
+detect_monitor(){
+	if xrandr -q | grep "${extern} connected"; then 
+		ext_res=$(xrandr -q | grep "$extern" | grep -oP '\d+x\d+')
+  fi
+  if test -z "$ext_res"; then
+		max_res=$(xrandr -q | grep  ' +' | grep -oP '\d+x\d+')
+		ext_res="$max_res"
+  fi
+	case $ext_res in 
+		1680x1050) setup_work ;;
+		3440x1440) setup_home ;;
+	esac
+}
+
+# fireup(){
+#    if [[ "$currenttime" > "08:30" ]] || [[ "$currenttime" < "17:30" ]]; then
+# 		 setup_work
+#    fi
+# 	 setup_home	
+# }
+
+main(){
+	detect_monitor
+	#xrandr --dpi 123.39 --output "$extern" --off --output "$intern" --auto 
+	xrandr --dpi 130 --output "$intern" --scale 1.0x1.0 --pos 0x0 --auto --primary --rotate normal --reflect normal --output "$extern" --off
+	sed -i 's/^Xft.dpi: 144/Xft.dpi: 130/' "${HOME}/.Xresources"
+}
+
+main
