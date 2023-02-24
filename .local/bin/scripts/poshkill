@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cmd.exe /c "powershell.exe" -command "(stop-process -name 'WindowsTerminal')" 
+

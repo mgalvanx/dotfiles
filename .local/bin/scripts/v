@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+#"$EDITOR" -c "startinsert" && poshkill
+"$EDITOR" -c "startinsert" && bash -c exit
+
+
