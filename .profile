@@ -1,7 +1,8 @@
 # I'm using a .profile instead of a .bash_profile because it looks neater in the home directory.(It also has better compatibility with other shells)
 # This file runs once I login and sets up envirnmental variables so my programs can know my default(where to save data).
 
-
+# Autostart Tmux
+#[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session;}
 # This command sources the bash rc file.
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
