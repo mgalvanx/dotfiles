@@ -1,5 +1,5 @@
 nnoremap ,b :.!bash<CR>
-inoremap <tab> <C-X><C-F>
+nnoremap ,y :%y+<CR>:q!<CR>
 
 
 
