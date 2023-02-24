@@ -16,6 +16,7 @@ test $# -ne 1 && echo "<usauge> you must supply the name of the repo" && exit 0
 git push --set-upstream origin master
 
 git_repo="$1"
-
+# These commands should be run after the --set-upstream command. 
 git remote set-url --add --push origin git@gitlab.com:$GITUSER/$git_repo.git
 git remote set-url --add --push origin git@github.com:$GITUSER/$git_repo.git
+
