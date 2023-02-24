@@ -1,0 +1,11 @@
+#!/bin/sh
+
+apt_fzf(){
+  package=$(apt-cache dumpavail | grep 'Package:' | sed 's/Package: //g' | fzf)
+  if test $package -z; then
+    return
+  fi
+  sudo apt install -y "$package"
+}
+
+apt_fzf
