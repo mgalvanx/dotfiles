@@ -5,4 +5,10 @@ while true; do
   sleep 7
   xdotool key alt+2
   sleep 7
+  xdotool key alt+3
+  sleep 7
+  xdotool key alt+4
+  sleep 7
+  xdotool key alt+5
+  sleep 7
 done

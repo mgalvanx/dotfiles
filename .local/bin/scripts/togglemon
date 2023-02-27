@@ -2,7 +2,7 @@
 
 set -x
 intern=LVDS1
-extern=DP2
+extern=DP3
 int_res=$(xrandr -q | grep "$intern" | grep -oP '\d+x\d+')
 
 setup_home(){

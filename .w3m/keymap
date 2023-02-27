@@ -220,7 +220,7 @@ keymap C-] TAB_LINK
 #keymap C-j GOTO_LINK
 keymap l GOTO_LINK
 
-keymap f LINK_END
+#keymap f LINK_END
 
 ########## info ##########
 keymap y PEEK
@@ -255,3 +255,90 @@ keymap ZZ EXIT
 keymap C-Q EXIT
 keymap ZQ QUIT
 keymap q QUIT
+
+# $EDITOR ~/.w3m/keymap
+
+# for more help on options
+# $ w3m -show-option
+
+# leader key = \
+keymap  \\\?    COMMAND       "HELP; SEARCH ^User-Defined; CENTER_V"            # show user custom hotkeys binding
+keymap  \\\f    COMMAND       "HELP; SEARCH ^Input Line Editing Mode; CENTER_V" # show field hotkeys binding
+keymap  \\\c    COMMAND       "SET_OPTION color=toggle ; RESHAPE"
+keymap  \\\u    COMMAND       "SET_OPTION mark_all_pages=toggle ; RELOAD"      # Treat URL-like strings as links in all pages (convert text to url)
+keymap  \\\l    COMMAND       "SET_OPTION display_link_number=toggle ; SET_OPTION show_lnum=toggle ; RESHAPE" # toggle hinting mode / line numbers
+keymap  \\\h    COMMAND       "SET_OPTION display_link_number=toggle ; RESHAPE" # toggle hinting mode
+keymap  \\\n    COMMAND       "SET_OPTION show_lnum=toggle ; RESHAPE"           # toggle line numbers
+keymap  \\\b    COMMAND       "SET_OPTION display_borders=toggle ; RESHAPE"
+keymap  \\\i    COMMAND       "SET_OPTION display_image=toggle ; RELOAD"
+keymap  \\\e    COMMAND       "SET_OPTION user_agent='' ; RELOAD"               # empty user agent
+keymap  \\\A    COMMAND       "SET_OPTION user_agent='Opera/9.80 (S60; SymbOS; Opera Mobi/SYB-1107071606; U; en) Presto/2.8.149 Version/11.10' ; RELOAD"
+keymap  \\\m    COMMAND       "SHELL 'man w3m'"
+
+#### toggle hinting mode (vimium similar)
+keymap  f-SPC   COMMAND "SET_OPTION display_link_number=toggle ; RESHAPE"
+#### jump to link number (e.g press 3ff) and hide hinting mode (similar to gg in vim)
+keymap  fo      COMMAND "SET_OPTION display_link_number=0 ; RESHAPE ; LINK_BEGIN"
+#### open current cursor link in new tab and hide hinting mode
+keymap  fn      COMMAND "SET_OPTION display_link_number=0 ; RESHAPE ; TAB_LINK"
+#### copy link to clipboard (e.g press f-SPC then 4fy to yank url)
+keymap  fy      COMMAND "SET_OPTION display_link_number=0 ; RESHAPE ; LINK_BEGIN ; EXTERN_LINK 'url=%s ; printf "%b" "$url" > /tmp/clipbrd.txt ; printf "%b" "$url" | xsel -b 2>/dev/null ; printf "%b" "$url" | tmux load-buffer - ; printf '%s' "$url" | wl-copy 2>/dev/null  ; printf '%s' "$url" | clip 2>/dev/null ; printf '%s' "$url" > /dev/clipboard 2>/dev/null ; printf '%s' "$url" | pbcopy 2>/dev/null ; printf '%s' "$url" | termux-clipboard-set 2>/dev/null'"
+#### jump to link number and open it
+keymap  ff       COMMAND "SET_OPTION display_link_number=0 ; RESHAPE ; LINK_BEGIN ; GOTO_LINK"
+#### jump to link number and open it in new tab
+keymap  ft       COMMAND "SET_OPTION display_link_number=0 ; RESHAPE ; LINK_BEGIN ; TAB_LINK"
+# yank url to multiple clipboard (under cursor)
+keymap  yy      EXTERN_LINK "url=%s ; printf "%b" "$url" > /tmp/clipbrd.txt ; printf "%b" "$url" | xsel -b 2>/dev/null ; printf "%b" "$url" | tmux load-buffer - ; printf '%s' "$url" | wl-copy 2>/dev/null  ; printf '%s' "$url" | clip 2>/dev/null ; printf '%s' "$url" > /dev/clipboard 2>/dev/null ; printf '%s' "$url" | pbcopy 2>/dev/null ; printf '%s' "$url" | termux-clipboard-set 2>/dev/null"
+# yank url to multiple clipboard (current page)
+keymap  YY      EXTERN "url=%s ; printf "%b" "$url" > /tmp/clipbrd.txt ; printf "%b" "$url" | xsel -b 2>/dev/null ; printf "%b" "$url" | tmux load-buffer - ; printf '%s' "$url" | wl-copy 2>/dev/null  ; printf '%s' "$url" | clip 2>/dev/null ; printf '%s' "$url" > /dev/clipboard 2>/dev/null ; printf '%s' "$url" | pbcopy 2>/dev/null ; printf '%s' "$url" | termux-clipboard-set 2>/dev/null"
+
+# Configuration
+# chmod +x ~/.w3m/cgi-bin/*.cgi
+# sed -i 's@^cgi_bin.*@cgi_bin ~/.w3m/cgi-bin:/usr/lib/w3m/cgi-bin:/usr/local/libexec/w3m/cgi-bin@g' ~/.w3m/config
+# sed -i 's@^use_dictcommand.*@use_dictcommand 1@g' ~/.w3m/config
+
+
+# Dictionary Lookup {{{
+############################ Execute dictionary command (see README.dict) (DICT_WORD)
+keymap  \\\d    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ; DICT_WORD"
+############################ Execute dictionary command for word at cursor (DICT_WORD_AT)
+keymap  \\\w    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ; DICT_WORD_AT"
+############################ Execute omnibar command (DICT_WORD)
+# }}}
+
+############################ Omnibar search engines {{{
+# user input keywords to search
+keymap  s1      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_1337x.cgi ; DICT_WORD"
+keymap  sa      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_aspell.cgi ; DICT_WORD"
+keymap  sb      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_bing.cgi ; DICT_WORD"
+keymap  sd      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_duckduckgo.cgi ; DICT_WORD"
+keymap  sg      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_google.cgi ; DICT_WORD"
+keymap  si      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_geminispace.cgi ; DICT_WORD"
+keymap  sn      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_nyaasi.cgi ; DICT_WORD"
+keymap  sp      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_piratebay.cgi ; DICT_WORD"
+keymap  sr      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_subreddit.cgi ; DICT_WORD"
+keymap  st      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_twitch.cgi ; DICT_WORD"
+keymap  su      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yewtube.cgi ; DICT_WORD"
+keymap  sv      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_veronica2.cgi ; DICT_WORD"
+keymap  sw      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_wikipedia.cgi ; DICT_WORD"
+keymap  sx      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_xdcceu.cgi ; DICT_WORD"
+keymap  sy      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yahoo.cgi ; DICT_WORD"
+# search current word under cursor
+keymap  s2      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_1337x.cgi ; DICT_WORD_AT"
+keymap  sA      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_aspell.cgi ; DICT_WORD_AT"
+keymap  sB      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_bing.cgi ; DICT_WORD_AT"
+keymap  sD      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_duckduckgo.cgi ; DICT_WORD_AT"
+keymap  sG      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_google.cgi ; DICT_WORD_AT"
+keymap  sI      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_geminispace.cgi ; DICT_WORD_AT"
+keymap  sN      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_nyaasi.cgi ; DICT_WORD_AT"
+keymap  sP      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_piratebay.cgi ; DICT_WORD_AT"
+keymap  sR      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_subreddit.cgi ; DICT_WORD_AT"
+keymap  sU      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yewtube.cgi ; DICT_WORD_AT"
+keymap  sV      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_veronica2.cgi ; DICT_WORD_AT"
+keymap  sW      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_wikipedia.cgi ; DICT_WORD_AT"
+keymap  sX      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_xdcceu.cgi ; DICT_WORD_AT"
+keymap  sY      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yahoo.cgi ; DICT_WORD_AT"
+keymap  sT      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_twitch.cgi ; DICT_WORD_AT"
+# }}}
+
+keymap  e      EXTERN_LINK "$SCRIPTS/urlportal.sh"
