@@ -1,12 +1,29 @@
 #!/bin/sh
 
 set -x
+
 intern=LVDS1
 extern=DP3
 int_res=$(xrandr -q | grep "$intern" | grep -oP '\d+x\d+')
+ext_res=$(xrandr -q | grep "$extern" | grep -oP '\d+x\d+')
+
+detect_monitor(){
+#	if xrandr -q | grep "${extern} connected"; then 
+#		ext_res=$(xrandr -q | grep "$extern" | grep -oP '\d+x\d+')
+#  fi
+  if test -z "$ext_res"; then
+		max_res=$(xrandr -q | grep  ' +' | grep -oP '\d+x\d+')
+		ext_res="$max_res"
+  fi
+	case $ext_res in 
+		1680x1050) setup_work ;;
+		3440x1440) setup_home ;;
+    *) no_monitor ;;
+	esac
+}
 
 setup_home(){
-		xrandr --dpi 144 --output LVDS1 --mode "$int_res" --scale 1.05x1.05 --pos 992x1440 --rotate normal --reflect normal --output DP2 --primary --mode "$ext_res" --pos 0x0 --rotate normal --reflect normal && setbg
+		xrandr --dpi 144 --output LVDS1 --mode "$int_res" --scale 1.05x1.05 --pos 992x1440 --rotate normal --reflect normal --output "$extern" --primary --mode "$ext_res" --pos 0x0 --rotate normal --reflect normal && setbg
 		sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' "${HOME}/.Xresources"
     exit
 }
@@ -16,19 +33,10 @@ setup_work(){
     exit
 }
 
-
-detect_monitor(){
-	if xrandr -q | grep "${extern} connected"; then 
-		ext_res=$(xrandr -q | grep "$extern" | grep -oP '\d+x\d+')
-  fi
-  if test -z "$ext_res"; then
-		max_res=$(xrandr -q | grep  ' +' | grep -oP '\d+x\d+')
-		ext_res="$max_res"
-  fi
-	case $ext_res in 
-		1680x1050) setup_work ;;
-		3440x1440) setup_home ;;
-	esac
+no_monitor(){
+	xrandr --dpi 130 --output "$intern" --scale 1.0x1.0 --pos 0x0 --auto --primary --rotate normal --reflect normal --output "$extern" --off
+	sed -i 's/^Xft.dpi: 144/Xft.dpi: 130/' "${HOME}/.Xresources"
+	#xrandr --dpi 123.39 --output "$extern" --off --output "$intern" --auto 
 }
 
 # fireup(){
@@ -40,9 +48,6 @@ detect_monitor(){
 
 main(){
 	detect_monitor
-	#xrandr --dpi 123.39 --output "$extern" --off --output "$intern" --auto 
-	xrandr --dpi 130 --output "$intern" --scale 1.0x1.0 --pos 0x0 --auto --primary --rotate normal --reflect normal --output "$extern" --off
-	sed -i 's/^Xft.dpi: 144/Xft.dpi: 130/' "${HOME}/.Xresources"
 }
 
 main
