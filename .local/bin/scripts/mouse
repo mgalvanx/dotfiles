@@ -1,0 +1,8 @@
+#!/bin/bash
+# https://wiki.archlinux.org/title/Mouse_acceleration
+#
+#xinput list-props 'Cradio Mouse'
+
+xinput --set-prop 'Cradio Mouse' 'libinput Accel Speed' 1
+xinput --set-prop 'Cradio Mouse' 'libinput Scrolling Pixel Distance' 10 
+#xinput --set-prop 'Cradio Mouse' 'libinput High Resolution Wheel Scroll Enabled' 0

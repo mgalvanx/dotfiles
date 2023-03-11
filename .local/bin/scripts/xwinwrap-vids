@@ -1,0 +1,16 @@
+#!/bin/sh
+
+killall -9 xwinwrap
+
+wp=$(find ~/videos/ -type f | shuf -n 1)
+
+# xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- \
+# mpv --title="wallpaper" --hwdec=vdpau --vo=gpu --no-audio --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --loop -wid WID \
+# $wp &
+
+
+xwinwrap -g 1366x768+0+0 -un -fdt -ni -b -nf -ov -- \
+mpv --title="wallpaper" --geometry=1366x768+0+0 --hwdec=vdpau --vo=gpu --no-audio --no-border --no-config --no-window-dragging --no-input-default-bindings --no-osd-bar --no-sub --loop -wid WID \
+$wp &
+
+
