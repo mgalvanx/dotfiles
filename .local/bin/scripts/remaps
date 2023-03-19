@@ -1,8 +1,5 @@
 # This script is called on startup to remap keys.
 
-# Increase key speed via a rate change
-xset r rate 300 50
-
 #    Super Key Is Main Key
 # Map the caps lock key to super
 #setxkbmap -option caps:super
@@ -10,7 +7,7 @@ xset r rate 300 50
 #killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
 # Left Alt Changed To Modifier Key
 #xmodmap -e "keycode 64 = Mode_switch"
-
+xset r rate 150 30
 #    Alt Keys are the Main Key
 # Map the caps lock key to alt
 setxkbmap -option 'caps:ctrl_modifier' 
