@@ -27,7 +27,7 @@ ssh-agent-fix(){
   fi
 }
 
-ssh-agent-fix
+#ssh-agent-fix
 
 # Make every new terminal use the current pywal colorscheme
 #source ~/.cache/wal/colors-tty.sh
@@ -97,8 +97,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Function Alias
+alias f='open_with_fzf'
+alias o='cd_with_fzf'
 
-alias f='cd_with_fzf'
+# Function Alias
+alias sy='youtube'
+alias sw='wiki'
+alias sr='reddit'
+alias di='dict'
 
 # Pager
 # Hack that makes man pages uses color(More minimal than using bat) Rob suggest to copy and paste(Manpager variable does not work on all system , this works universally)# See beginner boost 27 at the 10:00 mark to get this to work
@@ -132,12 +138,32 @@ export LESS_TERMCAP_us="[4m"  # underline
 # A set of functions that allows us to quickly navigate to folders,files and even open them will our default applications
 #Source:https://www.youtube.com/watch?v=QeJkAs_PEQQ
 
+# open_with_fzf() {
+#   choice=$(find $HOME -type f | fzf -d / --with-nth=-1 --cycle --layout=reverse-list   --keep-right --preview="cat {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up)
+#   if [[ -z $choice ]];then
+#     return
+#   fi 
+#   $EDITOR $choice
+# }
+
 open_with_fzf() {
-  find . -type f | fzf -d / --with-nth=-1 --cycle --layout=reverse-list   --keep-right --preview="bat -p --color always {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up
+  choice=$(find $HOME -maxdepth 5 \( -path "${HOME}/.cache" -o -path "${HOME}/.mozilla" -o -name "BraveSoftware" -o -name "virtualbox-vms" \) -prune -o  -type f -print| sort | fzf -d "${USER}/" --with-nth=2 --keep-right --cycle --layout=reverse-list  --preview="cat {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up)
+  if [[ -z $choice ]];then
+    return
+  fi 
+
+  if [[ $(xdg-mime query filetype "$choice") == *text* ]];then
+    xdg-open $choice
+    return  
+  fi
+  setsid -f  xdg-open "$choice"
+  #xdg-mime query filetype example.ext
 }
 
+
 cd_with_fzf() {
-  local dir_path=$(find $HOME -maxdepth 5 -type d -path $GDRIVE -prune -o -print | grep -v 'gdrive\|.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
+  local dir_path=$(find $HOME -maxdepth 4 \( -path "${HOME}/.cache" -o -path "${HOME}/.mozilla" -o -name "BraveSoftware" -o -name "virtualbox-vms" \) -prune -o -type d -print| fzf -d "${USER}/" --with-nth=2 --keep-right --cycle --layout=reverse-list  --preview="cat {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up)
+  #local dir_path=$(find $HOME -maxdepth 3 -type d  | grep -v 'gdrive\|.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
   local dir="${dir_path##*/}"
   cd "${dir_path}"
 
