@@ -1,0 +1,4 @@
+#!/bin/sh
+
+QUERY_STRING="$*"
+curl -s "dict://dict.org/d:${QUERY_STRING}" | less

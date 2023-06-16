@@ -1,0 +1,4 @@
+#!/bin/sh
+
+QUERY_STRING="$*"
+exec w3m "https://www.reddit.com/r/${QUERY_STRING}/.mobile"

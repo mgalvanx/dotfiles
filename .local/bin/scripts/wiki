@@ -1,0 +1,4 @@
+#!/bin/sh
+search="$*"
+
+exec w3m "https://en.wikipedia.org/w/index.php?search=${search}&title=Special%3ASearch&profile=default&fulltext=1&ns0=1"

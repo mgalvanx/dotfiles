@@ -1,0 +1,4 @@
+#!/bin/sh
+
+QUERY_STRING="$*"
+exec w3m "https://yewtu.be/search?q=$QUERY_STRING"
