@@ -1,0 +1,19 @@
+#!/bin/bash
+
+dmenu_open() {
+  choice=$(find "$HOME" -maxdepth 4 -type f | grep -v '.dotfiles\|.mozilla\|.cache\|pulse' | sed 's|/home/mgalvan/||g'| shuf | dmenu -l 6)
+  local file_path="${HOME}/${choice}"
+  if [[ -z $choice ]];then
+    return
+  fi
+
+  if [[ $(xdg-mime query filetype "$choice") == *text* ]];then
+    setsid -f "$TERMINAL" -e "${EDITOR}" "${file_path}"
+    return  
+  fi
+  setsid -f  xdg-open "$file_path"
+}
+
+dmenu_open
+
+
