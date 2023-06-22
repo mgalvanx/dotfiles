@@ -103,7 +103,7 @@ alias o='cd_with_fzf'
 # Function Alias
 alias sy='youtube'
 alias sw='wiki'
-alias sr='reddit'
+#alias sr='reddit'
 alias di='dict'
 
 # Pager
@@ -147,16 +147,24 @@ export LESS_TERMCAP_us="[4m"  # underline
 # }
 
 open_with_fzf() {
+
+  if [[ -z "$TMUX" ]]; then
+     tmux new-session  -s "$dir" && tmux attach -t "$dir" &&  tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
+     echo "attach isn't attaching"
+     echo "keys aren't being sent"
+     return 0
+   fi
+
   choice=$(find $HOME -maxdepth 5 \( -path "${HOME}/.cache" -o -path "${HOME}/.mozilla" -o -name "BraveSoftware" -o -name "virtualbox-vms" \) -prune -o  -type f -print| sort | fzf -d "${USER}/" --with-nth=2 --keep-right --cycle --layout=reverse-list  --preview="cat {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up)
   if [[ -z $choice ]];then
     return
   fi 
 
   if [[ $(xdg-mime query filetype "$choice") == *text* ]];then
-    xdg-open $choice
+    $EDITOR $choice
     return  
   fi
-  setsid -f  xdg-open "$choice"
+  setsid -f  $EDITOR "$choice"
   #xdg-mime query filetype example.ext
 }
 
@@ -173,6 +181,7 @@ cd_with_fzf() {
 #     echo "keys aren't being sent"
 #     return 0
 #   fi
+#
 #   echo "This shouldn't run when we are calling from outside tmux"
 #   tmux new-session -d -s "$dir"
 #   tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
