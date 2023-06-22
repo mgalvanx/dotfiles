@@ -158,8 +158,12 @@ keymap :O OPTIONS
 keymap :d DOWNLOAD_LIST
 
 ########## history navigation ##########
-keymap l NEXT
-keymap h PREV
+#keymap l NEXT
+#keymap h PREV
+keymap m PREV
+#keymap l GOTO_LINK
+keymap i GOTO_LINK
+
 keymap :p SELECT_MENU
 keymap :h HISTORY
 
@@ -171,7 +175,7 @@ keymap G END
 keymap d NEXT_PAGE
 keymap u PREV_PAGE
 keymap - PREV_PAGE
-keymap SPC NEXT_PAGE
+#keymap SPC NEXT_PAGE
 keymap zz CENTER_V
 ########## cursor ##########
 keymap J NEXT_TAB
@@ -194,13 +198,12 @@ keymap b PREV_WORD
 keymap C-i REDO
 keymap C-o UNDO
 ########## navigation ##########
-keymap f MOVE_LIST_MENU
-keymap F LIST_MENU
+#keymap F MOVE_LIST_MENU
+#keymap f LIST_MENU
 keymap C-n NEXT_LINK
-keymap C-p PREV_LINK
+keymap h NEXT_LINK
+keymap l PREV_LINK
 keymap k NEXT_LEFT_UP
-keymap k NEXT_LEFT_UP
-keymap j NEXT_RIGHT_DOWN
 keymap j NEXT_RIGHT_DOWN
 keymap :l PEEK_LINK
 
@@ -218,7 +221,8 @@ keymap :e LOAD
 keymap ESC-C-j SUBMIT
 keymap C-] TAB_LINK
 #keymap C-j GOTO_LINK
-keymap l GOTO_LINK
+#keymap l GOTO_LINK
+keymap i GOTO_LINK
 
 #keymap f LINK_END
 
@@ -260,6 +264,7 @@ keymap q QUIT
 
 # for more help on options
 # $ w3m -show-option
+keymap f NULL
 
 # leader key = \
 keymap  \\\?    COMMAND       "HELP; SEARCH ^User-Defined; CENTER_V"            # show user custom hotkeys binding
@@ -276,7 +281,7 @@ keymap  \\\A    COMMAND       "SET_OPTION user_agent='Opera/9.80 (S60; SymbOS; O
 keymap  \\\m    COMMAND       "SHELL 'man w3m'"
 
 #### toggle hinting mode (vimium similar)
-keymap  f-SPC   COMMAND "SET_OPTION display_link_number=toggle ; RESHAPE"
+keymap  F   COMMAND "SET_OPTION display_link_number=toggle ; RESHAPE"
 #### jump to link number (e.g press 3ff) and hide hinting mode (similar to gg in vim)
 keymap  fo      COMMAND "SET_OPTION display_link_number=0 ; RESHAPE ; LINK_BEGIN"
 #### open current cursor link in new tab and hide hinting mode
@@ -308,37 +313,45 @@ keymap  \\\w    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ;
 
 ############################ Omnibar search engines {{{
 # user input keywords to search
-keymap  s1      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_1337x.cgi ; DICT_WORD"
-keymap  sa      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_aspell.cgi ; DICT_WORD"
 keymap  sb      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_bing.cgi ; DICT_WORD"
 keymap  sd      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_duckduckgo.cgi ; DICT_WORD"
 keymap  sg      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_google.cgi ; DICT_WORD"
 keymap  si      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_geminispace.cgi ; DICT_WORD"
-keymap  sn      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_nyaasi.cgi ; DICT_WORD"
-keymap  sp      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_piratebay.cgi ; DICT_WORD"
 keymap  sr      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_subreddit.cgi ; DICT_WORD"
 keymap  st      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_twitch.cgi ; DICT_WORD"
 keymap  su      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yewtube.cgi ; DICT_WORD"
-keymap  sv      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_veronica2.cgi ; DICT_WORD"
 keymap  sw      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_wikipedia.cgi ; DICT_WORD"
-keymap  sx      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_xdcceu.cgi ; DICT_WORD"
 keymap  sy      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yahoo.cgi ; DICT_WORD"
 # search current word under cursor
-keymap  s2      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_1337x.cgi ; DICT_WORD_AT"
-keymap  sA      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_aspell.cgi ; DICT_WORD_AT"
 keymap  sB      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_bing.cgi ; DICT_WORD_AT"
 keymap  sD      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_duckduckgo.cgi ; DICT_WORD_AT"
 keymap  sG      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_google.cgi ; DICT_WORD_AT"
 keymap  sI      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_geminispace.cgi ; DICT_WORD_AT"
-keymap  sN      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_nyaasi.cgi ; DICT_WORD_AT"
-keymap  sP      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_piratebay.cgi ; DICT_WORD_AT"
 keymap  sR      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_subreddit.cgi ; DICT_WORD_AT"
 keymap  sU      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yewtube.cgi ; DICT_WORD_AT"
-keymap  sV      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_veronica2.cgi ; DICT_WORD_AT"
 keymap  sW      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_wikipedia.cgi ; DICT_WORD_AT"
-keymap  sX      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_xdcceu.cgi ; DICT_WORD_AT"
 keymap  sY      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yahoo.cgi ; DICT_WORD_AT"
 keymap  sT      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_twitch.cgi ; DICT_WORD_AT"
 # }}}
 
-keymap  e      EXTERN_LINK "$SCRIPTS/urlportal.sh"
+# surfraw prompt
+keymap xs COMMAND  "READ_SHELL ~/.w3m/cgi-bin/fzf_surfraw.cgi ; GOTO file:/cgi-bin/goto_clipboard_primary.cgi"
+
+# paste url and go (current tab)
+#keymap  pp      GOTO        /usr/lib/w3m/cgi-bin/goto_clipboard_primary.cgi
+keymap  pp      GOTO        ~/.w3m/cgi-bin/goto_clipboard_primary.cgi
+
+#paste url and go (new tab)
+keymap  PP      TAB_GOTO    /usr/lib/w3m/cgi-bin/goto_clipboard_primary.cgi
+keymap  PP      TAB_GOTO    ~/.w3m/cgi-bin/goto_clipboard_primary.cgi
+#readability mode
+#keymap ,-r COMMAND "READ_SHELL 'python3 -m readability.readability -u $W3M_URL 2> /dev/null' ; VIEW ; DELETE_PREVBUF"
+
+# toggle borders
+keymap ,-t COMMAND "SET_OPTION display_borders=toggle ; RESHAPE"
+
+# toggle line numbers
+keymap ,-l COMMAND "SET_OPTION display_link_number=toggle ; RESHAPE"
+
+# Url portal
+keymap  o      EXTERN_LINK "$SCRIPTS/urlportal.sh"
