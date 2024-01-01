@@ -188,8 +188,8 @@ keymap K PREV_TAB
 #keymap k DOWN
 keymap RIGHT MOVE_RIGHT
 keymap LEFT MOVE_LEFT
-keymap DOWN MOVE_DOWN1
-keymap UP MOVE_UP1
+keymap DOWN MOVE_DOWN
+keymap UP MOVE_UP
 keymap 0 LINE_BEGIN
 keymap $ LINE_END
 keymap w NEXT_WORD
@@ -222,7 +222,9 @@ keymap ESC-C-j SUBMIT
 keymap C-] TAB_LINK
 #keymap C-j GOTO_LINK
 #keymap l GOTO_LINK
-keymap i GOTO_LINK
+#keymap i GOTO_LINK
+keymap  I   VIEW_IMAGE
+
 
 #keymap f LINK_END
 
@@ -243,7 +245,7 @@ keymap a ADD_BOOKMARK
 keymap :b VIEW_BOOKMARK
 
 ########## tab ##########
-keymap x CLOSE_TAB
+keymap xx CLOSE_TAB
 keymap gh GOTO http://www.google.com/en
 keymap gH TAB_GOTO http://www.google.com/en
 keymap C-t NEW_TAB
@@ -265,6 +267,8 @@ keymap q QUIT
 # for more help on options
 # $ w3m -show-option
 keymap f NULL
+
+keymap  gf      MOVE_LIST_MENU
 
 # leader key = \
 keymap  \\\?    COMMAND       "HELP; SEARCH ^User-Defined; CENTER_V"            # show user custom hotkeys binding
@@ -300,7 +304,19 @@ keymap  YY      EXTERN "url=%s ; printf "%b" "$url" > /tmp/clipbrd.txt ; printf 
 # Configuration
 # chmod +x ~/.w3m/cgi-bin/*.cgi
 # sed -i 's@^cgi_bin.*@cgi_bin ~/.w3m/cgi-bin:/usr/lib/w3m/cgi-bin:/usr/local/libexec/w3m/cgi-bin@g' ~/.w3m/config
-# sed -i 's@^use_dictcommand.*@use_dictcommand 1@g' ~/.w3m/config
+#
+keymap  ]       EXTERN
+############################ Display target using an external browser (EXTERN_LINK)
+# open url under cursor (default: Esc+Shift+M); e.g 2+Esc+Shift+M
+keymap  o      EXTERN_LINK "$SCRIPTS/urlportal.sh"
+############################ Show all URLs referenced (LIST)
+keymap  gl      LIST
+############################ Pop up menu for hyperlinks to browse to (LIST_MENU)
+keymap  gF      LIST_MENU
+############################ Pop up link element menu (LINK_MENU)
+keymap  ge      LINK_MENU
+############################ Pop up accesskey menu (ACCESSKEY)
+keymap  ga      ACCESSKEY sed -i 's@^use_dictcommand.*@use_dictcommand 1@g' ~/.w3m/config
 
 
 # Dictionary Lookup {{{
@@ -310,6 +326,29 @@ keymap  \\\d    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ;
 keymap  \\\w    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ; DICT_WORD_AT"
 ############################ Execute omnibar command (DICT_WORD)
 # }}}
+#
+# File/Stream Operations {{{
+# # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# ############################ Open specified document in a new buffer (GOTO)
+keymap  ^l     GOTO
+# ############################ Go to relative address (GOTO_RELATIVE)
+keymap  ^o    GOTO_RELATIVE
+# ############################ Open specified document in a new tab (TAB_GOTO)
+keymap  O     TAB_GOTO
+# ############################ Open relative address in a new tab (TAB_GOTO_RELATIVE)
+keymap  gc    TAB_GOTO https://encrypted.google.com
+keymap  ^O    TAB_GOTO_RELATIVE
+# ############################ Open local file in a new buffer (LOAD)
+keymap  :e    LOAD
+# ############################ Execute shell command and display output (READ_SHELL)
+keymap  @    READ_SHELL
+# ############################ Execute shell command and display output (PIPE_SHELL)
+keymap  #    PIPE_SHELL
+# ############################ Pipe current buffer through a shell command and display output (PIPE_BUF)
+keymap  |    PIPE_BUF
+############################## Pipe current buffer through a shell command and display output (PIPE_BUF)
+keymap  !     EXEC_SHELL
 
 ############################ Omnibar search engines {{{
 # user input keywords to search
@@ -334,8 +373,36 @@ keymap  sY      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_yahoo.cg
 keymap  sT      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_twitch.cgi ; DICT_WORD_AT"
 # }}}
 
+# queue external media player (task-spooler) e.g youtube, video links
+keymap  xm      EXTERN_LINK   'tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-53'
+keymap  XM      EXTERN        'tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-53'
+
+# open gui browser
+ keymap  xw      EXTERN_LINK   '$BROWSER'
+ keymap  XW      EXTERN        '$BROWSER'
+ keymap  xn      EXTERN_LINK   '$BROWSER_PRIVATE'
+ keymap  XN      EXTERN        '$BROWSER_PRIVATE'
+#
 # surfraw prompt
 keymap xs COMMAND  "READ_SHELL ~/.w3m/cgi-bin/fzf_surfraw.cgi ; GOTO file:/cgi-bin/goto_clipboard_primary.cgi"
+keymap XS COMMAND  "READ_SHELL ~/.w3m/cgi-bin/fzf_surfraw.cgi ; TAB_GOTO /usr/lib/w3m/cgi-bin/goto_clipboard_primary.cgi"
+
+############################ Submit form (SUBMIT)
+keymap  ESC-C-j SUBMIT
+############################# Show current address (PEEK)
+keymap  pk      PEEK
+############################# Show target address (PEEK_LINK)
+keymap  pl      PEEK_LINK
+############################# Show image address (PEEK_IMG)
+keymap  pi      PEEK_IMG
+############################# Display information about the current document (INFO)
+keymap  gi      INFO
+############################# Display current position in document (LINE_INFO)
+keymap  C-g     LINE_INFO
+############################# Turn URL-like strings into hyperlinks (MARK_URL)
+keymap ";"     MARK_URL
+############################# Turn current word into hyperlink (MARK_WORD)
+keymap ,       MARK_WORD
 
 # paste url and go (current tab)
 #keymap  pp      GOTO        /usr/lib/w3m/cgi-bin/goto_clipboard_primary.cgi
@@ -345,7 +412,9 @@ keymap  pp      GOTO        ~/.w3m/cgi-bin/goto_clipboard_primary.cgi
 keymap  PP      TAB_GOTO    /usr/lib/w3m/cgi-bin/goto_clipboard_primary.cgi
 keymap  PP      TAB_GOTO    ~/.w3m/cgi-bin/goto_clipboard_primary.cgi
 #readability mode
-#keymap ,-r COMMAND "READ_SHELL 'python3 -m readability.readability -u $W3M_URL 2> /dev/null' ; VIEW ; DELETE_PREVBUF"
+keymap ,-r COMMAND "READ_SHELL 'rdrview -H $W3M_URL 2> /dev/null' ; VIEW ; DELETE_PREVBUF"
+#keymap ,-r COMMAND "SHELL 'python3 -m readability.readability -u $W3M_URL > /tmp/readability.html' ; LOAD /tmp/readability.html"
+#keymap ,-r COMMAND "SHELL 'rdrview -H $W3M_URL > /tmp/readability.html' ; LOAD /tmp/readability.html"
 
 # toggle borders
 keymap ,-t COMMAND "SET_OPTION display_borders=toggle ; RESHAPE"
@@ -354,4 +423,3 @@ keymap ,-t COMMAND "SET_OPTION display_borders=toggle ; RESHAPE"
 keymap ,-l COMMAND "SET_OPTION display_link_number=toggle ; RESHAPE"
 
 # Url portal
-keymap  o      EXTERN_LINK "$SCRIPTS/urlportal.sh"

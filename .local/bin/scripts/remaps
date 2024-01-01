@@ -7,7 +7,7 @@
 #killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
 # Left Alt Changed To Modifier Key
 #xmodmap -e "keycode 64 = Mode_switch"
-xset r rate 150 30
+xset r rate 150 30 &
 #    Alt Keys are the Main Key
 # Map the caps lock key to alt
 setxkbmap -option 'caps:ctrl_modifier' 

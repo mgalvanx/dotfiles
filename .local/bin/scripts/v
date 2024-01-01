@@ -1,7 +1,12 @@
 #!/bin/sh
 
 
+# #"$EDITOR" -c "startinsert" && poshkill
+# vim --cmd 'set filetype=pandoc' -c "norm GO #  " \
+#               -c "startinsert" && bash -c exit  
 #"$EDITOR" -c "startinsert" && poshkill
-"$EDITOR" -c "startinsert" && bash -c exit
+vim -c 'set filetype=pandoc' --cmd "norm GO#   " -c "norm $" -c "startinsert" && bash -c exit  
+
+
 
 

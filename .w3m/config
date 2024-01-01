@@ -1,7 +1,7 @@
 tabstop 8
 indent_incr 4
-pixel_per_char 14
-pixel_per_line 29
+pixel_per_char 18
+pixel_per_line 41
 frame 0
 target_self 0
 open_tab_blank 0
@@ -9,17 +9,17 @@ open_tab_dl_list 1
 display_link 1
 display_link_number 0
 decode_url 0
-display_lineinfo 1
+display_lineinfo 0
 ext_dirlist 1
 dirlist_cmd file:///$LIB/dirlist.cgi
 use_dictcommand 1
-dictcommand file:///cgi-bin/omnibar_yewtube.cgi
+dictcommand file:///cgi-bin/omnibar_google.cgi
 multicol 0
 alt_entity 0
 graphic_char 0
 display_borders 0
 disable_center 0
-fold_textarea 1
+fold_textarea 0
 display_ins_del 1
 ignore_null_img_alt 1
 view_unseenobject 0
@@ -27,7 +27,7 @@ display_image 1
 pseudo_inlines 1
 auto_image 1
 max_load_image 4
-ext_image_viewer 1
+ext_image_viewer 0
 image_scale 100
 inline_img_protocol 0
 imgdisplay w3mimgdisplay
@@ -38,21 +38,22 @@ show_srch_str 1
 label_topline 0
 nextpage_topline 0
 color 1
-basic_color terminal
+high-intensity 1
+basic_color white
 anchor_color blue
 image_color red
 form_color green
 mark_color cyan
-bg_color terminal
+bg_color black
 active_style 0
-active_color cyan
+active_color black
 visited_anchor 0
 visited_color magenta
 pagerline 10000
 use_history 1
 history 100
 save_hist 1
-confirm_qq 0
+confirm_qq 1
 close_tab_back 0
 mark 0
 emacs_like_lineedit 0
@@ -75,6 +76,7 @@ document_root
 personal_document_root 
 cgi_bin ~/.w3m/cgi-bin:/usr/lib/w3m/cgi-bin:/usr/local/libexec/w3m/cgi-bin
 index_file 
+tmp_dir 
 mime_types ~/.mime.types, /usr/etc/mime.types
 mailcap ~/.w3m/mailcap, /usr/etc/w3m/mailcap
 urimethodmap ~/.w3m/urimethodmap, /usr/etc/w3m/urimethodmap

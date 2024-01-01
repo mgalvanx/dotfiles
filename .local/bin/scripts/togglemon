@@ -3,13 +3,16 @@
 set -x
 
 intern=LVDS1
-extern=DP3
+extern_1=DP1
+extern_2=DP2
+extern_3=DP3
 int_res=$(xrandr -q | grep "$intern" | grep -oP '\d+x\d+')
-ext_res=$(xrandr -q | grep "$extern" | grep -oP '\d+x\d+')
+ext_res=$(xrandr -q | grep "$extern_2" | grep -oP '\d+x\d+')
+test_res=$(xrandr -q | grep "$extern_1" | grep -oP '\d+x\d+')
 
 detect_monitor(){
-#	if xrandr -q | grep "${extern} connected"; then 
-#		ext_res=$(xrandr -q | grep "$extern" | grep -oP '\d+x\d+')
+#	if xrandr -q | grep "${extern_2} connected"; then 
+#		ext_res=$(xrandr -q | grep "$extern_2" | grep -oP '\d+x\d+')
 #  fi
   if test -z "$ext_res"; then
 		max_res=$(xrandr -q | grep  ' +' | grep -oP '\d+x\d+')
@@ -23,20 +26,30 @@ detect_monitor(){
 }
 
 setup_home(){
-		xrandr --dpi 144 --output LVDS1 --mode "$int_res" --scale 1.05x1.05 --pos 992x1440 --rotate normal --reflect normal --output "$extern" --primary --mode "$ext_res" --pos 0x0 --rotate normal --reflect normal && setbg
-		sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' "${HOME}/.Xresources"
+    xrandr --output "$intern" --off 
+    xrandr --output "$extern_2" --dpi 144 --primary --mode "$ext_res" --pos 0x0 --rotate normal --reflect normal &&\
+		xrandr --output "$extern_1" --dpi 144 --mode 1920x1080 --scale .83x.83 --pos 992x1440 --rotate normal --reflect normal &&\
+#		xrandr --output "$extern_3" --dpi 144 --mode 1920x1080 --scale .83x.83 --right-of DP2 --rotate left  
+    setbg
+	  sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' "${HOME}/.Xresources"
     exit
 }
 
+# setup_home(){
+# 		xrandr --output --dpi 144 --output "$intern" --mode "$int_res" --scale 1.05x1.05 --pos 992x1440 --rotate normal --reflect normal --output "$extern_2" --primary --mode "$ext_res" --pos 0x0 --rotate normal --reflect normal && setbg
+# 		sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' "${HOME}/.Xresources"
+#     exit
+# }
+
 setup_work(){
-		xrandr --output "$intern" --primary --mode 1366x768 --pos 1050x912 --rotate normal --reflect normal --output "$extern" --noprimary --mode 1680x1050 --pos 0x0 --rotate left
+		xrandr --output "$intern" --primary --mode 1366x768 --pos 1050x912 --rotate normal --reflect normal --output "$extern_2" --noprimary --mode 1680x1050 --pos 0x0 --rotate left
     exit
 }
 
 no_monitor(){
-	xrandr --dpi 130 --output "$intern" --scale 1.0x1.0 --pos 0x0 --auto --primary --rotate normal --reflect normal --output "$extern" --off
+	xrandr --dpi 130 --output "$intern" --scale 1.0x1.0 --pos 0x0 --auto --primary --rotate normal --reflect normal --output "$extern_2" --off
 	sed -i 's/^Xft.dpi: 144/Xft.dpi: 130/' "${HOME}/.Xresources"
-	#xrandr --dpi 123.39 --output "$extern" --off --output "$intern" --auto 
+	#xrandr --dpi 123.39 --output "$extern_2" --off --output "$intern" --auto 
 }
 
 # fireup(){

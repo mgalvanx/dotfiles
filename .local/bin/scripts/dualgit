@@ -7,16 +7,15 @@
 # https://joshtronic.com/2021/05/16/how-to-push-to-multiple-git-repos-at-once/
 
 # Change http cloned repo to ssh
-#git remote set-url origin git@gitlab.com:{USERNAME}/{PROJECTNAME}.git
 
 
 test -z "$GITUSER" && echo "Make sure your git username is set in GITUSER" && exit 0
-test $# -ne 1 && echo "<usauge> you must supply the name of the repo" && exit 0
-
+#test $# -ne 1 && echo "<usauge> you must supply the name of the repo" && exit 0
+git_repo=$(git remote get-url origin)
+git_repo=${git_repo##*/}
+git remote set-url origin "git@github.com:${GITUSER}/${git_repo}"
 git push --set-upstream origin master
-
-git_repo="$1"
-# These commands should be run after the --set-upstream command. 
-git remote set-url --add --push origin git@gitlab.com:$GITUSER/$git_repo.git
-git remote set-url --add --push origin git@github.com:$GITUSER/$git_repo.git
-
+# 
+# # These commands should be run after the --set-upstream command. 
+ git remote set-url --add --push origin "git@github.com:${GITUSER}/${git_repo}"
+ git remote set-url --add --push origin "git@gitlab.com:${GITUSER}/${git_repo}"

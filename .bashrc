@@ -148,12 +148,12 @@ export LESS_TERMCAP_us="[4m"  # underline
 
 open_with_fzf() {
 
-  if [[ -z "$TMUX" ]]; then
-     tmux new-session  -s "$dir" && tmux attach -t "$dir" &&  tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
-     echo "attach isn't attaching"
-     echo "keys aren't being sent"
-     return 0
-   fi
+#   if [[ -z "$TMUX" ]]; then
+#      tmux new-session  -s "$dir" && tmux attach -t "$dir" &&  tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter
+#      echo "attach isn't attaching"
+#      echo "keys aren't being sent"
+#      return 0
+#    fi
 
   choice=$(find $HOME -maxdepth 5 \( -path "${HOME}/.cache" -o -path "${HOME}/.mozilla" -o -name "BraveSoftware" -o -name "virtualbox-vms" \) -prune -o  -type f -print| sort | fzf -d "${USER}/" --with-nth=2 --keep-right --cycle --layout=reverse-list  --preview="cat {}" --preview-window=wrap:right:60% --bind=space:toggle-preview --bind=ctrl-l:preview-down --bind=ctrl-h:preview-up)
   if [[ -z $choice ]];then
@@ -174,6 +174,8 @@ cd_with_fzf() {
   #local dir_path=$(find $HOME -maxdepth 3 -type d  | grep -v 'gdrive\|.cache\|.dotfiles\|.git\|keyboards\|firefox\/\|qmk_firmware\/\|OpenCorePkg\/' | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
   local dir="${dir_path##*/}"
   cd "${dir_path}"
+  clear
+  ls -a
 
 #   if [[ -z "$TMUX" ]]; then
 #     tmux new-session  -s "$dir" && tmux attach -t "$dir" &&  tmux send-keys -t "${dir}:1" "cd ${dir_path}" Enter

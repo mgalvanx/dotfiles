@@ -5,11 +5,16 @@
 !Xft.dpi: 144
 
 ! Current DPI
-Xft.dpi: 130
+Xft.dpi: 144
 
 
-st.font: Fira Code:regular:size=12.5
-*.alpha: 0.8
+st.font: Fira Code:regular:size=15
+spterm.font: Fira Code:regular:size=16
+spterm2.font: Fira Code:regular:size=10.5
+spfm.font: Fira Code:regular:size=12.5
+scratch.font: Fira Code:regular:size=16
+home.font: Fira Code:regular:size=17
+/**.alpha: 0.8*/
 dmenu.font: #monospace: size=12
 dwm.font: #monospace: size=12
 
@@ -60,8 +65,8 @@ dwm.borderpx: 3
 
 ! Dracula Xresources palette
 
-xterm*.faceName: Fira Code 
-xterm*.faceSize: 12.5
+/*xterm*.faceName: Fira Code 
+xterm*.faceSize: 12.5*/
 !xterm*.color0: #282A36
 xterm*.background: #000000
 
@@ -92,6 +97,10 @@ dwm.color8: #BD93F9
 
 ! ST Colors
 st.background: #000000
+scratch.background: #000000
+home.background: #000000
+spterm.background: #000000
+spfm.background: #000000
 !st.background: #282A36 
 /*Lynx Black Background Fixes(Compatible with Dwm*/
 /*Lynx.color0: #282A36 */

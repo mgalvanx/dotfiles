@@ -10,14 +10,16 @@
 export EDITOR="vim" # This is alias to a vim that is a tmux wrapper
 export TERMINAL="st"
 export BROWSER="firefox"
+export BROWSER_PRIVATE="firefox --private-window"
 export BROWSERCLI="w3m"
 
 # Path Variables
 export SCRIPTS=~/.local/bin/scripts
-export WALLPAPER=~/nextcloud/wallpaper
-export NOTES=~/nextcloud/notes
-export INBOX=~/nextcloud/notes/0_Inbox
+export WALLPAPER=~/cloud/wallpaper
+export NOTES=~/cloud/notes
+export INBOX=~/cloud/notes/0_Inbox
 #export TODO= # Add a path for todos
+export URLPORTAL="${SCRIPTS}/urlportal.sh"
 
 # Adds `~/.local/bin` to $PATH(So my custom scripts can run from the command line)
 # export PATH=$PATH:~/.local/bin/scripts
@@ -52,8 +54,10 @@ export XDG_DOWNLOAD_DIR="${HOME}/downloads"
 # export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/pythonstartup.py"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonstartup.py"
 
+xset r rate 150 30 
+
 # Autostart startx
-#if [ "$(tty)" = /dev/tty1 ]; then
-#   exec startx
-#fi
+if [ "$(tty)" = /dev/tty1 ]; then
+   exec startx
+fi
 

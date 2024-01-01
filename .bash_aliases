@@ -79,8 +79,7 @@ alias re="cd /home/mgalvan/nextcloud/notes/3_Resources && la"
 alias ah="cd /home/mgalvan/nextcloud/notes/4_Archives && la"
 
 # Terminal Aliases
-alias o='xdg-open'
-alias open='xdg-open'
+alias open='setsid -f xdg-open'
 
 
 
