@@ -3,6 +3,7 @@ text/plain=vim.desktop
 text/x-shellscript=vim.desktop
 text/x-shellscript=vim.desktop
 application/pdf=org.pwmt.zathura.desktop
+application/mp4=mpv.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 
 [Added Associations]
