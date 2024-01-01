@@ -1,0 +1,34 @@
+#/bin/sh
+# .tmux.conf is .config. Because of this the below is need so that my tmux configs will be sourced from .bash_aliases
+#shopt -s expand_aliases
+#source ~/.bash_aliases
+
+# When you create a new session, if you don't use -n Nameofwindow, the default window will be called bash
+create_session(){
+  if tmux has-session -t=scratch 2> /dev/null; then
+    return
+  fi
+  tmux new -s scratch -n note-1 -d
+  # This selects pane 0(the only pane created by default) and enters the command nvim
+  # tmux select-pane -t 0
+  tmux send-keys "while true; do v;done" Enter  
+  # This a horizontal split with the new pane(pane 1) taking up 35% of the screen
+  #tmux split-window -v -p 1
+  # This select pane one and then enters the command
+  #tmux select-pane -t 1 
+  #tmux send-keys "cd ~/python/python3bootcamp" Enter 
+  tmux new-window -t scratch -n note-2 
+  tmux send-keys "while true; do v;done" Enter  
+  tmux new-window -t scratch -n note-3 
+  tmux send-keys "while true; do v;done" Enter  
+  #setsid -f $TERMINAL -t scratch -e tmux attach -t scratch
+}
+
+attach_to_home(){
+setsid -f st -c St -n scratch -t scratch  -e sh -c 'tmux attach -t scratch' 
+}
+main(){
+create_session
+attach_to_home
+}
+main
