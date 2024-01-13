@@ -1,0 +1,4 @@
+#!/bin/sh
+
+setsid -f st -c St -t pulsemixer -g 105x32 -e bash -c 'pulsemixer;bash'
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+xrandr --output LVDS1 --off --output HDMI1 --mode 1440x900
+
+

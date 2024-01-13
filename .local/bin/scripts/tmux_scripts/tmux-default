@@ -1,0 +1,59 @@
+#!/bin/bash
+
+set -x 
+
+session="home"
+window_1="shell"
+cmd_1=""
+window_2=""
+cmd_2=""
+window_3=""
+cmd_3=""
+window_4=""
+cmd_4=""
+window_5=""
+cmd_5="" 
+window_6=""
+cmd_6_1=""
+cmd_6_2="" 
+
+create_session(){
+  if tmux has-session -t="$session" 2> /dev/null; then
+    return
+  fi
+	tmux new-session -s "${session}" -n "$window_1" -d 
+	tmux send-keys -t "${session}:${window_1}" "$cmd_1" Enter
+	tmux new-window -t "$session" -n "$window_2"
+	tmux send-keys -t "${session}:${window_2}" "$cmd_2" Enter
+	tmux new-window -t "$session" -n "$window_3"
+	tmux send-keys -t "${session}:${window_3}" "$cmd_3" Enter
+	tmux new-window -t "$session" -n "$window_4"
+	tmux send-keys -t "${session}:${window_4}" "$cmd_4" Enter
+	tmux new-window -t "$session" -n "$window_5"
+	tmux send-keys -t "${session}:${window_5}" "$cmd_5" Enter
+# Splitting window 6 vertically
+# Panes are not 0 indexed as the default setting.
+# Running the below command after the above will sometime cause the command to fail. Running it later in the scripts fixes the issue
+
+# 	tmux new-window -t "$session" -n "$window_6"
+#   tmux split-window -v -t "${session}:${window_6}" 
+# 	tmux send-keys -t "${session}:${window_6}.1" "$cmd_6_1" Enter
+# 	tmux send-keys -t "${session}:${window_6}.2" "$cmd_6_2" Enter
+ 	tmux select-window -t "${session}:${window_1}" 
+}
+
+
+attach_to_home(){
+ if wmctrl -x -l "$session" | grep -w "$session"; then
+   wmctrl -x -a "$session"
+   return
+ fi
+  setsid -f st -c St -n "$session" -t "$session" -g 105x32 -e sh -c "tmux attach -t ${session}" && sleep .20 && wmctrl -x -a "$session"
+
+}
+
+main(){
+create_session
+attach_to_home
+}
+main

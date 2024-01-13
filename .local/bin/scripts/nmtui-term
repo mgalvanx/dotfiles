@@ -1,0 +1,4 @@
+#!/bin/sh
+
+setsid -f st -c St -t nmtui -g 105x32 -e bash -c 'sudo nmtui;bash'
+

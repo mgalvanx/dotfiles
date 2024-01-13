@@ -1,0 +1,67 @@
+#!/bin/sh
+set -x
+  # The Hex value for DP3 1600x900-108.00MHz resolution keeps changing between 0x462,0x463,0x464,0x465 etc
+  # The above line captures the change.
+  hex_value=$(xrandr --verbose | grep -E '^[^[:space:]]|108.000MHz' | grep '1600x900' | grep -oP '\dx4\d+' | uniq)
+
+# Turns off all screen. Needs to be run a second time after matching all the screens to the 108.000 MH frequency.
+screens_off(){
+  xrandr --output LVDS1 --off 
+  xrandr --output DP1 --off 
+  sleep 1
+  xrandr --output DP2 --off
+  xrandr --output DP3 --off
+  xrandr --output HDMI1 --off --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
+}
+
+# The below command will show all resolutions that support the given frequency.
+xrandr --verbose | egrep '^[^[:space:]]|108.000MHz'
+# Use this if you are going to set a new monitors
+
+# Set all Monitors to the same frequency
+match_freq(){
+  xrandr --output DP2 --primary --mode 0x465 --pos 0x0 --rotate normal 
+  sleep 2
+  xrandr --output DP1 --mode 0x458 --pos 992x1440 --rotate normal 
+  sleep 2
+  xrandr --output DP3 --auto --pos 3440x270 --rotate left 
+  sleep 4
+  xrandr --output DP3 --off
+  xrandr --output DP3 --mode "$hex_value" --pos 3440x270 --rotate left 
+
+}
+
+tricky_screen(){
+  xrandr --output DP3 --auto --pos 3440x270 --rotate left 
+  sleep 1
+  xrandr --output DP3 --mode "$hex_value" --pos 3440x270 --rotate left 
+}
+
+triple_screens(){
+  xrandr --output DP2 --dpi 144 --primary --auto --pos 0x0 --rotate normal 
+  sleep 2
+  # Set the resolution of of the rest of the screens
+  # Custom/higher resolution of DP1 with to match DP3's 108
+  tricky_screen
+  sleep 2
+
+  xrandr --newmode 1440x900-108.000MHz 108.00 1440 1472 1880 1912 900 918 927 946
+  xrandr --addmode DP1 1440x900-108.000MHz
+  xrandr --output DP1 --mode 1440x900-108.000MHz --pos 992x1440 --rotate normal 
+  #xrandr --output DP2 --primary --mode 0x465 --pos 0x0 --rotate normal 
+  xrandr --output DP3 --auto --pos 3440x270 --rotate left 
+  xrandr --output DP3 --off
+  tricky_screen
+  
+	sed -i 's/^Xft.dpi: 130/Xft.dpi: 144/' "${HOME}/.Xresources"
+}
+
+main(){
+  screens_off
+  match_freq
+  screens_off
+  triple_screens
+}
+
+
+main

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -x
+
+
+attach_to_firefox(){
+ if wmctrl -l  | grep -w 'Firefox'; then
+   wmctrl -a 'Firefox' 
+   return
+ fi
+  /usr/bin/firefox
+ }
+ attach_to_firefox

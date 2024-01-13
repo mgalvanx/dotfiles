@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+session="music"
+window_1="ncspot"
+cmd_1="ncspot"
+
+# When you create a new session, if you don't use -n Nameofwindow, the default window will be called bash
+create_session(){
+  if tmux has-session -t="$session" 2> /dev/null; then
+    return
+  fi
+	tmux new-session -s "${session}" -n "$window_1" -d 
+	tmux send-keys -t "${session}:${window_1}" "$cmd_1" Enter
+}
+
+
+
+attach_to_music(){
+ if wmctrl -l "$session" | grep "$session"; then
+   wmctrl -a "$session"
+   return
+ fi
+  sudo ip -6 addr flush eth0
+  setsid -f st -c St -n "$session" -t "$session" -g 105x32 -e sh -c "tmux attach -t ${session}"
+}
+
+main(){
+create_session
+attach_to_music 
+}
+main

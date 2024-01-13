@@ -1,0 +1,23 @@
+#!/bin/bash
+
+yt_loop(){
+  while true; do
+    clear
+    figlet "Youtube Search" | lolcat
+    read -p "===================================>> " query
+    if [[ -z "$query" ]]; then
+    continue
+    fi
+    count=1
+    while true; do
+      ytfzf  --show-thumbnails -l --detach --pages-start="$count" "$query"   
+      read -p "Enter n for next page? " input
+      case "$input" in
+        n) ((count=count+1)) ;;
+        *) break
+      esac
+     done
+  done
+}
+
+yt_loop

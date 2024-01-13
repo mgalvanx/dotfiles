@@ -1,0 +1,30 @@
+#/bin/sh
+set -x
+
+session="term"
+window_1="shell"
+cmd_1="cmatrix -s && clear"
+
+# When you create a new session, if you don't use -n Nameofwindow, the default window will be called bash
+create_session(){
+  if tmux has-session -t="$session" 2> /dev/null; then
+    return
+  fi
+	tmux new-session -s "${session}" -n "$window_1" -d 
+	tmux send-keys -t "${session}:${window_1}" "$cmd_1" Enter
+}
+
+
+ attach_to_term(){
+  if wmctrl -x -l "$session" | grep -w "$session"; then
+    wmctrl -x -a "$session"
+    return
+  fi
+   setsid -f st -c St -n "$session" -t "$session" -g 105x32 -e sh -c "tmux attach -t ${session}" && sleep .20 && wmctrl -x -a "$session"
+}
+
+main(){
+create_session
+attach_to_term
+}
+main
