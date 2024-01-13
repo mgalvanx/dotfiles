@@ -1,37 +1,55 @@
-#!/bin/sh
-# .tmux.conf is .config. Because of this the below is need so that my tmux configs will be sourced from .bash_aliases
-#shopt -s expand_aliases
-#source ~/.bash_aliases
+#!/bin/bash
 
-# When you create a new session, if you don't use -n Nameofwindow, the default window will be called bash
+set -x 
+
+session="home"
+window_1="shell"
+cmd_1="clear && neofetch"
+window_2="web"
+cmd_2="duck"
+window_3="email"
+cmd_3="neomutt"
+window_4="rss"
+cmd_4="newsboat"
+window_5="youtube"
+cmd_5="yt_loop" 
+window_6="wtsp"
+cmd_6_1="tsp -C && watch tsp"
+cmd_6_2="TS_SOCKET=/tmp/downloads tsp -C && watch TS_SOCKET=/tmp/downloads tsp" 
+
 create_session(){
-  if tmux has-session -t=home 2> /dev/null; then
+  if tmux has-session -t="$session" 2> /dev/null; then
     return
   fi
-  tmux new -s home -n web -d
-  # This selects pane 0(the only pane created by default) and enters the command nvim
-  # tmux select-pane -t 0
-  tmux send-keys "ws" Enter  
-  # This a horizontal split with the new pane(pane 1) taking up 35% of the screen
-  #tmux split-window -v -p 1
-  # This select pane one and then enters the command
-  #tmux select-pane -t 1 
-  #tmux send-keys "cd ~/python/python3bootcamp" Enter 
-  tmux new-window -t home -n chat 
-  tmux send-keys "weechat" Enter  
-  tmux new-window -t home -n rss -d
-  tmux select-window -t home:rss
-  tmux send-keys "newsboat" Enter  
-  tmux new-window -t home -n wtsp -d
-  tmux select-window -t home:wtsp
-  tmux send-keys "tsp -C && watch tsp" Enter  
-  tmux split-window -v 
-  tmux send-keys "TS_SOCKET=/tmp/downloads tsp -C && watch TS_SOCKET=/tmp/downloads tsp" Enter  
+	tmux new-session -s "${session}" -n "$window_1" -d 
+	tmux send-keys -t "${session}:${window_1}" "$cmd_1" Enter
+	tmux new-window -t "$session" -n "$window_2"
+	tmux send-keys -t "${session}:${window_2}" "$cmd_2" Enter
+	tmux new-window -t "$session" -n "$window_3"
+	tmux send-keys -t "${session}:${window_3}" "$cmd_3" Enter
+	tmux new-window -t "$session" -n "$window_4"
+	tmux send-keys -t "${session}:${window_4}" "$cmd_4" Enter
+	tmux new-window -t "$session" -n "$window_5"
+	tmux send-keys -t "${session}:${window_5}" "$cmd_5" Enter
+# Splitting window 6 vertically
+# Panes are not 0 indexed as the default setting.
+# Running the below command after the above will sometime cause the command to fail. Running it later in the scripts fixes the issue
 
+# 	tmux new-window -t "$session" -n "$window_6"
+#   tmux split-window -v -t "${session}:${window_6}" 
+# 	tmux send-keys -t "${session}:${window_6}.1" "$cmd_6_1" Enter
+# 	tmux send-keys -t "${session}:${window_6}.2" "$cmd_6_2" Enter
+ 	tmux select-window -t "${session}:${window_1}" 
 }
 
+
 attach_to_home(){
-setsid -f st -c St -n home -t home  -g 105x32 -e sh -c 'tmux attach -t home' 
+ if wmctrl -x -l "$session" | grep -w "$session"; then
+   wmctrl -x -a "$session"
+   return
+ fi
+  setsid -f st -c St -n "$session" -t "$session" -g 105x32 -e sh -c "tmux attach -t ${session}" && sleep .20 && wmctrl -x -a "$session"
+
 }
 
 main(){

@@ -413,6 +413,7 @@ keymap  PP      TAB_GOTO    /usr/lib/w3m/cgi-bin/goto_clipboard_primary.cgi
 keymap  PP      TAB_GOTO    ~/.w3m/cgi-bin/goto_clipboard_primary.cgi
 #readability mode
 keymap ,-r COMMAND "READ_SHELL 'rdrview -H $W3M_URL 2> /dev/null' ; VIEW ; DELETE_PREVBUF"
+#keymap ,-r  COMMAND "READ_SHELL '/home/mgalvan/.config/readability/bin/python -m readability.readability -u $W3M_URL 2> /dev/null' ; VIEW ; DELETE_PREVBUF"
 #keymap ,-r COMMAND "SHELL 'python3 -m readability.readability -u $W3M_URL > /tmp/readability.html' ; LOAD /tmp/readability.html"
 #keymap ,-r COMMAND "SHELL 'rdrview -H $W3M_URL > /tmp/readability.html' ; LOAD /tmp/readability.html"
 

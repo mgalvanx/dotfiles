@@ -9,11 +9,13 @@ Xft.dpi: 144
 
 
 st.font: Fira Code:regular:size=15
-spterm.font: Fira Code:regular:size=16
-spterm2.font: Fira Code:regular:size=10.5
-spfm.font: Fira Code:regular:size=12.5
-scratch.font: Fira Code:regular:size=16
+term.font: Fira Code:regular:size=15
+scratch.font: Fira Code:regular:size=15
+system.font: Fira Code:regular:size=11.5
+unlock.font: Fira Code:regular:size=14
+phone.font: Fira Code:regular:size=15
 home.font: Fira Code:regular:size=17
+music.font: Fira Code:regular:size=16
 /**.alpha: 0.8*/
 dmenu.font: #monospace: size=12
 dwm.font: #monospace: size=12
@@ -97,10 +99,13 @@ dwm.color8: #BD93F9
 
 ! ST Colors
 st.background: #000000
+term.background: #000000
 scratch.background: #000000
+phone.background: #000000
+unlock.background: #000000
 home.background: #000000
-spterm.background: #000000
-spfm.background: #000000
+music.background: #000000
+system.background: #000000
 !st.background: #282A36 
 /*Lynx Black Background Fixes(Compatible with Dwm*/
 /*Lynx.color0: #282A36 */

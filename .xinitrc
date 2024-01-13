@@ -22,23 +22,19 @@ fi
 trackpoint &
 dunst &
 dwm_status &
-#home &
-# dwmblocks &
 mouse &
 xcompmgr &
 remaps & 
 unclutter &
-nextcloud --background &
-keynav daemonize &
+#nextcloud --background &
+#keynav daemonize &
 #setbg &
 pulseaudio --start &
 xrdb ~/.Xresources &
-#sleep 1 && triple-monitors &
 xset r rate 150 30 &
 # The screens will not turn on if there is not a 3 second delay
-sleep 3 && triple-monitors &
-sleep 20 && tmux-home &
-sleep 21 && pixel &
+#sleep 4 && triple-monitors &
+#sleep 21 && program-startup &
 
 exec dwm
 

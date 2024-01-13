@@ -8,6 +8,6 @@ type_word() {
     done
   printf '\n'
 }
-
+clear
 type_word "Greetings Professor....." && sleep 1 &&  type_word "Shall we play a game?"
 sleep .7

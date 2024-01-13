@@ -2,7 +2,7 @@ auto-reload yes # reloads everytime we open newsboat
 max-items 50
 reload-time 30 # reloads every 30 mins
 reload-threads 100
-browser $BROWSERCLI
+browser $BROWSER
 prepopulate-query-feeds yes
 cleanup-on-quit yes
 
@@ -46,9 +46,10 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
 #feedlist-format "%?T?║%4i %n %8u %t (%T) &╠#%-8t════════════════════════════════════════?"
 
 # Macros
-macro w open-in-browser ; set browser "$BROWSERCLI %u"
+#macro w open-in-browser %u; set browser "$BROWSERCLI %u"
 macro c set browser "firefox-comments"; open-in-browser; set browser "$BROWSERCLI %u"
-macro p set browser "notify-send '%u' &&  tsp mpv --title='newsboat-mpv' --profile=default %u"; open-in-browser ; set browser "$BROWSERCLI %u"
+macro p set browser "echo '%u' | xsel -ib && tsp mpv --title='newsboat-mpv' --profile=default %u"; open-in-browser ; set browser "$BROWSERCLI %u"
+#macro p set browser "notify-send '%u' &&  && sleep 10 && notify-send '%u' && tsp mpv --title='newsboat-mpv' --profile=default %u"; open-in-browser ; set browser "$BROWSERCLI %u"
 #macro p set browser "setsid -f mpv --title='newsboat-mpv' --really-quiet --no-terminal  --ontop --no-border --force-window --autofit=500x280 --geometry=-15-60 %u"; open-in-browser ; set browser "$BROWSERCLI %u"
 #macro n set browser "$BROWSER_PRIVATE"; open-in-browser ; set browser "$URLPORTAL %u"
 

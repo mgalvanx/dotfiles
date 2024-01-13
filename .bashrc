@@ -7,12 +7,16 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
 _source_if() { [[ -r "$1" ]] && source "$1"; }
 
 # cdpath
-export CDPATH=.:\
-$HOME/.config:\
-~
+#export CDPATH=.:\
+#$HOME/.config:\
+#~
 
 # SSH-Agent
 # This will allow a single ssh-agent process to run at a time.
@@ -97,6 +101,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Function Alias
+#alias "\C-f" = 'open_with_fzf'
 alias f='open_with_fzf'
 alias o='cd_with_fzf'
 

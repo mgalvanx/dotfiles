@@ -8,7 +8,7 @@ search="$*"
 # 	return 0
 # fi
 
-exec w3m "duckduckgo.com/lite?kd=-1&kp=-1&q=$*"
+exec w3m -4 "duckduckgo.com/lite?kd=-1&kp=-1&q=$*"
 # chat "🦆 searching: $* $url"
 #exec lynx "$url"
 #exec lynx "duckduckgo.com/lite?q=$*" # 🦆

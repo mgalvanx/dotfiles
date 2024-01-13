@@ -1,34 +1,41 @@
-#/bin/sh
-# .tmux.conf is .config. Because of this the below is need so that my tmux configs will be sourced from .bash_aliases
-#shopt -s expand_aliases
-#source ~/.bash_aliases
+#/bin/bash
 
-# When you create a new session, if you don't use -n Nameofwindow, the default window will be called bash
+set -x
+
+session="scratch"
+window_1="note-1"
+cmd_1="while true; do v;done"
+window_2="note-2"
+cmd_2="while true; do v;done"
+window_3="note-3"
+cmd_3="while true; do v;done"
+
 create_session(){
-  if tmux has-session -t=scratch 2> /dev/null; then
+  if tmux has-session -t="$session" 2> /dev/null; then
     return
   fi
-  tmux new -s scratch -n note-1 -d
-  # This selects pane 0(the only pane created by default) and enters the command nvim
-  # tmux select-pane -t 0
-  tmux send-keys "while true; do v;done" Enter  
-  # This a horizontal split with the new pane(pane 1) taking up 35% of the screen
-  #tmux split-window -v -p 1
-  # This select pane one and then enters the command
-  #tmux select-pane -t 1 
-  #tmux send-keys "cd ~/python/python3bootcamp" Enter 
-  tmux new-window -t scratch -n note-2 
-  tmux send-keys "while true; do v;done" Enter  
-  tmux new-window -t scratch -n note-3 
-  tmux send-keys "while true; do v;done" Enter  
-  #setsid -f $TERMINAL -t scratch -e tmux attach -t scratch
+	tmux new-session -s "${session}" -n "$window_1" -d 
+	tmux send-keys -t "${session}:${window_1}" "$cmd_1" Enter
+	tmux new-window -t "$session" -n "$window_2"
+	tmux send-keys -t "${session}:${window_2}" "$cmd_1" Enter
+	tmux new-window -t "$session" -n "$window_3"
+	tmux send-keys -t "${session}:${window_3}" "$cmd_1" Enter
+	tmux select-window -t "${session:$window_1}" 
 }
 
-attach_to_home(){
-setsid -f st -c St -n scratch -t scratch  -e sh -c 'tmux attach -t scratch' 
+attach_to_scratch(){
+ if wmctrl -x -l "$session" | grep "$session"; then
+   wmctrl -x -a "$session"
+   return
+ fi
+#	tmux select-window -t "${session:$window_1}" 
+  setsid -f st -c St -n "$session" -t "$session" -e sh -c "tmux attach -t ${session}" && sleep .20 && wmctrl -x -a "$session"
 }
+
+
 main(){
 create_session
-attach_to_home
+attach_to_scratch
 }
+
 main

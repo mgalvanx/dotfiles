@@ -25,6 +25,7 @@ export URLPORTAL="${SCRIPTS}/urlportal.sh"
 # export PATH=$PATH:~/.local/bin/scripts
 export PATH=~/.local/bin/scripts:$PATH
 export PATH=$PATH:$SCRIPTS/cert_scripts
+export PATH=$PATH:$SCRIPTS/private-scripts
 export PATH=$PATH:$SCRIPTS/tmux_scripts
 export PATH=$PATH:$SCRIPTS/notescripts
 export PATH=$PATH:$SCRIPTS/work-scripts
@@ -54,10 +55,9 @@ export XDG_DOWNLOAD_DIR="${HOME}/downloads"
 # export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/pythonstartup.py"
 export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonstartup.py"
 
-xset r rate 150 30 
 
 # Autostart startx
-if [ "$(tty)" = /dev/tty1 ]; then
-   exec startx
-fi
+#if [ "$(tty)" = /dev/tty1 ]; then
+#   exec startx
+#fi
 

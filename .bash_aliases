@@ -35,33 +35,6 @@ alias ta='tmux attach'
 # newsboat
 alias nb='newsboat'
 
-# ytfzf 
-#alias yt='ytfzf -t --detach -l' # default sorts by relevance
-alias yt='yt_pages' # default sorts by relevance
-alias yth='ytfzf -t -H'
-alias ytv='ytfzf -t --sort-by=view_count'
-alias ytd='ytfzf -t --sort-by=upload_date'
-alias ytr='ytfzf -t --sort-by=rating'
-
-yt_pages(){
-  query="$*"
-  count=1
-  if [[ -z "$query" ]]; then
-    exit 0
-  fi
-  clear
-  while true; do
-    clear
-    ytfzf -t --detach  -l --pages-start="$count" "$query"
-    read -p "Enter n for next page? " input
-    case "$input" in
-  		n) ((count=count+1)) ;;
-  		l) continue ;;
-			*) break
- 		esac
-  done
-  clear
-}
 
 # virtual box
 alias vmlist='vboxmanage list vms'
