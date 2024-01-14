@@ -13,5 +13,5 @@ esac
 # Rewrite this script in using posix sed and regular expression if it applies
 IFS="$(printf '\n ')" && IFS="${IFS% }"
 for line in $(ls -A); do 
-  mv "$line" "$(echo "${line}" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr '_' '-')"
+  mv "$line" "$(echo "${line}" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr '_' '-'| sed -e 's/\[[^][]*\]//g')"
 done 

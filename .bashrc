@@ -7,9 +7,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-
-GPG_TTY=$(tty)
-export GPG_TTY
+# Renable when using pure tty
+#GPG_TTY=$(tty)
+#export GPG_TTY
 
 _source_if() { [[ -r "$1" ]] && source "$1"; }
 
