@@ -44,25 +44,68 @@ bind "set menu-complete-display-prefix on"
 bind "set completion-ignore-case on"
 
 
-#This sets the prompt for terminal
-PROMPT_LONG=50
+# #This sets the prompt for terminal
+# PROMPT_LONG=50
+# PROMPT_MAX=95
+# __ps1(){
+#   local P='$'
+#   #colors for prompt
+#   local r='\[\e[1;31m\]' #
+#   local u='\[\e[1;36m\]'
+#   local h='\[\e[1;32m\]'
+#   local w='\[\e[34m\]'
+#   local p='\[\e[34m\]'
+#   local g='\[\e[37m\]'
+#   local x='\[\e[0m\]'
+#   B=$(git branch --show-current 2>/dev/null)
+#   B=$(dot branch --show-current 2>/dev/null)
+#   PS1="$u\u$g@$h\h$g:$w\W$p$P$x "
+# }
+# PROMPT_COMMAND="__ps1"
+
+# --------------------------- smart prompt ---------------------------
+#                 (keeping in bashrc for portability)
+
+PROMPT_LONG=26
+#PROMPT_LONG=24
 PROMPT_MAX=95
+PROMPT_AT=@
 
-__ps1(){
-  local P='$'
-  #colors for prompt
-  local r='\[\e[1;31m\]' #
-  local u='\[\e[1;36m\]'
-  local h='\[\e[1;32m\]'
-  local w='\[\e[34m\]'
-  local p='\[\e[34m\]'
-  local g='\[\e[37m\]'
-  local x='\[\e[0m\]'
+__ps1() {
+	local P='$' dir="${PWD##*/}" B countme short long double \
+		r='\[\e[1;31m\]' g='\[\e[35m\]' h='\[\e[1;36m\]' \
+		u='\[\e[1;36m\]' p='\[\e[34m\]' w='\[\e[1;35m\]' \
+		b='\[\e[34m\]' x='\[\e[0m\]'
 
-  PS1="$u\u$g@$h\h$g:$w\W$p$P$x "
+	[[ $EUID == 0 ]] && P='#' && u=$r && p=$u # root
+	[[ $PWD = / ]] && dir=/
+	[[ $PWD = "$HOME" ]] && dir='~'
+
+	B=$(git branch --show-current 2>/dev/null)
+	[[ $dir = "$B" ]] && B=.
+	countme="$USER$PROMPT_AT$(hostname):$dir($B)\$ "
+
+	[[ $B == master || $B == main ]] && b="$r"
+	[[ -n "$B" ]] && B="$g($b$B$g)"
+
+	short="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B$p$P$x "
+	#long="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n$g╚ $p$P$x "
+	long="$u\u$g$PROMPT_AT$h\h$g:$w$dir$B\n$p$P$x "
+	#double="$g╔ $u\u$g$PROMPT_AT$h\h$g:$w$dir\n$g║ $B\n$g╚ $p$P$x "
+	double="$u\u$g$PROMPT_AT$h\h$g:$w$dir\n$B\n$p$P$x "
+
+#   PS1="$u\u$g@$h\h$g:$w\W$p$P$x "
+	if ((${#countme} > PROMPT_MAX)); then
+		PS1="$double"
+	elif ((${#countme} > PROMPT_LONG)); then
+		PS1="$long"
+	else
+		PS1="$short"
+	fi
 }
 
 PROMPT_COMMAND="__ps1"
+
 #--------------Bash Shell Options---------------------------
 # Disable ctrl-s and ctrl-1 (These commands pause and enable the terminal. We are going to disable it.
 stty -ixon
@@ -201,7 +244,6 @@ install_vim() {
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   vim -es -u ${HOME}/.vimrc -i NONE -c "PlugInstall" -c "qa"
 }
-
 
 owncomp=(greet)
 for i in ${owncomp[@]}; do complete -C $i $i; done

@@ -1,4 +1,4 @@
-
+set termguicolors
 set nocompatible " change to compatible to get vi-compatiblity mode
 
 " #######################   vi-compatible   ##############################
@@ -133,7 +133,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 "   Plug 'frazrepo/vim-rainbow'
    Plug 'vim-pandoc/vim-pandoc'
    Plug 'rwxrob/vim-pandoc-syntax-simple'
-   Plug 'dracula/vim', { 'as': 'dracula' }
+   Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+"   Plug 'dracula/vim', { 'as': 'dracula' }
 "   Plug 'pegn/pegn-syntax'
 "   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "   Plug 'tpope/vim-fugitive'
@@ -142,8 +143,9 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
 "   Plug 'mrk21/yaml-vim'
   call plug#end()
 
-  let g:dracula_colorterm = 0
-  colorscheme dracula
+  "let g:dracula_colorterm = 0
+  "colorscheme dracula
+  colorscheme catppuccin_mocha
   set background=dark
 
 endif

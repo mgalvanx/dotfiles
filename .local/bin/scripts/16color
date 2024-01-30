@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 printf "\e[H\e[2J"
 echo "Use the following ansi escape sequences for system-wide 16 bit colors"

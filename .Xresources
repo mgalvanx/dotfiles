@@ -15,11 +15,12 @@ system.font: Fira Code:regular:size=11.5
 unlock.font: Fira Code:regular:size=14
 phone.font: Fira Code:regular:size=15
 home.font: Fira Code:regular:size=17
+laptop.font: Fira Code:regular:size=12
 music.font: Fira Code:regular:size=16
-/**.alpha: 0.8*/
 dmenu.font: #monospace: size=12
 dwm.font: #monospace: size=12
 
+*.alpha: 0.90
 
 
 Sxiv.font: #monospace: size=12
@@ -68,49 +69,95 @@ dwm.borderpx: 3
 ! Dracula Xresources palette
 
 /*xterm*.faceName: Fira Code 
-xterm*.faceSize: 12.5*/
+!xterm*.faceSize: 12.5*/
 !xterm*.color0: #282A36
-xterm*.background: #000000
+!xterm*.background: #000000
 
-*.foreground: #F8F8F2
-*.background: #282A36
-*.color0:     #000000 
+!*.foreground: #F8F8F2
+!*.background: #282A36
+!*.color0:     #000000 # Black Background
 !*.color0: #282A36  
-*.color8:     #4D4D4D
-*.color1:     #FF5555
-*.color9:     #FF6E67
-*.color2:     #50FA7B
-*.color10:    #5AF78E
-*.color3:     #F1FA8C
-*.color11:    #F4F99D
-*.color4:     #BD93F9
-*.color12:    #CAA9FA
-*.color5:     #FF79C6
-*.color13:    #FF92D0
-*.color6:     #8BE9FD
-*.color14:    #9AEDFE
-*.color7:     #BFBFBF
-*.color15:    #E6E6E6
+!*.color8:     #4D4D4D
+!*.color1:     #FF5555
+!*.color9:     #FF6E67
+!*.color2:     #50FA7B
+!*.color10:    #5AF78E
+!*.color3:     #F1FA8C
+!*.color11:    #F4F99D
+!*.color4:     #BD93F9
+!*.color12:    #CAA9FA
+!*.color5:     #FF79C6
+!*.color13:    #FF92D0
+!*.color6:     #8BE9FD
+!*.color14:    #9AEDFE
+!*.color7:     #BFBFBF
+!*.color15:    #E6E6E6
+
+*background: #1E1E2E
+*foreground: #CDD6F4
+
+! black
+!*color0: #45475A
+*color0: #1E1E2E
+*color8: #585B70
+
+! red
+*color1: #F38BA8
+*color9: #F38BA8
+
+! green
+*color2: #A6E3A1
+*color10: #A6E3A1
+
+! yellow
+*color3: #F9E2AF
+*color11: #F9E2AF
+
+! blue
+*color4: #89B4FA
+*color12: #89B4FA
+
+! magenta
+*color5: #F5C2E7
+*color13: #F5C2E7
+
+! cyan
+*color6: #94E2D5
+*color14: #94E2D5
+
+! white
+*color7: #BAC2DE
+*color15: #A6ADC8
+
+
 
 ! DWM Colors
 dwm.color0: #000000
 dwm.color8: #BD93F9
 !dwm.color8:  #4D4D4D
 
-! ST Colors
-st.background: #000000
+! ST black background
+
+/*st.background: #000000
 term.background: #000000
 scratch.background: #000000
 phone.background: #000000
 unlock.background: #000000
 home.background: #000000
 music.background: #000000
-system.background: #000000
+system.background: #000000*/
+
+
+
 !st.background: #282A36 
 /*Lynx Black Background Fixes(Compatible with Dwm*/
 /*Lynx.color0: #282A36 */
 /* *.background: .color0 */
-*.color256: 0#1d2021
-*.color257: 15#ebdbb2
+
+*.color256: #1E1E2E
+*.color257: #1E1E2E
+
+!*.color256: 0#1d2021
+!*.color257: 15#ebdbb2
 
 !st.color0: #000000 

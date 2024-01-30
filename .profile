@@ -58,6 +58,7 @@ export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonstartup.py"
 
 # Autostart startx
 if [ "$(tty)" = /dev/tty1 ]; then
+	
    exec startx
 fi
 

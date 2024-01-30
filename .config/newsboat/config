@@ -2,7 +2,6 @@ auto-reload yes # reloads everytime we open newsboat
 max-items 50
 reload-time 30 # reloads every 30 mins
 reload-threads 100
-browser $BROWSER
 prepopulate-query-feeds yes
 cleanup-on-quit yes
 
@@ -25,11 +24,11 @@ bind-key D pb-download
 bind-key U show-urls
 bind-key x pb-delete
 
-color listnormal cyan default
-color listfocus black yellow standout bold
+color listnormal blue default
+color listfocus black magenta standout bold
 #color listnormal_unread blue default
-color listfocus_unread yellow default bold
-#color info red black bold
+color listfocus_unread magenta default bold
+color info cyan black bold  
 #color article cyan default
 
 highlight article "^Feed:.*" color5 color0
@@ -45,10 +44,12 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
 
 #feedlist-format "%?T?║%4i %n %8u %t (%T) &╠#%-8t════════════════════════════════════════?"
 
+browser urlportal.sh
 # Macros
 #macro w open-in-browser %u; set browser "$BROWSERCLI %u"
 macro c set browser "firefox-comments"; open-in-browser; set browser "$BROWSERCLI %u"
 macro v set browser "mplay %u"; open-in-browser ; set browser "$BROWSERCLI %u"
 macro V set browser "mload %u"; open-in-browser ; set browser "$BROWSERCLI %u"
+macro s set browser "send-video %u"; open-in-browser ; set browser "$BROWSERCLI %u"
 #macro n set browser "$BROWSER_PRIVATE"; open-in-browser ; set browser "$URLPORTAL %u"
 

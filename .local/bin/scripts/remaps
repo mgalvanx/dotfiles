@@ -1,5 +1,24 @@
 # This script is called on startup to remap keys.
+# This file depends on settings in .Xmodmap
+# xmodmap /home/mgalvan/.Xmodmap
 
+ # Use Spacebar as a Modifier
+# spare_modifier="Hyper_L" 
+# xmodmap -e "keycode 65 = $spare_modifier"   
+# xmodmap -e "add Hyper_L = $spare_modifier"
+# xmodmap -e "keycode any = space"  
+# xcape -e "$spare_modifier=space"
+#clear mod3 
+#clear mod4 
+#add mod3 = Hyper_L 
+#add mod4 = Super_L Super_R
+#spare_modifier="Super_L" 
+#xmodmap -e "remove Mod4 = Super_L"
+#xmodmap -e "keycode 65 = Super_L"   
+#xmodmap -e "add Mod4 = Super_L"
+#xmodmap -e "add Super_L = $spare_modifier"
+#xmodmap -e "keycode any = space"  
+#xkillall xcape 2>/dev/null ; xcape -e "Super_L=space" -t 400
 #    Super Key Is Main Key
 # Map the caps lock key to super
 #setxkbmap -option caps:super
@@ -28,7 +47,7 @@ killall xcape 2>/dev/null ; xcape -e 'Caps_Lock=Escape'
 #xcape -e 'Alt_R=Alt_R|Home' -t 200
 
 # This always goes after we set up super or alt and the main modifier key
-xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
+#xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
 
 #------------------------Custom Mode_switch Keys-------------------------------
 # Vim arrow keys
@@ -39,7 +58,7 @@ xset -q | grep "Caps Lock:\s*on" && xdotool key Caps_Lock
 
 # Changes menu key to super_L
 #xmodmap -e "keycode 58 = m M Menu Menu"
-xmodmap -e "keycode 135 = Super_L"
+#xmodmap -e "keycode 135 = Super_L"
 
 #notify-send "Default keyboard remap has been applied"
 

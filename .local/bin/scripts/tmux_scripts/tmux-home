@@ -2,9 +2,14 @@
 
 set -x 
 
-session="home"
+if xrandr | grep -P 'DP\d disconnected';then
+  session="laptop"
+  else  
+  session="home"
+fi
+
 window_1="shell"
-cmd_1="clear && neofetch"
+cmd_1="cmatrix -s && clear"
 window_2="web"
 cmd_2="duck"
 window_3="email"

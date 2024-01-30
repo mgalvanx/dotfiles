@@ -13,4 +13,5 @@
 #            keymap  sG      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_google.cgi ; DICT_WORD_AT"
 
 echo "w3m-control: BACK"
-echo "w3m-control: TAB_GOTO https://www.google.com/search?q=$QUERY_STRING"
+#echo "w3m-control: TAB_GOTO https://www.google.com/search?q=$QUERY_STRING"
+echo "w3m-control: GOTO https://www.google.com/search?q=$QUERY_STRING"

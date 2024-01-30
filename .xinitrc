@@ -23,17 +23,18 @@ trackpoint &
 dunst &
 dwm_status &
 mouse &
-xcompmgr &
+picom &
+#xcompmgr &
 remaps & 
 unclutter &
 #nextcloud --background &
 #keynav daemonize &
-#setbg &
 pulseaudio --start &
 xrdb ~/.Xresources &
 xset r rate 150 30 &
 # The screens will not turn on if there is not a 3 second delay
-#sleep 4 && triple-monitors &
+sleep 4 && triple-monitors &
+sleep 21 && setbg &
 #sleep 21 && program-startup &
 
 exec dwm

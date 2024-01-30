@@ -3,6 +3,10 @@
 # This script will sends a timer to a seperate tmux session. Once the timer is finished, it will automatically close the tmux session
 set -x
 timer="$1"
+#mirror_b="https://www.youtube.com/watch?v=8mSNa3tsneY"
+ah='https://youtube.com/watch?v=_lK4cX5xGiQ'
+#video="setsid -f mpv --ab-loop-count=3 --start=2:43 --ab-loop-a=2:43 --ab-loop-b=2:54.15 \"https://youtube.com/watch?v=_lK4cX5xGiQ\""
+flegoo=$(setsid -f mpv --ab-loop-count=3 --start=3:27.5 --ab-loop-a=3:27 --ab-loop-b=3:37.8 https://youtube.com/watch?v=_lK4cX5xGiQ)
 
 test -z $timer && echo "<usuage>: pomo num[s/m/h]" && exit 1
 
@@ -14,14 +18,13 @@ tmux new-session -d -s pomo -n countdown
 # tmux send-keys -t pomo:countdown \
 # "termdown "${timer}m" | lolcat  && setsid -f st -c St -t float -g 80x25 -e bash -c 'tmux attach -t pomo:countdown'" | && notify-send -t 5000 '🍅Pomo has ended! Consider Taking a Break 🍅' && setsid -f mpv  --no-video https://www.youtube.com/watch?v=kh3KagpasVo && tmux kill-session -t pomo" \
 # Enter 
-#
+
 # }
 #setsid -f st -c St -t float -g 21x39+4+4 -e bash -c "termdown "${timer}m" | lolcat  && notify-send -t 5000 '🍅Pomo has ended! Consider Taking a Break 🍅' && setsid -f mpv --no-video https://www.youtube.com/watch?v=kh3KagpasVo" 
 
 tmux send-keys -t pomo:countdown \
-"termdown "${timer}m" | lolcat  && notify-send -t 5000 '🍅Pomo has ended! Consider Taking a Break 🍅' && setsid -f mpv  --no-video https://www.youtube.com/watch?v=kh3KagpasVo && tmux kill-session -t pomo" \
+"termdown "${timer}m" | lolcat  && notify-send -t 5000 '🍅Pomo has ended! Consider Taking a Break 🍅' && setsid -f mpv --start=2:43 --ab-loop-a=2:43 --ab-loop-b=2:54.15 "${ah}" && tmux kill-session -t pomo" \
 Enter 
-
 }
 
 pomo_tmux

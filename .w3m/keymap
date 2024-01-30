@@ -321,12 +321,12 @@ keymap  ga      ACCESSKEY sed -i 's@^use_dictcommand.*@use_dictcommand 1@g' ~/.w
 
 # Dictionary Lookup {{{
 ############################ Execute dictionary command (see README.dict) (DICT_WORD)
-keymap  \\\d    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ; DICT_WORD"
+keymap  ,-d    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ; DICT_WORD"
 ############################ Execute dictionary command for word at cursor (DICT_WORD_AT)
 keymap  \\\w    COMMAND "SET_OPTION dictcommand=file:///cgi-bin/dictionary.cgi ; DICT_WORD_AT"
 ############################ Execute omnibar command (DICT_WORD)
 # }}}
-#
+
 # File/Stream Operations {{{
 # # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #
@@ -374,8 +374,8 @@ keymap  sT      COMMAND "SET_OPTION dictcommand=file:///cgi-bin/omnibar_twitch.c
 # }}}
 
 # queue external media player (task-spooler) e.g youtube, video links
-keymap  xm      EXTERN_LINK   'tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-53'
-keymap  XM      EXTERN        'tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-53'
+keymap  xv      EXTERN_LINK   'mplay'
+keymap  xV      EXTERN        'mload'
 
 # open gui browser
  keymap  xw      EXTERN_LINK   '$BROWSER'
@@ -420,6 +420,7 @@ keymap ,-r COMMAND "READ_SHELL 'rdrview -H $W3M_URL 2> /dev/null' ; VIEW ; DELET
 # toggle borders
 keymap ,-t COMMAND "SET_OPTION display_borders=toggle ; RESHAPE"
 
+keymap ,i COMMAND "SET_OPTION display_image=toggle ; RESHAPE"
 # toggle line numbers
 keymap ,-l COMMAND "SET_OPTION display_link_number=toggle ; RESHAPE"
 

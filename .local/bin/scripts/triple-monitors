@@ -1,5 +1,10 @@
 #!/bin/sh
 set -x
+
+if xrandr | grep -P 'DP\d disconnected';then
+  export mode=undocked
+  exit
+fi
   # The Hex value for DP3 1600x900-108.00MHz resolution keeps changing between 0x462,0x463,0x464,0x465 etc
   # The above line captures the change.
   hex_value=$(xrandr --verbose | grep -E '^[^[:space:]]|108.000MHz' | grep '1600x900' | grep -oP '\dx4\d+' | uniq)
